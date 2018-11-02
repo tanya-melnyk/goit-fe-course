@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Доп. задание М-1</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+</head>
+
+<body>
+
+  <!-- Задание 1
+Создать 2 маркированных списка:
+
+Первый должен содержать li, внутри которых будут имена строчных тегов изученных в модуле.
+Второй должен содержать li, внутри которых будут имена блочных тегов изученных в модуле.
+Используйте этот ресурс для поиска и дополнительной справки по тегам. -->
+  <h2>Задание 1</h2>
+  <h3>Строчные теги:</h3>
+  <!-- ul>li*8 -->
+  <ul>
+    <li>a</li>
+    <li>b</li>
+    <li>button</li>
+    <li>span</li>
+    <li>i</li>
+    <li>em</li>
+    <li>strong</li>
+    <li>u</li>
+  </ul>
+  <h3>Блочные теги:</h3>
+  <ul>
+    <li>main</li>
+    <li>article</li>
+    <li>sector</li>
+    <li>nav</li>
+    <li>header</li>
+    <li>footer</li>
+    <li>p</li>
+    <li>div</li>
+    <li>body</li>
+    <li>h1-h6</li>
+    <li>li</li>
+    <li>ol, ul</li>
+    <li>table</li>
+  </ul>
+
+  <!-- Задание 2
+  Сверстайте блок статьи состоящей из изображения, заголовка, абзаца и ссылки. Текст и картинку возьмите любую. -->
+  <h2>Задание 2</h2>
+  <article>
+    <img src="./img/lorem_ipsum_g-1.jpg" alt="Lorem text" width="500">
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ullam fuga eos eligendi. Beatae aut ad expedita,
+      laboriosam accusamus porro reiciendis incidunt sapiente rem, asperiores ratione pariatur optio suscipit id
+      eligendi sit eum iure distinctio saepe corrupti unde. Inventore corrupti rerum quo illum? Sint sit tempora odio
+      blanditiis labore culpa, consequuntur iusto officiis itaque expedita fugit saepe maxime ad consequatur molestiae
+      eos exercitationem provident delectus, fugiat aut dolore ratione quibusdam quia. Id quae accusantium velit
+      consequuntur autem alias molestiae quasi incidunt, quidem facere maiores impedit in fuga accusamus unde optio
+      veniam similique, neque mollitia tempora iste voluptatibus animi eaque. Fugiat, commodi?</p>
+    <a href="https://ru.wikipedia.org/wiki/Lorem_ipsum" target="_blank">What is <i>lorem ipsum</i>?</a>
+  </article>
+
+  <!-- Задание 3
+Сверстать нумерованный список. В каждом элементе списка есть заголовок и абзац текста. Для заполнения используйте текс-рыбу. -->
+  <h2>Задание 3</h2>
+  <!-- wrong
+    ol>li*3>(h4{lorem2}+p{lorem20}) -->
+  <!-- right
+    ol>li*3>(h4>lorem2^p>lorem20)
+    ol>li*3>(h4>lorem2)+p>lorem20 -->
+  <ol>
+    <li>
+      <h4>Lorem, ipsum.</h4>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Doloremque fugit itaque similique vero voluptatum
+        neque iure pariatur quibusdam ratione ducimus.</p>
+    </li>
+    <li>
+      <h4>Repellat, perferendis.</h4>
+      <p>Dolorem voluptates repellat tempora quos vitae esse, corrupti, nihil amet tenetur numquam modi, in enim
+        necessitatibus. Doloremque nostrum recusandae saepe?</p>
+    </li>
+    <li>
+      <h4>Iusto, aliquam.</h4>
+      <p>Fugit quas officiis facilis, repudiandae impedit ratione non veritatis, maxime laboriosam tenetur porro
+        voluptatem accusamus aliquam voluptates? Commodi, laudantium ex?</p>
+    </li>
+  </ol>
+
+  <!-- Задание 4
+Сверстать маркированный список, чтобы каждый элемент был ссылкой на соцсеть. При клике на ссылку, она открывается в новой вкладке браузера. -->
+  <h2>Задание 4</h2>
+  <!-- ul>li*5>a[target=_blank] -->
+  <ul>
+    <li><a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square"></i> facebook</a></li>
+    <li><a href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin"></i> linkedin</a></li>
+    <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter-square"></i> twitter</a></li>
+    <li><a href="https://www.reddit.com" target="_blank"><i class="fab fa-reddit-square"></i> reddit</a></li>
+    <li><a href="https://imgur.com" target="_blank">imgur</a></li>
+  </ul>
+
+</body>
+
+</html>
