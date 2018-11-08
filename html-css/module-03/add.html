@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Доп. задание М-3</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Playfair+Display"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Ubuntu:300"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/style-add.css" />
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <!-- h2.task{Задание $}*4 -->
+      <h2 class="task">Задание 1</h2>
+      <p class="task-text">
+        Сверстать горизонтальное меню из 6-ти пукнтов. Оформить используя CSS.
+        Меню должно быть центрировано на странице. Добавить пунктам меню любой
+        еффект в состоянии hover, к примеру изменения цвета текста пункта меню.
+      </p>
+
+      <!-- ul.nav-menu>.menu-item*6>a.menu-link{Пункт меню $} -->
+
+      <ul class="nav-menu">
+        <li class="menu-item menu-item-first">
+          <a href="" class="menu-link">Пункт меню 1</a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">Пункт меню 2</a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">Пункт меню 3</a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">Пункт меню 4</a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">Пункт меню 5</a>
+        </li>
+        <li class="menu-item">
+          <a href="#" class="menu-link">Пункт меню 6</a>
+        </li>
+      </ul>
+
+      <h2 class="task">Задание 2</h2>
+      <p class="task-text">
+        Сверстать статью с изображения. Ширина обертки для статьи 470px. Отступы
+        и поля для контента сделать приближенными к изображению.
+      </p>
+      <!--
+        article.article-wrapper>img.article-img+p.article-theme+h2.article-title+p.article-text
+      -->
+      <article class="article-wrapper">
+        <img
+          src="./img/fest.jpg"
+          alt="фото фестиваля"
+          class="article-img"
+          width="420"
+        />
+        <p class="article-theme">lifestyle</p>
+        <h3 class="article-title">More than just a music festival</h3>
+        <p class="article-text">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris
+        </p>
+      </article>
+
+      <h2 class="task">Задание 3</h2>
+      <p class="task-text">
+        Используя шаблон статьи из задания #2, создать еще одну статью с
+        изображения. Ширина обертки для статей 960px. Обертка должна быть
+        центрирована на странице. Подставь статьи в одну строку внутри обертки.
+      </p>
+      <div class="articles-wrapper">
+        <article class="article">
+          <img
+            src="./img/fest.jpg"
+            alt="фото фестиваля"
+            class="article-img"
+            width="420"
+          />
+          <p class="article-theme">lifestyle</p>
+          <h3 class="article-title">More than just a music festival</h3>
+          <p class="article-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>
+        </article>
+        <article class="article">
+          <img
+            src="./img/coffee.jpg"
+            alt="фото чашки кофе"
+            class="article-img"
+            width="420"
+          />
+          <p class="article-theme">lifestyle</p>
+          <h3 class="article-title">Life tastes better with coffee</h3>
+          <p class="article-text">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris
+          </p>
+        </article>
+      </div>
+
+      <h2 class="task">Задание 4</h2>
+
+      <p class="task-text">Вычислить и записать приоритет селекторов:</p>
+      <ul>
+        <li>#myid:focus <span>= 110</span></li>
+        <li>.menu &gt; li &gt; a:hover <span>= 22</span></li>
+        <li>#myid &gt; ul &gt; li a:hover <span>= 113</span></li>
+      </ul>
+      <p class="task-text">
+        Проверьте свои расчеты здесь
+        <a href="https://specificity.keegan.st/">Specificity Calculator</a>
+      </p>
+      <p><em>А ссылка на калькулятор не работает:)</em></p>
+    </div>
+  </body>
+</html>
