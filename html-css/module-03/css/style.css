@@ -43,12 +43,8 @@ img {
 
 /* HEADER */
 
-.page-header {
-  margin-bottom: 26px;
-}
-
 .nav-header {
-  padding: 58px 0;
+  padding: 58px 0 84px;
 }
 
 .nav-menu {
@@ -63,10 +59,6 @@ img {
 .nav-menu li {
   display: inline-block;
   text-align: center;
-}
-
-.nav-menu li:first-child {
-  margin-right: 22px;
 }
 
 .menu-link {

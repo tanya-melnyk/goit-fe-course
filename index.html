@@ -1,39 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tetiana Melnyk</title>
+    <style>
+      * {
+        font-size: 18px;
+        line-height: 26px;
+      }
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Tetiana Melnyk</title>
-</head>
+      .list-title {
+        font-size: 22px;
+        color: #626262;
+      }
 
-<body>
-  <div class="wrapper">
-    <h3 class="list-title">HTML/CSS Homeworks:</h3>
-    <!-- ol>li.link-hw$@2*10>a{Homework М-$} -->
-    <ol>
-      <li class="link-hw1-2"><a href="./html-css/module-01-02/index.html">Homework М-1-2</a>
-      <ul>
-        <li><a href="./html-css/module-01-02/add.html">Additional tasks М-1-2</a></li>
-      </ul>
-      </li>
-      <li class="link-hw3"><a href="./html-css/module-03/index.html">Homework М-3</a>
-      <ul>
-        <li><a href="./html-css/module-03/v2.html">Homework M-3 V.2</a></li>
-        <li><a href="./html-css/module-03/add.html">Additional tasks М-3</a></li>
-      </ul>
-      </li>
-      <li class="link-hw4"><a href="">Homework М-4</a></li>
-      <li class="link-hw5"><a href="">Homework М-5</a></li>
-      <li class="link-hw6"><a href="">Homework М-6</a></li>
-      <li class="link-hw7"><a href="">Homework М-7</a></li>
-      <li class="link-hw8"><a href="">Homework М-8</a></li>
-      <li class="link-hw9"><a href="">Homework М-9</a></li>
-      <li class="link-hw10"><a href="">Homework М-10</a></li>
-      <li class="link-hw11"><a href="">Homework М-11</a></li>
-    </ol>
-  </div>
-</body>
+      .homeworks-list a {
+        font-family: sans-serif;
+        text-decoration: none;
+        color: #626262;
+      }
 
+      .additional-tasks-list {
+        font-style: italic;
+      }
+
+      .homeworks-list a:hover {
+        color: dodgerblue;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <h2 class="list-title">HTML/CSS Homeworks:</h2>
+      <!-- ol>li*10>a{Homework М-$@2} -->
+      <ol class="homeworks-list">
+        <li>
+          <a href="./html-css/module-01-02/index.html">Homework М-1-2</a>
+          <ul class="additional-tasks-list">
+            <li>
+              <a href="./html-css/module-01-02/add.html"
+                >Additional tasks М-1-2</a
+              >
+            </li>
+          </ul>
+        </li>
+        <li>
+          <a href="./html-css/module-03/index.html">Homework М-3</a>
+          <ul class="additional-tasks-list">
+            <li><a href="./html-css/module-03/v2.html">Homework M-3 V.2</a></li>
+            <li>
+              <a href="./html-css/module-03/add.html">Additional tasks М-3</a>
+            </li>
+          </ul>
+        </li>
+        <li><a href="">Homework М-4</a></li>
+        <li><a href="">Homework М-5</a></li>
+        <li><a href="">Homework М-6</a></li>
+        <li><a href="">Homework М-7</a></li>
+        <li><a href="">Homework М-8</a></li>
+        <li><a href="">Homework М-9</a></li>
+        <li><a href="">Homework М-10</a></li>
+        <li><a href="">Homework М-11</a></li>
+      </ol>
+    </div>
+  </body>
 </html>

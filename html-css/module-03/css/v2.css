@@ -40,11 +40,8 @@ img {
 
 .nav-header {
   width: 902px;
-  margin: 0 auto 26px;
-}
-
-.nav-header {
-  padding: 58px 0;
+  margin: 0 auto;
+  padding: 58px 0 84px;
 }
 
 .nav-menu {
@@ -59,10 +56,6 @@ img {
 .nav-menu li {
   display: inline-block;
   text-align: center;
-}
-
-.nav-menu li:first-child {
-  margin-right: 22px;
 }
 
 .menu-link {
