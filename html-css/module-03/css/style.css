@@ -135,6 +135,10 @@ img {
   cursor: pointer;
 }
 
+.button-wrapper {
+  text-align: center;
+}
+
 .load-more-button {
   color: #626262;
   background: #fff;
@@ -143,7 +147,7 @@ img {
   height: 60px;
   border: 1px solid rgb(98, 98, 98);
   padding: 0;
-  margin: 0 369px 70px;
+  margin-bottom: 70px;
   cursor: pointer;
   display: inline-block;
 }
