@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Additional tasks M-4</title>
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Additional tasks M-4</title>
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
     />
@@ -13,9 +13,77 @@
       href="https://fonts.googleapis.com/css?family=Roboto"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css">
-</head>
-<body>
-  
-</body>
+    <link rel="stylesheet" href="./css/add.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- (h2.task{Задание $}+p.task-text)*4 -->
+      <h2 class="task">Задание 1</h2>
+      <p class="task-text">
+        Создать список из шести элементов. С помощью псевдокласса hover задать
+        стили элементам меню при наведении курсора. Для создания горизонтального
+        меню использовать float.
+      </p>
+      <!-- ul.menu-list>.list-item*6>a.menu-link{Menu item $} -->
+      <ul class="menu-list">
+        <li class="menu-item"><a href="#" class="menu-link">Menu item 2</a></li>
+        <li class="menu-item"><a href="#" class="menu-link">Menu item 3</a></li>
+        <li class="menu-item"><a href="#" class="menu-link">Menu item 4</a></li>
+        <li class="menu-item"><a href="#" class="menu-link">Menu item 1</a></li>
+        <li class="menu-item"><a href="#" class="menu-link">Menu item 5</a></li>
+        <li class="menu-item"><a href="#" class="menu-link">Menu item 6</a></li>
+      </ul>
+
+      <h2 class="task">Задание 2</h2>
+      <p class="task-text">
+        Создать список из девяти элементов. Для элементов списка, с помощью
+        псевдокласса nth-child, сделать 3 чередующихся фона #88292F, #5DB7DE и
+        #0D5D56. Цвет шрифта должен быть #0E1116.
+      </p>
+      <!-- ul.list>.list-item{Item $}*9 -->
+      <ul class="list-2">
+        <li class="list-2-item">Item 1</li>
+        <li class="list-2-item">Item 2</li>
+        <li class="list-2-item">Item 3</li>
+        <li class="list-2-item">Item 4</li>
+        <li class="list-2-item">Item 5</li>
+        <li class="list-2-item">Item 6</li>
+        <li class="list-2-item">Item 7</li>
+        <li class="list-2-item">Item 8</li>
+        <li class="list-2-item">Item 9</li>
+      </ul>
+      <h2 class="task">Задание 3</h2>
+      <p class="task-text">
+        Создать список из девяти элементов. C помощью псевдоэлемента ::before
+        поставить перед каждой ссылкой символ стрелки.
+      </p>
+      <!-- ul.list-3>.list-3-item*9>a.list-3-link{Link $} -->
+      <ul class="list-3">
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 1</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 2</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 3</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 4</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 5</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 6</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 7</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 8</a></li>
+        <li class="list-3-item"><a href="#" class="list-3-link">Link 9</a></li>
+      </ul>
+      <h2 class="task">Задание 4</h2>
+      <p class="task-text">
+        Создать список из 5-ти элементов. Используя CSS счетчики и псевдоэлемент
+        before для li, пронумеровать элементы списка римскими цифрами, CSS
+        оформление на свой вкус. Псевдоэлемент должен быть квадратом с
+        вертикально и горизонтально центрированым текстом.
+      </p>
+      <!-- ul.list-4>.list-4-item{List element}*5 -->
+      <ul class="list-4">
+        <li class="list-4-item">List element</li>
+        <li class="list-4-item">List element</li>
+        <li class="list-4-item">List element</li>
+        <li class="list-4-item">List element</li>
+        <li class="list-4-item">List element</li>
+      </ul>
+    </div>
+  </body>
 </html>

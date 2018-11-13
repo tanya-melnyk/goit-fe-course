@@ -1,0 +1,112 @@
+body {
+  font-family: Roboto,Tahoma,sans-serif;
+}
+
+.wrapper {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.task {
+  font-size: 32px;
+}
+
+.task-text {
+  font-size: 20px;
+}
+
+/* ЗАДАНИЕ 1 */
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* height: auto; */
+  /* overflow: hidden; */
+}
+
+.menu-list::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.menu-item {
+  float: left;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  padding: 10px 25px;
+}
+
+.menu-link:hover {
+  color: #fff;
+  background: hsl(125, 92%, 15%);
+}
+
+/* ЗАДАНИЕ 2 */
+
+.list-2 {
+  color: #0E1116;
+  line-height: 1.5;
+}
+
+.list-2-item:nth-child(3n+1) {
+  background: #88292F;
+}
+
+.list-2-item:nth-child(3n+2) {
+  background: #5DB7DE;
+}
+
+.list-2-item:nth-child(3n+3) {
+  background: #0D5D56;
+}
+
+/* ЗАДАНИЕ 3 */
+
+.list-3 {
+  list-style: none;
+}
+
+.list-3-link {
+  margin-left: 10px;
+  line-height: 1.5;
+}
+
+.list-3-item::before {
+  content: "\2192";
+}
+
+/* ЗАДАНИЕ 4 */
+
+.list-4 {
+  list-style: none;
+  counter-reset: counter-list-item;
+}
+
+.list-4-item {
+  counter-increment: counter-list-item;
+  line-height: 30px;
+  font-size: 20px;
+}
+
+.list-4-item::before {
+  content: counter(counter-list-item, upper-roman);
+  margin-right: 10px;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  background: hsl(120, 100%, 20%);
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.list-4-item:hover::before {
+  background: hsl(120, 100%, 30%);
+}
