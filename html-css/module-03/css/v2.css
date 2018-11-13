@@ -38,10 +38,14 @@ img {
 
 /* HEADER */
 
+.page-header {
+  margin: 0 0 84px;
+  padding-top: 58px;
+}
+
 .nav-header {
   width: 902px;
   margin: 0 auto;
-  padding: 58px 0 84px;
 }
 
 .nav-menu {
@@ -77,6 +81,10 @@ img {
 .container {
   width: 960px;
   margin: 0 auto;
+}
+
+.articles-section {
+  padding-bottom: 70px;
 }
 
 .articles-list {
@@ -139,7 +147,6 @@ img {
   height: 60px;
   border: 1px solid rgb(98, 98, 98);
   padding: 0;
-  margin-bottom: 70px;
   cursor: pointer;
   display: inline-block;
 }
