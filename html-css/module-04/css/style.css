@@ -1,0 +1,256 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  color: #555252;
+}
+
+.clearfix {
+  height: auto;
+  display: table;
+  clear: both;
+}
+
+.container {
+  width: 1110px;
+  margin: 0 auto;
+}
+
+.container:hover {
+  background: linear-gradient(to bottom, hsla(168, 54%, 67%, .4), #fff 30%)
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/*----- HEADER -----*/
+
+.header-nav {
+  padding: 32px 0;
+}
+
+.site-logo {
+  font-size: 30px;
+  letter-spacing: -0.02em;
+  line-height: 32px;
+  font-weight: 300;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #555252;
+  display: inline-block;
+  float: left;
+}
+
+.site-logo::first-letter {
+  font-weight: 900;
+  color: #1abc9c;
+}
+
+.nav-menu {
+  width: 466px;
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  float: right;
+}
+
+.menu-item {
+  float: left;
+}
+
+.menu-item:not(:last-child) {
+  margin-right: 32px;
+}
+
+.menu-link {
+  font-family: "Open Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: -0.02em;
+  line-height: 11px;
+  font-weight: 700;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #0f0101;
+  display: block;
+}
+
+.menu-link:hover,
+.menu-link:focus {
+  color: #1abc9c;
+}
+
+/*----- PRODUCTS SECTION -----*/
+
+.products-section {
+  padding: 66px 0 52px;
+}
+
+.section-title {
+  margin: 0 0 86px;
+  padding: 0;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 32px;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.section-title::after {
+  content: "";
+  width: 164px;
+  height: 7px;
+  background: #4ec6ab;
+  display: block;
+  margin: 34px auto 0;
+  padding: 0;
+}
+
+.products-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.products-list-item {
+  width: 255px;
+  height: 322px;
+  float: left;
+}
+
+.products-list-item:not(:nth-child(4n + 4)) {
+  margin-right: 30px;
+}
+
+.products-list-item:not(:nth-last-child(-n + 4)) {
+  margin-bottom: 30px;
+}
+
+.product-name,
+.product-price {
+  margin: 0;
+  padding: 0 0 0 13px;
+  line-height: 40px;
+  font-weight: 900;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.product-name {
+  width: 201px;
+  background: #323232;
+  float: left;
+}
+
+.product-price {
+  width: 54px;
+  background: #8c8c8c;
+  float: right;
+}
+
+.products-list-item:hover .product-name {
+  background: #1abc9c;
+}
+
+.products-list-item:hover .product-price {
+  background: #7fd9c7;
+}
+
+.products-list-item:hover {
+  box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+/*----- NEWS SECTION -----*/
+
+.news-section {
+  padding: 52px 0 82px;
+}
+
+.news-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.news-list-item {
+  width: 350px;
+  float: left;
+}
+
+.news-list-item:not(:nth-child(3n + 3)) {
+  margin-right: 30px;
+}
+ 
+.news-img {
+  margin-bottom: 10px;
+  filter: grayscale(70%);
+}
+
+.news-title,
+.news-text,
+.read-more-button {
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 26px;
+}
+
+.news-title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 18px;
+}
+
+.news-title::after {
+  content: "";
+  width: 135px;
+  height: 3px;
+  background: #4ec6ab;
+  display: block;
+  margin-top: 8px;
+}
+
+.news-text {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.news-list-item:hover .news-img {
+  filter: grayscale(0%);
+  cursor: pointer;
+}
+
+.read-more-button {
+  border-radius: 3px;
+  background-color: rgb(78, 198, 171);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 300;
+  border: 0;
+  padding: 14px 40px;
+  box-shadow: inset 5px 5px 7px 0 rgba(255,255,255,0.5), 
+  inset -5px -5px 7px 0 rgba(0,0,0,0.5);
+}
+
+.read-more-button:hover {
+  box-shadow: 2px 4px 7px 0px rgba(0, 0, 0, 0.4),
+  inset 5px 5px 7px 0 rgba(255,255,255,0.5), 
+  inset -5px -5px 7px 0 rgba(0,0,0,0.5);
+  cursor: pointer;
+}
+

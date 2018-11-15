@@ -20,9 +20,8 @@ body {
 .menu-list {
   list-style: none;
   margin: 0;
-  padding: 0;
-  /* height: auto; */
-  /* overflow: hidden; */
+  padding: 10px 0;
+  background: hsl(125, 12%, 75%);
 }
 
 .menu-list::after {
