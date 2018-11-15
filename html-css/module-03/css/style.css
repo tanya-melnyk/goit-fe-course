@@ -136,20 +136,17 @@ img {
   cursor: pointer;
 }
 
-.button-wrapper {
-  text-align: center;
-}
 
 .load-more-button {
   color: #626262;
   background: #fff;
   font-size: 20px;
-  width: 164px;
-  height: 60px;
+  line-height: 24px;
+  margin: 0 auto;
+  padding: 17px 32px;
   border: 1px solid rgb(98, 98, 98);
-  padding: 0;
   cursor: pointer;
-  display: inline-block;
+  display: block;
 }
 
 .load-more-button:hover,
