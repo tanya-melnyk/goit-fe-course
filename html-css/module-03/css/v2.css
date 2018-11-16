@@ -145,6 +145,7 @@ img {
   border: 1px solid rgb(98, 98, 98);
   cursor: pointer;
   display: block;
+  outline: none;
 }
 
 .load-more-button:hover,
