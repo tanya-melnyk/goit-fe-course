@@ -13,12 +13,9 @@ body {
   color: #555252;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-}
+/* This worked, but the next way is better
 
-/* .clearfix {
+.clearfix {
   height: auto;
   display: table;
   clear: both;
@@ -35,12 +32,14 @@ ul {
   margin: 0 auto;
 }
 
-.container:hover {
+/* How to make hover gradients for sections */
+
+/* .container:hover {
   background: linear-gradient(
     to bottom,
     hsla(168, 54%, 67%, 0.4),
     hsl(0, 0%, 100%) 30%);
-}
+} */
 
 img {
   display: block;
@@ -71,9 +70,10 @@ img {
 }
 
 .nav-list {
+  margin: 0;
+  padding: 10px 0 0;
   width: 466px;
   list-style: none;
-  padding-top: 10px;
   float: right;
 }
 
@@ -105,7 +105,7 @@ img {
 /*----- PRODUCTS SECTION -----*/
 
 .products-section {
-  padding: 66px 0 52px;
+  padding: 68px 0 52px;
 }
 
 .section-title {
@@ -127,8 +127,13 @@ img {
   border-bottom: 7px solid #4ec6ab;
 }
 
-.products-list-item {
+.products-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+.products-list-item {
   width: 255px;
   float: left;
 }
@@ -183,8 +188,13 @@ img {
   padding: 52px 0 82px;
 }
 
-.news-list-item {
+.news-list {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+.news-list-item {
   width: 350px;
   float: left;
 }
@@ -217,8 +227,7 @@ img {
 .news-title::after {
   content: "";
   width: 135px;
-  height: 3px;
-  background: #4ec6ab;
+  border-bottom: 3px solid #4ec6ab;
   display: block;
   margin-top: 8px;
 }
@@ -236,11 +245,13 @@ img {
   display: inline-block;
   text-decoration: none;
   color: #fff;
-  padding: 14px 40px;
+  padding: 12px 44px;
   border-radius: 3px;
   background-color: rgb(78, 198, 171);
   font-size: 16px;
+  line-height: 26px;
   font-weight: 300;
+  letter-spacing: -0.02em;
   box-shadow: inset 5px 5px 7px 0 rgba(255, 255, 255, 0.5),
     inset -5px -5px 7px 0 rgba(0, 0, 0, 0.5);
 }
