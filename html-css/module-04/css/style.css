@@ -230,10 +230,9 @@ img {
 
 .news-list-item:hover .news-img {
   filter: grayscale(0%);
-  cursor: pointer;
 }
 
-.read-more-btn-link {
+.news-read-more-btn-link {
   display: inline-block;
   text-decoration: none;
   color: #fff;
@@ -246,7 +245,7 @@ img {
     inset -5px -5px 7px 0 rgba(0, 0, 0, 0.5);
 }
 
-.read-more-btn-link:hover {
+.news-read-more-btn-link:hover {
   box-shadow: 2px 4px 7px 0px rgba(0, 0, 0, 0.4),
     inset 5px 5px 7px 0 rgba(255, 255, 255, 0.5),
     inset -5px -5px 7px 0 rgba(0, 0, 0, 0.5);
