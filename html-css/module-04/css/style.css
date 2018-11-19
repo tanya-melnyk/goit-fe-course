@@ -47,7 +47,7 @@ img {
   height: auto;
 }
 
-/*----- HEADER -----*/
+/*---------- HEADER ----------*/
 
 .header-nav {
   padding: 32px 0;
@@ -102,7 +102,7 @@ img {
   color: #1abc9c;
 }
 
-/*----- PRODUCTS SECTION -----*/
+/*---------- PRODUCTS SECTION ----------*/
 
 .products-section {
   padding: 68px 0 52px;
@@ -142,8 +142,12 @@ img {
   margin-right: 30px;
 }
 
-.products-list-item:not(:nth-last-child(-n + 4)) {
+.products-list-item:nth-last-child(n + 4) {
   margin-bottom: 30px;
+}
+
+.products-list-item-link {
+  display: block;
 }
 
 .product-name,
@@ -182,7 +186,7 @@ img {
   box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.4);
 }
 
-/*----- NEWS SECTION -----*/
+/*---------- NEWS SECTION ----------*/
 
 .news-section {
   padding: 52px 0 82px;
@@ -201,6 +205,10 @@ img {
 
 .news-list-item:not(:nth-child(3n + 3)) {
   margin-right: 30px;
+}
+
+.news-list-item__img-link {
+  display: block;
 }
 
 .news-img {
