@@ -1,0 +1,145 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 20px/24px "Roboto", sans-serif;
+}
+
+.container {
+  width: 70%;
+  margin: 0 auto;
+  padding: 20px 20px 100px;
+}
+
+/* ------- ЗАДАНИЕ 1 ------- */
+
+.background {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(100, 255, 255, 0.3),
+      rgba(100, 255, 255, 0.3)
+    ),
+    url(https://i0.wp.com/ficedu.org/wp-content/uploads/2016/07/Savin-NY-Website-Background-Web.jpg)
+      center/cover no-repeat;
+}
+
+/* ------- ЗАДАНИЕ 2 ------- */
+
+.block-2 {
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+  background: #424242;
+  position: relative;
+}
+
+.block-2 div {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+}
+
+.sub-block-1 {
+  background: rgb(255, 0, 0);
+}
+
+.sub-block-2 {
+  background: rgb(255, 128, 0);
+  left: 150px;
+}
+
+.sub-block-3 {
+  background: rgb(255, 255, 0);
+  right: 0;
+}
+
+.sub-block-4 {
+  background: rgb(128, 255, 0);
+  top: 150px;
+}
+
+.sub-block-5 {
+  background: rgb(255, 0, 255);
+  top: 150px;
+  left: 150px;
+}
+
+.sub-block-6 {
+  background: rgb(0, 255, 128);
+  top: 150px;
+  right: 0;
+}
+
+.sub-block-7 {
+  background: rgb(0, 255, 255);
+  bottom: 0;
+}
+
+.sub-block-8 {
+  background: rgb(0, 128, 255);
+  left: 150px;
+  bottom: 0;
+}
+
+.sub-block-9 {
+  background: rgb(0, 0, 255);
+  right: 0;
+  bottom: 0;
+}
+
+/* ------- ЗАДАНИЕ 3 ------- */
+
+.nav-list,
+.nav-dropdown-list {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-dropdown-list {
+  display: none;
+  position: absolute;
+}
+
+.nav-dropdown-item {
+  margin: 4px 0;
+}
+
+.nav-item:hover > .nav-dropdown-list {
+  display: block;
+}
+
+.nav-link,
+.nav-dropdown-link {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 20px 60px;
+  display: inline-block;
+  background: #424242;
+}
+
+.nav-dropdown-link {
+  font-size: 18px;
+  padding: 10px 20px;
+}
+
+.nav-link:hover,
+.nav-dropdown-link:hover {
+  background: #fff;
+  color: #424242;
+  box-shadow: 0 2px 2px 2px rgba(0, 0, 0, 0.3);
+}

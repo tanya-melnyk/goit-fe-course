@@ -86,15 +86,16 @@ img {
 }
 
 .nav-link {
-  font-family: "Open Sans", sans-serif;
-  font-size: 14px;
+  /* font-family: "Open Sans", sans-serif; */
+  /* font-size: 14px; */
   letter-spacing: -0.02em;
-  line-height: 11px;
-  font-weight: 700;
+  /* line-height: 11px; */
+  /* font-weight: 700; */
   text-decoration: none;
   text-transform: uppercase;
   color: #0f0101;
   display: block;
+  font: bold 14px/11px "Open Sans", sans-serif;
 }
 
 .nav-link:hover,

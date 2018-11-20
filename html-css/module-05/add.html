@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Additional tasks M-5</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/add.css" />
+  </head>
+  <body>
+    <div class="background">
+      <main>
+        <div class="container">
+          <!-- (h2.task{Задание $}+p.task-text)*4 -->
+          <h2 class="task">Задание 1</h2>
+          <p class="task-text">
+            Сверстать блок размером на всю страницу, поставить на фон
+            произвольное изображение. Используя технику множественного фона,
+            добавить поверх картинки одноцветный линейный градиент с
+            прозрачностью rgba(0, 0, 0, 0.3).
+          </p>
+
+          <h2 class="task">Задание 2</h2>
+          <p class="task-text">
+            Сверстать блок размером 400x400 пикселей и фоном #424242. Добавить в
+            него еще 9 блоков произвольных (но разных) цветов размерами 100x100
+            пикселей. Используя абсолютное позиционирование, спозиционировать 9
+            блоков относительно родителя как указано на изображении.
+          </p>
+
+          <div class="block-2">
+            <div class="sub-block-1"></div>
+            <div class="sub-block-2"></div>
+            <div class="sub-block-3"></div>
+            <div class="sub-block-4"></div>
+            <div class="sub-block-5"></div>
+            <div class="sub-block-6"></div>
+            <div class="sub-block-7"></div>
+            <div class="sub-block-8"></div>
+            <div class="sub-block-9"></div>
+          </div>
+
+          <h2 class="task">Задание 3</h2>
+          <p class="task-text">
+            Разобрать и сверстать выпадающее меню по примеру в теории модуля,
+            добавить произвольное оформление.
+          </p>
+
+          <!--
+            nav.nav>ul.nav-list>.nav-item*3>a.nav-link[href="#"]{item $}+ul.nav-dropdown>.nav-dropdown-item*3>a.nav-dropdown-link[href="#"]{sub-item $}
+          -->
+          <nav class="nav">
+            <ul class="nav-list">
+              <!-- Пункт меню -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">item 1</a>
+                <!-- Подменю вложенное в menu-item -->
+                <ul class="nav-dropdown-list">
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 1-1</a>
+                  </li>
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 1-2</a>
+                  </li>
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 1-3</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">item 2</a>
+                <ul class="nav-dropdown-list">
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 2-1</a>
+                  </li>
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 2-2</a>
+                  </li>
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 2-3</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">item 3</a>
+                <ul class="nav-dropdown-list">
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 3-1</a>
+                  </li>
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 3-2</a>
+                  </li>
+                  <li class="nav-dropdown-item">
+                    <a href="#" class="nav-dropdown-link">sub-item 3-3</a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

@@ -7,69 +7,103 @@
     <title>Tetiana Melnyk</title>
     <style>
       * {
-        font-size: 18px;
-        line-height: 26px;
-        background:#faf0e6;
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        min-height: 100vh;
+        background: linear-gradient(
+            rgba(255, 255, 255, 0.6),
+            rgba(255, 255, 255, 0.6)
+          ),
+          url(./html-css/module-01-02/img/remote-work.jpg)
+            center/cover no-repeat;
+        font-size: 26px;
+        line-height: 36px;
+      }
+
+      .wrapper {
+        margin: 0;
+        padding: 50px 450px;
       }
 
       .list-title {
-        font-size: 22px;
+        margin-bottom: 20px;
+        font-size: 32px;
+        color: #424242;
       }
 
       .homeworks-list a {
         font-family: sans-serif;
         text-decoration: none;
-        color: black;
+        color: #424242;
+        padding: 10px;
       }
 
-      .additional-tasks-list {
+      .additional-tasks-list a {
         font-style: italic;
+        color: #777;
+        font-size: 20px;
       }
+
+
 
       .homeworks-list a:hover,
       .homeworks-list a:focus {
-        color:cornflowerblue;
+        color: rgb(0, 150, 150);
+        box-shadow: 0 4px 10px 0px rgba(0, 0, 0, 0.4);
+        border-radius: 25px;
+        font-size: 1.1em;
       }
     </style>
   </head>
 
   <body>
-    <div class="wrapper">
-      <h2 class="list-title">HTML/CSS Homeworks:</h2>
-      <!-- ol>li*10>a{Homework М-$@2} -->
-      <ol class="homeworks-list">
-        <li>
-          <a href="./html-css/module-01-02/index.html">Homework М-1-2</a>
-          <ul class="additional-tasks-list">
-            <li>
-              <a href="./html-css/module-01-02/add.html"
-                >Additional tasks М-1-2</a
-              >
-            </li>
-          </ul>
-        </li>
-        <li>
-          <a href="./html-css/module-03/index.html">Homework М-3</a>
-          <ul class="additional-tasks-list">
-            <li><a href="./html-css/module-03/v2.html">Homework M-3 V.2</a></li>
-            <li>
-              <a href="./html-css/module-03/add.html">Additional tasks М-3</a>
-            </li>
-          </ul>
-        </li>
-        <li><a href="./html-css/module-04/index.html">Homework М-4</a>
-        <ul class="additional-tasks-list">
-          <li><a href="./html-css/module-04/add.html">Additional tasks М-4</a></li>
-        </ul>
-        </li>
-        <li><a href="">Homework М-5</a></li>
-        <li><a href="">Homework М-6</a></li>
-        <li><a href="">Homework М-7</a></li>
-        <li><a href="">Homework М-8</a></li>
-        <li><a href="">Homework М-9</a></li>
-        <li><a href="">Homework М-10</a></li>
-        <li><a href="">Homework М-11</a></li>
-      </ol>
+    <div class="container">
+      <div class="wrapper">
+        <h2 class="list-title">HTML/CSS Homeworks:</h2>
+        <!-- ol>li*10>a{Homework М-$@2} -->
+        <ol class="homeworks-list">
+          <li>
+            <a href="./html-css/module-01-02/index.html">Homework М-1-2</a>
+            <ul class="additional-tasks-list">
+              <li>
+                <a href="./html-css/module-01-02/add.html"
+                  >Additional tasks М-1-2</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="./html-css/module-03/index.html">Homework М-3</a>
+            <ul class="additional-tasks-list">
+              <li>
+                <a href="./html-css/module-03/v2.html">Homework M-3 V.2</a>
+              </li>
+              <li>
+                <a href="./html-css/module-03/add.html">Additional tasks М-3</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a href="./html-css/module-04/index.html">Homework М-4</a>
+            <ul class="additional-tasks-list">
+              <li>
+                <a href="./html-css/module-04/add.html">Additional tasks М-4</a>
+              </li>
+            </ul>
+          </li>
+          <li><a href="">Homework М-5</a></li>
+          <li><a href="">Homework М-6</a></li>
+          <li><a href="">Homework М-7</a></li>
+          <li><a href="">Homework М-8</a></li>
+          <li><a href="">Homework М-9</a></li>
+          <li><a href="">Homework М-10</a></li>
+          <li><a href="">Homework М-11</a></li>
+        </ol>
+      </div>
     </div>
   </body>
 </html>
