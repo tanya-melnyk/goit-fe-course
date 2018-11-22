@@ -15,7 +15,7 @@ body {
 .container {
   width: 70%;
   margin: 0 auto;
-  padding: 20px 20px 100px;
+  padding: 20px 20px 200px;
 }
 
 /* ------- ЗАДАНИЕ 1 ------- */
@@ -52,7 +52,8 @@ body {
 
 .sub-block-2 {
   background: rgb(255, 128, 0);
-  left: 150px;
+  left: 50%;
+  transform: translatex(-50%);
 }
 
 .sub-block-3 {
@@ -62,19 +63,22 @@ body {
 
 .sub-block-4 {
   background: rgb(128, 255, 0);
-  top: 150px;
+  top: 50%;
+  transform: translatey(-50%);
 }
 
 .sub-block-5 {
   background: rgb(255, 0, 255);
-  top: 150px;
-  left: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .sub-block-6 {
   background: rgb(0, 255, 128);
-  top: 150px;
+  top: 50%;
   right: 0;
+  transform: translatey(-50%);
 }
 
 .sub-block-7 {
@@ -84,8 +88,9 @@ body {
 
 .sub-block-8 {
   background: rgb(0, 128, 255);
-  left: 150px;
+  left: 50%;
   bottom: 0;
+  transform: translatex(-50%);
 }
 
 .sub-block-9 {
