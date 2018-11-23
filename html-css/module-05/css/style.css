@@ -342,6 +342,8 @@ img {
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid rgb(255, 255, 255);
+  outline: none;
+  cursor: pointer;
 }
 
 .icon-like {
