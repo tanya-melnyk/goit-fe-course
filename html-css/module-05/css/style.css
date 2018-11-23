@@ -57,8 +57,14 @@ img {
 
 /* -- Web-site logo -- */
 
-.main-logo__link {
+.site-logo {
   display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+.site-logo__link {
+  display: block;
   text-decoration: none;
   font-size: 30px;
   line-height: 32px;
@@ -68,7 +74,7 @@ img {
   color: #555252;
 }
 
-.main-logo__link::first-letter {
+.site-logo__link::first-letter {
   font-weight: 900;
   color: #1abc9c;
 }
