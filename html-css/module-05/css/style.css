@@ -294,7 +294,8 @@ img {
 .product-popup {
   position: absolute;
   top: 25px;
-  left: 25px;
+  left: 50%;
+  transform: translatex(-50%);
   width: 235px;
   height: 262px;
   background: rgba(0, 0, 0, 0.55);
