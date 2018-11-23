@@ -332,10 +332,13 @@ img {
   margin-bottom: 7px;
 }
 
-.product-popup__icon-link {
+.product-popup__icon-btn {
   display: block;
   width: 50px;
   height: 50px;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid rgb(255, 255, 255);
@@ -374,8 +377,8 @@ img {
   opacity: 1;
 }
 
-.product-popup__icon-link:hover,
-.product-popup__icon-link:focus {
+.product-popup__icon-btn:hover,
+.product-popup__icon-btn:focus {
   background: #1abc9c;
   background-repeat: no-repeat;
   background-position: center;
