@@ -297,7 +297,6 @@ img {
   left: 25px;
   width: 235px;
   height: 262px;
-  padding: 76px 34px;
   background: rgba(0, 0, 0, 0.55);
   box-shadow: 0 0 0 10px rgba(255, 255, 255, 0.55);
   opacity: 0;
@@ -314,6 +313,10 @@ img {
 } */
 
 .product-popup__icons-list {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
   margin: 0;
   padding: 0;
   list-style: none;
