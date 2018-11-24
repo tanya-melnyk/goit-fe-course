@@ -15,15 +15,11 @@
   <body>
     <!-- *** HEADER *** -->
 
-    <!--
-      header.page-header>nav.page-header__nav>a.site-logo[href="#"]{mart}+ul.page-header__nav-list>.page-header__nav-item*6>a.page-header__nav-link[href="#"]
-    -->
-
-    <header class="page-header container">
-      <nav class="page-header__nav">
+    <header class="page-header">
+      <nav class="page-header__nav container">
         <!-- Web-site logo -->
 
-        <h1 class="site-logo"><a class="site-logo__link" href="#">mart</a></h1>
+        <a class="site-logo__link" href="#">mart</a>
 
         <!-- Main web-site navigation -->
 
@@ -53,232 +49,232 @@
     <main>
       <!-- *** SLIDER SECTION *** -->
 
-      <section class="slider-section container">
+      <section class="slider-section">
         <h2 class="visually-hidden">Tour offers</h2>
+        <div class="slider container">
+          <!-- Controlling buttons for slider -->
 
-        <!-- a darkening effect for slides -->
+          <button class="slider__cotrol-btn slider__cotrol-btn__prev"></button>
+          <button class="slider__cotrol-btn slider__cotrol-btn__next"></button>
 
-        <div class="slider-section__screen"></div>
+          <!-- Slides list -->
 
-        <!-- Controlling buttons for slider -->
-
-        <button class="slider__cotrol-btn slider__cotrol-btn__prev"></button>
-        <button class="slider__cotrol-btn slider__cotrol-btn__next"></button>
-
-        <!-- Slides list -->
-
-        <ul class="slides-list">
-          <li class="slide-1">
-            <img
-              class="slide-img"
-              src="./img/slide-1.jpg"
-              alt="happy girls"
-              width="1600"
-              height="600"
-            />
-            <div class="slider-text">
-              <h2 class="slider-title">
-                <a class="slider-title__link" href="#"
-                  >affordable paris tours</a
-                >
-              </h2>
-              <p class="slider-desc">city tours / tour tickets / tour guides</p>
-            </div>
-          </li>
-        </ul>
+          <ul class="slides-list">
+            <li class="slides-item">
+              <div class="slider-text">
+                <h2 class="slider-title">
+                  <a class="slider-title__link" href="#"
+                    >affordable paris tours</a
+                  >
+                </h2>
+                <p class="slider-desc">
+                  city tours / tour tickets / tour guides
+                </p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
 
       <!-- *** PRODUCTS SECTION *** -->
 
-      <section class="products-section container">
-        <!-- Product section header -->
+      <section class="products-section">
+        <div class="products-section__wrapper container">
+          <!-- Product section header -->
 
-        <header class="products-section__header">
-          <h2 class="products-section__title">new collection</h2>
-        </header>
+          <header class="products-section__header">
+            <h2 class="products-section__title">new collection</h2>
+          </header>
 
-        <!--
-          List of cards with product image, name, price
-          and popup window with some choice-icons
-        -->
-
-        <!-- A card with product image, name and price -->
-
-        <ul class="products-list clearfix">
-          <li class="products-list__item-card">
-            <img
-              class="product-img"
-              src="./img/products/blue-tshirt.jpg"
-              alt="man in blue tshirt"
-              width="255"
-              height="322"
-            />
-            <p class="product-name">blue tshirt</p>
-            <p class="product-price">$26</p>
-
-            <!-- popup window with some choice-icons -->
-
-            <div class="product-popup">
-              <ul class="product-popup__icons-list">
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-like">
-                    <span class="visually-hidden">like</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-change">
-                    <span class="visually-hidden">change</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-wish-list">
-                    <span class="visually-hidden">wish-list</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-cart">
-                    add to cart
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </li>
+          <!--
+            List of cards with product image, name, price
+            and popup window with some choice-icons
+          -->
 
           <!-- A card with product image, name and price -->
 
-          <li class="products-list__item-card">
-            <img
-              class="product-img"
-              src="./img/products/woman-shirt.jpg"
-              alt="woman in checkered shirt"
-              width="255"
-              height="322"
-            />
-            <p class="product-name">woman shirt</p>
-            <p class="product-price">$31</p>
+          <ul class="products-list clearfix">
+            <li class="products-list__item-card">
+              <img
+                class="product-img"
+                src="./img/products/blue-tshirt.jpg"
+                alt="man in blue tshirt"
+                width="255"
+                height="322"
+              />
+              <div class="product-info clearfix">
+                <p class="product-name">blue tshirt</p>
+                <p class="product-price">$26</p>
+              </div>
+              <!-- popup window with some choice-icons -->
 
-            <!-- popup window with some choice-icons -->
+              <div class="product-popup">
+                <ul class="product-popup__icons-list">
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-like">
+                      <span class="visually-hidden">like</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-change">
+                      <span class="visually-hidden">change</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-wish-list">
+                      <span class="visually-hidden">wish-list</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-cart">
+                      add to cart
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
-            <div class="product-popup">
-              <ul class="product-popup__icons-list">
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-like">
-                    <span class="visually-hidden">like</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-change">
-                    <span class="visually-hidden">change</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-wish-list">
-                    <span class="visually-hidden">wish-list</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-cart">
-                    add to cart
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </li>
+            <!-- A card with product image, name and price -->
 
-          <!-- A card with product image, name and price -->
+            <li class="products-list__item-card">
+              <img
+                class="product-img"
+                src="./img/products/woman-shirt.jpg"
+                alt="woman in checkered shirt"
+                width="255"
+                height="322"
+              />
+              <div class="product-info clearfix">
+                <p class="product-name">woman shirt</p>
+                <p class="product-price">$31</p>
+              </div>
+              <!-- popup window with some choice-icons -->
 
-          <li class="products-list__item-card">
-            <img
-              class="product-img"
-              src="./img/products/yellow-tshirt.jpg"
-              alt="man in yellow tshirt"
-              width="255"
-              height="322"
-            />
-            <p class="product-name">yellow tshirt</p>
-            <p class="product-price">$21</p>
+              <div class="product-popup">
+                <ul class="product-popup__icons-list">
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-like">
+                      <span class="visually-hidden">like</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-change">
+                      <span class="visually-hidden">change</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-wish-list">
+                      <span class="visually-hidden">wish-list</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-cart">
+                      add to cart
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
-            <!-- popup window with some choice-icons -->
+            <!-- A card with product image, name and price -->
 
-            <div class="product-popup">
-              <ul class="product-popup__icons-list">
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-like">
-                    <span class="visually-hidden">like</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-change">
-                    <span class="visually-hidden">change</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-wish-list">
-                    <span class="visually-hidden">wish-list</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-cart">
-                    add to cart
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </li>
+            <li class="products-list__item-card">
+              <img
+                class="product-img"
+                src="./img/products/yellow-tshirt.jpg"
+                alt="man in yellow tshirt"
+                width="255"
+                height="322"
+              />
+              <div class="product-info clearfix">
+                <p class="product-name">yellow tshirt</p>
+                <p class="product-price">$21</p>
+              </div>
+              <!-- popup window with some choice-icons -->
 
-          <!-- A card with product image, name and price -->
+              <div class="product-popup">
+                <ul class="product-popup__icons-list">
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-like">
+                      <span class="visually-hidden">like</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-change">
+                      <span class="visually-hidden">change</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-wish-list">
+                      <span class="visually-hidden">wish-list</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-cart">
+                      add to cart
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
 
-          <li class="products-list__item-card">
-            <img
-              class="product-img"
-              src="./img/products/cool-lingerie.jpg"
-              alt="woman wearing lingerie"
-              width="255"
-              height="322"
-            />
-            <p class="product-name">cool lingerie</p>
-            <p class="product-price">$56</p>
+            <!-- A card with product image, name and price -->
 
-            <!-- popup window with some choice-icons -->
+            <li class="products-list__item-card">
+              <img
+                class="product-img"
+                src="./img/products/cool-lingerie.jpg"
+                alt="woman wearing lingerie"
+                width="255"
+                height="322"
+              />
+              <div class="product-info clearfix">
+                <p class="product-name">cool lingerie</p>
+                <p class="product-price">$56</p>
+              </div>
+              <!-- popup window with some choice-icons -->
 
-            <div class="product-popup">
-              <ul class="product-popup__icons-list">
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-like">
-                    <span class="visually-hidden">like</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-change">
-                    <span class="visually-hidden">change</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-wish-list">
-                    <span class="visually-hidden">wish-list</span>
-                  </button>
-                </li>
-                <li class="product-popup__icon">
-                  <button class="product-popup__icon-btn icon-cart">
-                    add to cart
-                  </button>
-                </li>
-              </ul>
-            </div>
-          </li>
-        </ul>
+              <div class="product-popup">
+                <ul class="product-popup__icons-list">
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-like">
+                      <span class="visually-hidden">like</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-change">
+                      <span class="visually-hidden">change</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-wish-list">
+                      <span class="visually-hidden">wish-list</span>
+                    </button>
+                  </li>
+                  <li class="product-popup__icon">
+                    <button class="product-popup__icon-btn icon-cart">
+                      add to cart
+                    </button>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
       </section>
     </main>
 
     <!-- *** FOOTER *** -->
 
-    <footer class="page-footer container">
+    <footer class="page-footer">
       <!-- Copyright information -->
 
-      <p class="copyright" role="contentinfo">
-        All Rights Reserved &copy; Dokan | Designed
-        <span class="desiner-name">ThemenGraph</span>
-      </p>
+      <div class="footer-wrapper container">
+        <p class="copyright" role="contentinfo">
+          All Rights Reserved &copy; Dokan | Designed
+          <span class="desiner-name">ThemenGraph</span>
+        </p>
+      </div>
     </footer>
   </body>
 </html>
