@@ -157,24 +157,13 @@ img {
 /* -- Slides list -- */
 
 .slides-list {
+  position: absolute;
+  top: 45%;
+  left: 18%;
+  transform: translateY(-50%);
   margin: 0;
   padding: 0;
   list-style: none;
-  height: 100%;
-}
-
-.slides-item {
-  position: relative;
-  height: 100%;
-}
-
-/* -- slide text -- */
-
-.slider-text {
-  position: absolute;
-  top: 198px;
-  left: 184px;
-  width: 790px;
 }
 
 .slider-title {
@@ -340,18 +329,13 @@ img {
   margin-bottom: 7px;
 }
 
-.product-popup__icon-btn {
+.product-popup__icon-link {
   display: block;
   width: 50px;
   height: 50px;
-  margin: 0;
-  padding: 0;
-  background-color: transparent;
   background-repeat: no-repeat;
   background-position: center;
   border: 1px solid rgb(255, 255, 255);
-  outline: none;
-  cursor: pointer;
 }
 
 .icon-like {
@@ -387,8 +371,8 @@ img {
   opacity: 1;
 }
 
-.product-popup__icon-btn:hover,
-.product-popup__icon-btn:focus {
+.product-popup__icon-link:hover,
+.product-popup__icon-link:focus {
   background: #1abc9c;
   background-repeat: no-repeat;
   background-position: center;
@@ -414,6 +398,7 @@ img {
 .icon-cart:focus {
   background-image: url(../img/icons/cart.png);
   background-position-x: 13px;
+  border: 1px solid #1abc9c;
 }
 
 /* -- hover, focus effects for product name and price -- */
@@ -450,6 +435,7 @@ img {
   text-align: center;
 }
 
-.desiner-name {
+.desiner-name-link {
+  text-decoration: none;
   color: #46bfa9;
 }
