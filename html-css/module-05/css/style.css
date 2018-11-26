@@ -122,7 +122,8 @@ img {
 
 .slider__cotrol-btn {
   position: absolute;
-  top: 226px;
+  top: 46%;
+  transform: translateY(-50%);
   display: inline-block;
   width: 104px;
   height: 104px;
@@ -299,8 +300,8 @@ img {
 /* Another way to make a transparent border */
 /*<div> .product-item-popup__border {
   position: absolute;
-  top: 15px;
-  left: 15px;
+  top: 0;
+  left: 0;
   width: 255px;
   height: 282px;
   border: 10px solid rgba(255,255,255,.55);
@@ -319,6 +320,19 @@ img {
 
 .product-popup__icon {
   display: inline-block;
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.icon-cart {
+  display: block;
+  width: 166px;
+  background-image: url(../img/icons/cart.png);
+  background-color: rgb(50, 50, 50);
+  background-position-x: 13px;
 }
 
 .product-popup__icon:nth-child(-n + 2) {
@@ -326,16 +340,21 @@ img {
 }
 
 .product-popup__icon:nth-child(-n + 3) {
-  margin-bottom: 7px;
+  margin-bottom: 8px;
 }
 
 .product-popup__icon-link {
   display: block;
-  width: 50px;
-  height: 50px;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid rgb(255, 255, 255);
+  height: 100%;
+  text-decoration: none;
+  font: 14px/50px "Open Sans", sans-serif;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.product-popup__icon-link:last-child {
+  padding-left: 60px;
 }
 
 .icon-like {
@@ -350,20 +369,6 @@ img {
   background-image: url(../img/icons/clock.png);
 }
 
-.icon-cart {
-  width: 166px;
-  padding: 0 23px;
-  text-decoration: none;
-  font: 14px/50px "Open Sans", sans-serif;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  color: #fff;
-  text-align: right;
-  background-image: url(../img/icons/cart.png);
-  background-color: rgb(50, 50, 50);
-  background-position-x: 13px;
-}
-
 /* -- hover, focus effects for popup window with some choice-icons -- */
 
 .product-popup:hover,
@@ -371,33 +376,9 @@ img {
   opacity: 1;
 }
 
-.product-popup__icon-link:hover,
-.product-popup__icon-link:focus {
-  background: #1abc9c;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: none;
-}
-
-.icon-like:hover,
-.icon-like:focus {
-  background-image: url(../img/icons/heart.png);
-}
-
-.icon-change:hover,
-.icon-change:focus {
-  background-image: url(../img/icons/change.png);
-}
-
-.icon-wish-list:hover,
-.icon-wish-list:focus {
-  background-image: url(../img/icons/clock.png);
-}
-
-.icon-cart:hover,
-.icon-cart:focus {
-  background-image: url(../img/icons/cart.png);
-  background-position-x: 13px;
+.product-popup__icon:hover,
+.product-popup__icon:focus {
+  background-color: #1abc9c;
   border: 1px solid #1abc9c;
 }
 
