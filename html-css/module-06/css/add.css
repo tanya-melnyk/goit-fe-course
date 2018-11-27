@@ -1,0 +1,106 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 20px/24px "Roboto", sans-serif;
+}
+
+.container {
+  width: 840px;
+  margin: 0 auto;
+  padding: 0 15px 100px;
+}
+
+.task {
+  padding-top: 30px;
+}
+
+/* ------- ЗАДАНИЕ 1 ------- */
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  list-style: none;
+  margin: 0;
+  padding: 30px 0 10px;
+  box-shadow: 2px 2px 10px 5px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-item {
+  width: 210px;
+}
+
+/* ------- ЗАДАНИЕ 2 ------- */
+
+.profile-card {
+  width: 380px;
+  margin: 0 auto;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.profile-card:hover {
+  box-shadow: 4px 4px 10px 4px rgba(0, 0, 0, 0.4);
+}
+
+.profile-photo {
+  transition: transform 0.2s;
+}
+
+.profile-photo:hover {
+  transform: rotate(5deg);
+}
+
+.profile-name {
+  transition: 
+    transform 0.2s linear, 
+    color 0.3s linear;
+}
+
+.profile-name:hover {
+  transform: scale(1.15);
+  color: hsl(24, 32%, 40%);
+}
+
+/* @keyframes full-width {
+  0% { transform: scale(1); }
+  67% { transform: scale(1.15); }
+	100% { transform: scale(1.15); }
+}
+
+@keyframes color-change {
+	0% {color: #000;}
+	100% {color: hsl(24, 32%, 40%);}
+}
+
+.profile-name:hover {
+  animation-name: full-width, color-change;
+  animation-duration: 0.2s;
+  animation-fill-mode: forwards; 
+} */
+
+.like-btn {
+  width: 34%;
+  padding: 10px 30px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
+  background-color: hsl(24, 33%, 94%);
+  cursor: pointer;
+  outline: none;
+  transition-property: width, background-color;
+  transition-duration: 0.2s;
+}
+
+.like-btn:hover {
+  width: 100%;
+  background-color: hsl(24, 33%, 80%);
+}
