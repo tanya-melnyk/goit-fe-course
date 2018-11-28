@@ -1,0 +1,393 @@
+/*---------- GLOBAL STYLES ----------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: #999;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+img {
+  height: auto;
+  display: block;
+  max-width: 100%;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/*---------- HEADER ----------*/
+
+.page-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 21px;
+}
+
+/* -- Web-site logo -- */
+
+.site-logo,
+.site-nav__menu-item__link {
+  display: block;
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: #95e1d3;
+}
+
+.site-logo {
+  font-weight: 700;
+  font-size: 30px;
+}
+
+/* -- Main web-site navigation -- */
+
+.site-nav__menu {
+  display: flex;
+  justify-content: space-between;
+  width: 490px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__menu-item__link {
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: color 200ms linear;
+}
+
+.site-nav__menu-item__link::after {
+  content: "";
+  display: block;
+  width: 50px;
+  margin: 10px auto 0;
+  border-bottom: 3px solid #f38181;
+  opacity: 0;
+  transition: opacity 200ms linear;
+}
+
+/* -- hover effects for navigation -- */
+
+.site-nav__menu-item__link:hover {
+  color: #f38181;
+}
+
+.site-nav__menu-item__link:hover::after {
+  opacity: 1;
+}
+
+/*---------- SERVICES SECTION ----------*/
+
+.services-section {
+  padding: 112px 0 44px;
+}
+
+/* -- Section headers -- */
+
+.section-header {
+  margin-bottom: 44px;
+  text-align: center;
+  color: #333;
+}
+
+.section-subtitle {
+  margin: 0 0 8px;
+  padding: 0;
+  font: 24px "Kaushan Script", cursive;
+}
+
+.section-title {
+  margin: 0;
+  padding: 0;
+  font: bold 30px "Montserrat", sans-serif;
+  text-transform: uppercase;
+}
+
+/* -- title underline for section headers -- */
+
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  margin: 32px auto 0;
+  border-bottom: 3px solid #f38181;
+}
+
+/* -- list of services -- */
+
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 0;
+  padding: 20px 0 0;
+  list-style: none;
+}
+
+.services-list__item {
+  width: 380px;
+  padding-left: 80px;
+  background-repeat: no-repeat;
+  background-position: 20px 0;
+}
+
+.services-list__item:nth-last-child(n + 4) {
+  margin-bottom: 96px;
+}
+
+.services-list__item-photography {
+  background-image: url(../img/service-icons/photography.png);
+}
+
+.services-list__item-web {
+  background-image: url(../img/service-icons/web-design.png);
+}
+
+.services-list__item-creativity {
+  background-image: url(../img/service-icons/creativity.png);
+}
+
+.services-list__item-seo {
+  background-image: url(../img/service-icons/seo.png);
+}
+
+.services-list__item-css {
+  background-image: url(../img/service-icons/css-html.png);
+}
+
+.services-list__item-digital {
+  background-image: url(../img/service-icons/digital.png);
+}
+
+.service-name {
+  margin: 0 0 10px;
+  padding: 0;
+  font: 14px "Montserrat", sans-serif;
+  color: #333;
+  text-transform: uppercase;
+}
+
+.service-desc {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/*---------- TEAM SECTION ----------*/
+
+.team-section {
+  padding: 42px 0 82px;
+}
+
+/* -- team section lead -- */
+
+.team-section__lead {
+  margin: 0 128px 90px;
+  padding: 0;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* -- List of team members with members image, name,
+occupation and popup window with some socials -icons -- */
+
+.team-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* -- A card with members image, name and occupation -- */
+
+.team-list__item {
+  position: relative;
+  width: 380px;
+}
+
+.team-list__img {
+  margin-bottom: 26px;
+  transition-property: transform, box-shadow;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+}
+
+.team-list__name {
+  margin: 0 0 6px;
+  padding: 0;
+  font: 14px "Montserrat", sans-serif;
+  text-transform: uppercase;
+  color: #333;
+  text-align: center;
+}
+
+.team-list__occupation {
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+}
+
+/* -- popup window with some socials icons -- */
+
+.team-popup {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 380px;
+  height: 470px;
+  background-image: linear-gradient(
+    rgba(243, 129, 129, 0.9),
+    rgba(252, 227, 138, 0.9)
+  );
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 200ms;
+  transition-timing-function: linear;
+}
+
+.team-popup__icons-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.team-popup__icon:not(:last-child) {
+  margin-right: 1px;
+}
+
+.team-popup__icon-link {
+  display: block;
+  width: 55px;
+  height: 56px;
+  background-color: #fce38a;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: background-color 200ms linear;
+}
+
+.team-popup__icon-facebook {
+  background-image: url(../img/socials-icons/facebook.png);
+}
+
+.team-popup__icon-twitter {
+  background-image: url(../img/socials-icons/twitter.png);
+}
+
+.team-popup__icon-pinterest {
+  background-image: url(../img/socials-icons/pinterest.png);
+}
+
+.team-popup__icon-instagram {
+  background-image: url(../img/socials-icons/instagram.png);
+}
+
+/* -- hover, focus effects for popup window with some choice-icons -- */
+
+.team-list__item:hover .team-list__img {
+  transform: translate(-10px, -10px);
+  box-shadow: 10px 10px 0px 0px #95e1d3;
+}
+
+.team-list__item:hover .team-popup {
+  transform: translate(-10px, -10px);
+  opacity: 1;
+}
+
+.team-popup__icon-link:hover {
+background-color: #95e1d3;
+}
+
+
+/*---------- FOOTER ----------*/
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 63px;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* -- Copyright information -- */
+
+.copyright {
+  margin: 0;
+  padding: 0;
+  font: 14px "Montserrat", sans-serif;
+  color: #333;
+}
+
+.copyright a{
+  text-decoration: none;
+  color: #f38181;
+}
+
+/* -- Subscribe form -- */
+
+.subscribe-form p {
+  margin: 0;
+  padding: 0;
+}
+
+.subscribe-input-email {
+  width: 229px;
+  height: 40px;
+  padding: 0 0 0 12px;
+  line-height: 1.6;
+  font-weight: 300;
+  font-style: italic;
+  color: #ccc;
+  border: 1px solid rgb(231, 231, 231);
+  border-right: none;
+  outline: none;
+}
+
+.subscribe-submit-email {
+  padding: 0;
+  width: 150px;
+  height: 40px;
+  font: bold 14px "Montserrat", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  border: none;
+  background-color: #95e1d3;
+  cursor: pointer;
+  outline: none;
+}
+
