@@ -1,0 +1,109 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 20px/24px "Roboto", sans-serif;
+}
+
+.container {
+  width: 840px;
+  margin: 0 auto;
+  padding: 0 15px 100px;
+}
+
+.task {
+  padding-top: 30px;
+}
+
+/* ------- ЗАДАНИЕ 1 ------- */
+
+.wrapper {
+  width: 61%;
+  margin: 3% auto;
+  padding: 2.5% 2.5% 4%;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.4);
+}
+
+.table {
+  table-layout: fixed;
+  width: 100%;
+  border: 2px solid #333;
+  border-collapse: collapse;
+}
+
+.table-caption {
+  font-size: 28px;
+  margin-bottom: 5%;
+}
+
+thead {
+  font-size: 18px;
+  color: #fff;
+  background-color: #333;
+}
+
+thead th:nth-child(1) {
+  width: 50%;
+}
+
+thead th:nth-child(2) {
+  width: 29%;
+}
+
+thead th:nth-child(3) {
+  width: 21%;
+}
+
+th {
+  padding: 2.6%;
+}
+
+td {
+  padding: 2.6%;
+  font-size: 18px;
+  border: 2px solid #333;
+}
+
+td:nth-of-type(1) {
+  text-transform: uppercase;
+}
+
+/* ------- ЗАДАНИЕ 2 ------- */
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 500px;
+}
+
+input[name="name"],
+input[name="email"],
+textarea {
+  width: 100%;
+  font-size: 16px;
+  line-height: 3;
+  text-indent: 1rem;
+  border: 1.5px solid #999;
+}
+
+input[type="submit"] {
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #fff;
+  background-color: hsl(0, 70%, 65%);
+  border: none;
+  border-radius: 2%;
+  padding: 1rem 3rem;
+  outline: none;
+  cursor: pointer;
+}
+

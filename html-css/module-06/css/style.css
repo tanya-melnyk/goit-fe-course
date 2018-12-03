@@ -72,6 +72,7 @@ img {
   display: flex;
   justify-content: space-between;
   width: 490px;
+  /* flex-basis: 40.8%; */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -153,12 +154,14 @@ img {
 
 .section-header {
   margin-bottom: 64px;
+  /* margin-bottom: 5.3%; */
   text-align: center;
   color: #333;
 }
 
 .section-subtitle {
   margin: 0 0 8px;
+  /* margin: 0 0 0.7%; */
   padding: 0;
   font: 24px "Kaushan Script", cursive;
 }
@@ -176,7 +179,9 @@ img {
   content: "";
   display: block;
   width: 60px;
+  /* width: 5%; */
   margin: 34px auto 0;
+  /* margin: 2.8% auto 0; */
   border-bottom: 3px solid #f38181;
 }
 
@@ -193,13 +198,17 @@ img {
 
 .services-list__item {
   width: 380px;
+  /* flex-basis: 31.7%; */
   padding-left: 80px;
+  /* padding-left: 6.7%; */
   background-repeat: no-repeat;
   background-position: 20px 0;
+  /* background-position: 5.3% 0; */
 }
 
 .services-list__item:nth-last-child(n + 4) {
   margin-bottom: 96px;
+  /* margin-bottom: 8%; */
 }
 
 .services-list__item-photography {
@@ -414,7 +423,8 @@ background-color: #95e1d3;
 .subscribe-input-email {
   width: 229px;
   height: 40px;
-  padding: 0 0 0 12px;
+  padding: 0;
+  text-indent: 12px;
   line-height: 1.6;
   font-weight: 300;
   font-style: italic;
