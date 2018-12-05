@@ -93,9 +93,34 @@ textarea {
   line-height: 3;
   text-indent: 1rem;
   border: 1.5px solid #999;
+  /* outline-color: rgb(108, 75, 199); */
+  outline: none;
 }
 
-input[type="submit"] {
+input[name="name"]::placeholder,
+input[name="email"]::placeholder,
+textarea::placeholder {
+  color: rgb(104, 104, 104);
+}
+
+form input:required::placeholder {
+  color: red;
+}
+
+input[name="email"]:valid {
+  border-color: green;
+}
+
+input[name="email"]:invalid {
+  border-color: red;
+}
+
+textarea {
+  resize: none;
+}
+
+
+button {
   text-transform: uppercase;
   font-size: 18px;
   color: #fff;

@@ -1,0 +1,318 @@
+/* ------------- FONTS -------------- */
+
+/* damion-regular - latin */
+@font-face {
+  font-family: "Damion";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Damion"),
+    url("../fonts/damion-v7-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/damion-v7-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* montserrat-regular - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../fonts/montserrat-v12-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v12-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* montserrat-600 - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  src: local("Montserrat SemiBold"), local("Montserrat-SemiBold"),
+    url("../fonts/montserrat-v12-latin-600.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v12-latin-600.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* montserrat-700 - latin */
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url("../fonts/montserrat-v12-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v12-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* merriweather-italic - latin */
+@font-face {
+  font-family: "Merriweather";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Merriweather Italic"), local("Merriweather-Italic"),
+    url("../fonts/merriweather-v19-latin-italic.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/merriweather-v19-latin-italic.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* roboto-slab-regular - latin */
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Roboto Slab Regular"), local("RobotoSlab-Regular"),
+    url("../fonts/roboto-slab-v7-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-slab-v7-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/*---------- GLOBAL STYLES ----------*/
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #222;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+}
+
+/*---------- HEADER ----------*/
+
+.site-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+/* -- Web-site logo -- */
+
+.site-logo-link {
+  display: block;
+  font: 30px/1 "Damion", cursive;
+  color: #fed136;
+  text-decoration: none;
+}
+
+/* -- Main web-site navigation -- */
+
+.site-nav__menu-list {
+  display: flex;
+  justify-content: space-between;
+  width: 51%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.site-nav__menu-item-link {
+  font-weight: 600;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #222;
+  transition: color 0.2s;
+}
+
+/* -- hover effects for navigation -- */
+
+.site-nav__menu-item-link:hover {
+  color: #fed136;
+}
+
+/*---------- SERVICES SECTION ----------*/
+
+.services-section {
+  padding-top: 62px;
+  padding-bottom: 118px;
+}
+
+/* -- Section headers -- */
+
+.section__header {
+  margin-bottom: 74px;
+  text-align: center;
+}
+
+.section__title {
+  margin: 0;
+  padding: 0;
+  font-size: 40px;
+  line-height: 1.7;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.section__lead {
+  margin: 0;
+  padding: 0;
+  font: 16px "Merriweather", serif;
+  color: #777;
+}
+
+/* -- list of services -- */
+
+.services-list {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-item {
+  width: 30%;
+  text-align: center;
+}
+
+/* -- services icons -- */
+
+.service-name::before {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 12px;
+  border: 3px solid #fed136;
+  border-radius: 50%;
+}
+
+.service-name-commerce::before {
+  background: url(../img/Icon-Basket.png) no-repeat center;
+  background-size: 60%;
+}
+.service-name-web::before {
+  background: url(../img/Icon-Laptop.png) no-repeat center;
+  background-size: 60%;
+}
+.service-name-security::before {
+  background: url(../img/Icon-Locked.png) no-repeat center;
+  background-size: 40%;
+}
+
+/* -- sercices info -- */
+
+.service-name,
+.service-desc {
+  margin: 0;
+  padding: 0;
+  letter-spacing: -0.025em;
+}
+
+.service-name {
+  font-size: 18px;
+  line-height: 2.3;
+}
+
+.service-desc {
+  font-family: "Roboto Slab", serif;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #777;
+}
+
+/* --------------- CONTACT SECTION ----------------- */
+
+.contact-form-section__wrapper {
+  padding-top: 90px;
+  padding-bottom: 18px;
+  background-color: #222;
+}
+
+/* ------------------- Contact Form --------------- */
+
+.contact-form {
+  width: 1400px;
+  margin: 0 auto;
+  padding-bottom: 98px;
+  background-image: url(../img/map-image.png);
+  background-repeat: no-repeat;
+  background-position: right bottom;
+  background-size: 44%;
+}
+
+/* ------------------ header -------------------- */
+
+.contact-form__title {
+  color: #fff;
+}
+
+/* ---------------------- inputs ---------------------- */
+
+.contact-form__inputs-list {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-between;
+  align-content: space-between;
+  height: 210px;
+  margin: 0 0 30px;
+  padding: 0;
+}
+
+.contact-form__input-item input,
+.contact-form__input-item textarea {
+  width: 456px;
+  height: 50px;
+  padding: 0;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+
+.contact-form__input-item textarea {
+  height: 210px;
+  padding-top: 14px;
+  resize: none;
+}
+
+.contact-form__input-item input::placeholder,
+.contact-form__input-item textarea::placeholder {
+  font-size: 14px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-indent: 20px;
+  color: #bbb;
+  letter-spacing: -0.025em;
+}
+
+.contact-form__input-item input[required]:valid,
+.contact-form__input-item textarea[required]:valid {
+  outline-color: #0f0;
+}
+
+.contact-form__input-item input[required]:invalid,
+.contact-form__input-item textarea[required]:invalid {
+  outline-color: #f00;
+}
+
+/* -- send button -- */
+
+.contact-form__send-button {
+  display: block;
+  margin: 0 auto;
+  padding: 22px 45px;
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  background-color: #fed136;
+  outline: none;
+  cursor: pointer;
+}
+
+
