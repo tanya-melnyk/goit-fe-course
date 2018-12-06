@@ -138,7 +138,7 @@ body {
 
 .services-section {
   padding-top: 62px;
-  padding-bottom: 118px;
+  padding-bottom: 116px;
 }
 
 /* -- Section headers -- */
@@ -197,11 +197,11 @@ body {
 }
 .service-name-web::before {
   background: url(../img/Icon-Laptop.png) no-repeat center;
-  background-size: 60%;
+  background-size: 62%;
 }
 .service-name-security::before {
   background: url(../img/Icon-Locked.png) no-repeat center;
-  background-size: 40%;
+  background-size: 43%;
 }
 
 /* -- sercices info -- */
@@ -230,13 +230,13 @@ body {
 .contact-form-section {
   background-image: url(../img/map-image.png);
   background-repeat: no-repeat;
-  background-position: 80% 90%;
-  background-size: 33%;
+  background-position: 81% 86%;
+  background-size: 32%;
   background-color: #222;
 }
 
 .contact-form-section__wrapper {
-  padding-top: 90px;
+  padding-top: 92px;
   padding-bottom: 116px;
 }
 
@@ -312,7 +312,7 @@ body {
   background: none;
   border: 3px solid #fdce34;
   border-radius: 3px;
-  box-shadow: inset 0 0 0 2em #fdce34;
+  box-shadow: inset 0 0 0 1.7em #fdce34;
   outline: none;
   cursor: pointer;
   transition-property: box-shadow;
@@ -325,7 +325,7 @@ body {
     1px 1px 3px #000, 
     0 0 1rem #fdce34;
   box-shadow: 
-    inset 0 0 6px 0 #fdce34, 
+    inset 0 0 0 0 #fdce34, 
     0 0 5px 4px rgba(256, 256, 256, 0.3);
 }
 
