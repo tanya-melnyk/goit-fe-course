@@ -120,6 +120,7 @@ body {
 }
 
 .site-nav__menu-item-link {
+  display: block;
   font-weight: 600;
   text-decoration: none;
   text-transform: uppercase;
@@ -226,29 +227,26 @@ body {
 
 /* --------------- CONTACT SECTION ----------------- */
 
-.contact-form-section__wrapper {
-  padding-top: 90px;
-  padding-bottom: 18px;
+.contact-form-section {
+  background-image: url(../img/map-image.png);
+  background-repeat: no-repeat;
+  background-position: 80% 90%;
+  background-size: 33%;
   background-color: #222;
 }
 
-/* ------------------- Contact Form --------------- */
-
-.contact-form {
-  width: 1400px;
-  margin: 0 auto;
-  padding-bottom: 98px;
-  background-image: url(../img/map-image.png);
-  background-repeat: no-repeat;
-  background-position: right bottom;
-  background-size: 44%;
+.contact-form-section__wrapper {
+  padding-top: 90px;
+  padding-bottom: 116px;
 }
 
-/* ------------------ header -------------------- */
+/* ------------------ Section header -------------------- */
 
 .contact-form__title {
   color: #fff;
 }
+
+/* ------------------- Contact Form --------------- */
 
 /* ---------------------- inputs ---------------------- */
 
@@ -263,12 +261,13 @@ body {
 }
 
 .contact-form__input-item input,
-.contact-form__input-item textarea 
-{
+.contact-form__input-item textarea {
   width: 456px;
   height: 50px;
   padding: 0;
-  font-size: 18px;
+  font: italic 18px "Merriweather", serif;
+  text-indent: 1.4rem;
+  color: #222;
   border: 1px solid #ccc;
   border-radius: 2px;
   outline-width: 2px;
@@ -283,21 +282,20 @@ body {
 
 .contact-form__input-item input::placeholder,
 .contact-form__input-item textarea::placeholder {
-  font-size: 1rem;
-  font-weight: 700;
+  font: bold 1rem "Montserrat", sans-serif;
   text-transform: uppercase;
   text-indent: 1.4rem;
   color: #bbb;
   letter-spacing: -0.025em;
 }
 
-.contact-form__input-item input[required]:focus:valid,
-.contact-form__input-item textarea[required]:focus:valid {
+.contact-form__input-item input[required]:valid,
+.contact-form__input-item textarea[required]:valid {
   outline-color: #32ff32;
 }
 
-.contact-form__input-item input[required]:focus:invalid,
-.contact-form__input-item textarea[required]:focus:invalid {
+.contact-form__input-item input[required]:invalid,
+.contact-form__input-item textarea[required]:invalid {
   outline-color: #ff3232;
 }
 
@@ -306,16 +304,36 @@ body {
 .contact-form__send-button {
   display: block;
   margin: 0 auto;
-  padding: 1.6rem 3.2rem;
+  padding: 1.4rem 3rem;
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
-  border: none;
+  background: none;
+  border: 3px solid #fdce34;
   border-radius: 3px;
-  background-color: hsl(46, 99%, 60%);
+  box-shadow: inset 0 0 0 2em #fdce34;
   outline: none;
   cursor: pointer;
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.07, 2, 1, 1.13);
 }
 
+.contact-form__send-button:hover {
+  text-shadow: 
+    1px 1px 3px #000, 
+    0 0 1rem #fdce34;
+  box-shadow: 
+    inset 0 0 6px 0 #fdce34, 
+    0 0 5px 4px rgba(256, 256, 256, 0.3);
+}
 
+.contact-form__send-button:focus {
+  text-shadow: 
+    1px 1px 3px #000, 
+    0 0 0.2rem #fdce34;
+  box-shadow: 
+    inset 0 0 3px 0 #fdce34, 
+    0 0 1px 1px rgba(256, 256, 256, 0.3);
+}
