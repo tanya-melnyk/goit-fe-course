@@ -69,6 +69,7 @@
 
 html {
   box-sizing: border-box;
+  font-size: 14px;
 }
 
 *,
@@ -80,7 +81,6 @@ html {
 body {
   font-family: "Montserrat", sans-serif;
   font-weight: 700;
-  font-size: 14px;
   color: #222;
 }
 
@@ -143,7 +143,7 @@ body {
 /* -- Section headers -- */
 
 .section__header {
-  margin-bottom: 74px;
+  margin-bottom: 8%;
   text-align: center;
 }
 
@@ -263,39 +263,42 @@ body {
 }
 
 .contact-form__input-item input,
-.contact-form__input-item textarea {
+.contact-form__input-item textarea 
+{
   width: 456px;
   height: 50px;
   padding: 0;
   font-size: 18px;
   border: 1px solid #ccc;
   border-radius: 2px;
+  outline-width: 2px;
+  outline-style: solid;
 }
 
 .contact-form__input-item textarea {
   height: 210px;
-  padding-top: 14px;
+  padding-top: 1rem;
   resize: none;
 }
 
 .contact-form__input-item input::placeholder,
 .contact-form__input-item textarea::placeholder {
-  font-size: 14px;
+  font-size: 1rem;
   font-weight: 700;
   text-transform: uppercase;
-  text-indent: 20px;
+  text-indent: 1.4rem;
   color: #bbb;
   letter-spacing: -0.025em;
 }
 
-.contact-form__input-item input[required]:valid,
-.contact-form__input-item textarea[required]:valid {
-  outline-color: #0f0;
+.contact-form__input-item input[required]:focus:valid,
+.contact-form__input-item textarea[required]:focus:valid {
+  outline-color: #32ff32;
 }
 
-.contact-form__input-item input[required]:invalid,
-.contact-form__input-item textarea[required]:invalid {
-  outline-color: #f00;
+.contact-form__input-item input[required]:focus:invalid,
+.contact-form__input-item textarea[required]:focus:invalid {
+  outline-color: #ff3232;
 }
 
 /* -- send button -- */
@@ -303,14 +306,14 @@ body {
 .contact-form__send-button {
   display: block;
   margin: 0 auto;
-  padding: 22px 45px;
+  padding: 1.6rem 3.2rem;
   font-size: 18px;
   font-weight: 700;
   text-transform: uppercase;
   color: #fff;
   border: none;
   border-radius: 3px;
-  background-color: #fed136;
+  background-color: hsl(46, 99%, 60%);
   outline: none;
   cursor: pointer;
 }
