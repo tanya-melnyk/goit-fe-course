@@ -189,19 +189,18 @@ body {
   margin: 0 auto 12px;
   border: 3px solid #fed136;
   border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
 .service-name-commerce::before {
-  background: url(../img/Icon-Basket.png) no-repeat center;
-  background-size: 60%;
+  background-image: url(../img/Icon-Basket.png);
 }
 .service-name-web::before {
-  background: url(../img/Icon-Laptop.png) no-repeat center;
-  background-size: 62%;
+  background-image: url(../img/Icon-Laptop.png);
 }
 .service-name-security::before {
-  background: url(../img/Icon-Locked.png) no-repeat center;
-  background-size: 43%;
+  background-image: url(../img/Icon-Locked.png);
 }
 
 /* -- sercices info -- */

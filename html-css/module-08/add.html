@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Additional tasks M-8</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/add.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h2 class="task">Задание 1</h2>
+        <p class="task-text">
+          Сделать резиновую верстку по указанному изображению.
+        </p>
+        <ul>
+          <li>Ширина контейнера - 960px</li>
+          <li>Все остальные ширины должны быть в процентах</li>
+        </ul>
+        <img src="./img/add/task-1.jpg" alt="blocks">
+
+        <div class="wrapper">
+          <header class="header">960px</header>
+          <div class="main">
+            <div class="content">520px</div>
+            <aside class="aside-left">200px</aside>
+            <aside class="aside-right">200px</aside>
+          </div>
+          <footer class="footer">960px</footer>
+        </div>
+
+        <h2 class="task">Задание 2</h2>
+        <p class="task-text">
+          Используя медиаправила повторить расположение блоков на рисунке.
+        </p>
+        <ul>
+          <li>480px+ левая фигура</li>
+          <li>768px+ правая фигура</li>
+        </ul>
+        <img src="./img/add/task-2.png" alt="blocks">
+
+        <div class="wrapper-2">
+          <div class="content-2">Content</div>
+          <aside class="sidebar">Sidebar</aside>
+        </div>
+
+        <h2 class="task">Задание 3</h2>
+        <p class="task-text">
+          Используя медиаправила повторить расположение блоков на рисунке.
+        </p>
+        <ul>
+          <li>480px+ левая фигура</li>
+          <li>768px+ правая фигура</li>
+        </ul>
+        <img src="./img/add/task-3.jpg" alt="blocks">
+
+        <div class="wrapper-3">
+          <header class="header-3"></header>
+          <div class="main-3">
+            <aside class="sidebar-3"></aside>
+            <div class="content-3"></div>
+          </div>
+        </div>
+
+        <h2 class="task">Задание 4</h2>
+        <p class="task-text">Записать picture со следующим поведением:</p>
+        <ul>
+          <li>480px+ любая картинка с попугаем</li>
+          <li>768px+ любая картинка с пальмой</li>
+          <li>1200px+ любая картинка с яхтой</li>
+          <li>по умолчанию любая картинка с пляжем</li>
+        </ul>
+
+        <picture>
+          <source
+            media="(min-width: 1200px)"
+            srcset="./img/add/yacht-1280.jpeg"
+          />
+          <source
+            media="(min-width: 768px)"
+            srcset="./img/add/palm-tree-1280.jpeg"
+          />
+          <source
+            media="(min-width: 480px)"
+            srcset="./img/add/parrot-1280.jpeg"
+          />
+          <img src="./img/add/beach-640.jpeg" alt="The beach" sizes="100vw" />
+        </picture>
+      </div>
+    </main>
+  </body>
+</html>

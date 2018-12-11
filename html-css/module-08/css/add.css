@@ -1,0 +1,159 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font: 20px/24px "Roboto", sans-serif;
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 15px 100px;
+}
+
+.task {
+  padding-top: 30px;
+}
+
+/* ------- ЗАДАНИЕ 1 ------- */
+
+.wrapper {
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: center;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+
+.header,
+.content,
+.aside-left,
+.aside-right,
+.footer {
+  padding-top: 1.7rem;
+
+  border: 1px solid #000;
+}
+
+.header {
+  height: 80px;
+  margin-bottom: 1.5%;
+  background-color: #ff0;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  height: 400px;
+}
+
+.content {
+  width: 54.1666666667%;
+  background-color: #2ca4f3;
+}
+
+.aside-left {
+  width: 20.8333333333%;
+  background-color: #888;
+}
+
+.aside-right {
+  width: 20.8333333333%;
+  background-color: #f00;
+}
+
+.footer {
+  height: 80px;
+  margin-top: 1.5%;
+  background-color: #43a543;
+}
+
+/* ------- ЗАДАНИЕ 2 ------- */
+
+.wrapper-2 {
+  height: 280px;
+  text-align: center;
+  line-height: 7;
+}
+
+.content-2 {
+  background-color: #f1f159;
+}
+
+.sidebar {
+  background-color: #a2f074;
+}
+
+@media (min-width: 768px) {
+  .wrapper-2 {
+    display: flex;
+  }
+  .content-2 {
+    flex-basis: 75%;
+  }
+  .sidebar {
+    flex-basis: 25%;
+  }
+}
+
+/* ------- ЗАДАНИЕ 3 ------- */
+
+.wrapper-3 {
+  height: 400px;
+  background-color: #eee;
+  padding: 1rem;
+}
+
+.header-3 {
+  height: 130px;
+  background-color: #fa4a2b;
+  margin-bottom: 1rem;
+}
+
+.main-3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 222px;
+}
+
+.sidebar-3 {
+  height: 130px;
+  background-color: #1ba56c;
+}
+
+.content-3 {
+  height: 76px;
+  background-color: #279bdf;
+}
+
+@media (min-width: 768px) {
+  .main-3 {
+    flex-direction: row;
+  }
+
+  .sidebar-3 {
+    flex-basis: 35%;
+    height: auto;
+  }
+
+  .content-3 {
+    flex-basis: 63%;
+    height: auto;
+  }
+}
+
+/* ------- ЗАДАНИЕ 4 ------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 2rem;
+}
