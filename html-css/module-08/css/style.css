@@ -191,13 +191,13 @@ img {
 }
 
 .member-img-wrapper-heather::after {
-  background-image: url(../img/website/icons/2-flask.png);
-  background-color: #ffa507;
+  background-image: url(../img/website/icons/3-cup.png);
+  background-color: #1cd7ad;
 }
 
 .member-img-wrapper-lucas::after {
-  background-image: url(../img/website/icons/3-cup.png);
-  background-color: #1cd7ad;
+  background-image: url(../img/website/icons/2-flask.png);
+  background-color: #ffa507;
 }
 
 .member-img-wrapper-bradley-2::after {
