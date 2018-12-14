@@ -156,7 +156,7 @@ img {
 /* * member card * */
 
 .member-card {
-  width: 220px;
+  flex: 0 0 220px;
   padding: 0 0.14rem;
 }
 
