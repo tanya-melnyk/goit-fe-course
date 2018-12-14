@@ -148,7 +148,7 @@ img {
 
 .members-list {
   display: flex;
-  margin: 0 0 26px;
+  margin: 0 0 28px;
   padding: 0 40px;
   list-style: none;
 }
@@ -157,15 +157,18 @@ img {
 
 .member-card {
   width: 220px;
-  padding: 0 0.14rem;
 }
 
 /* * member image * */
 
 .member-img-wrapper {
   position: relative;
-  width: 121px;
+  width: 120px;
   margin: 0 auto 1.3rem;
+}
+
+.member-img-wrapper img {
+  border-radius: 50%;
 }
 
 /* * member icon * */
@@ -214,24 +217,27 @@ img {
 .member-info {
   margin: 0;
   font: 300 1rem "Roboto", sans-serif;
+  letter-spacing: 0.01em;
   color: #666;
 }
 
 /* * other partners button * */
 
-.other-partners-link {
-  display: inline-block;
-  text-decoration: none;
-  color: #ff4e50;
+.other-partners-btn {
   padding: 0.68rem 4.98rem;
+  font-weight: 700;
+  color: #ff4e50;
+  background: #fff;
   border-width: 2px;
   border-style: solid;
   border-color: #ff4e50;
   border-radius: 1.55rem;
   transition: transform 200ms;
-}
+  outline: none;
+  cursor: pointer;
+  }
 
-.other-partners-link:hover,
-.other-partners-link:focus {
+.other-partners-btn:hover,
+.other-partners-btn:focus {
   transform: scale(1.06);
 }
