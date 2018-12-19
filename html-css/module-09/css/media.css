@@ -1,0 +1,157 @@
+/* ******* MOBILE ONLY < 768px ******* */
+
+@media screen and (max-width: 767px) {
+  /* ***** HEADER ***** */
+  /* *** Navigation *** */
+  /* * log buttons * */
+
+  .site-log-list {
+    margin-bottom: 8.14rem;
+    padding-left: 3.8rem;
+  }
+
+  /* *** Header Info *** */
+  /* * header text * */
+
+  .page-header__text {
+    padding-left: 2em;
+    padding-right: 2em;
+  }
+
+  /* ***** MEMBERS SECTION ***** */
+  /* *** Members List *** */
+  /* * member card * */
+
+  .member-card:not(:last-child) {
+    margin-bottom: 1.96rem;
+  }
+}
+
+/* ******* TABLET ONLY 768px-939px ******* */
+
+@media screen and (min-width: 768px) and (max-width: 939px) {
+  /* ***** MEMBERS SECTION ***** */
+  /* *** Members List *** */
+  /* * member card * */
+
+  .member-card:nth-child(odd) {
+    margin-bottom: 4.1rem;
+  }
+}
+
+/* ******* TABLET > 768px ******* */
+
+@media screen and (min-width: 768px) {
+  /* ***** HEADER ***** */
+
+  .header-wrapper {
+    min-height: 700px;
+    padding-top: 38px;
+    padding-bottom: 38px;
+    background-image: url(../img/website/background/background-1440.jpg);
+  }
+
+  /* *** Navigation *** */
+
+  .page-nav {
+    margin-bottom: 140px;
+  }
+
+  /* * log buttons * */
+
+  .site-log-list {
+    padding-left: 3rem;
+  }
+
+  /* *** Header Info *** */
+  /* * header text * */
+
+  .page-header__title {
+    margin-bottom: 0.46em;
+    font-size: 3.71rem;
+  }
+
+  .page-header__text {
+    margin-bottom: 1.35em;
+    font-size: 1.71rem;
+  }
+
+  /* * header find button * */
+
+  .page-header__find-button-link {
+    padding-left: 1.64rem;
+    padding-right: 1.64rem;
+  }
+
+  /* ***** MEMBERS SECTION ***** */
+
+  .members-section {
+    padding-bottom: 40px;
+  }
+
+  .section-title {
+    margin-bottom: 2.44rem;
+  }
+
+  /* *** Members List *** */
+
+  .members-list {
+    margin-bottom: 38px;
+  }
+
+  /* * member card * */
+
+  .member-info {
+    padding-right: 0.4rem;
+    padding-left: 0.4rem;
+  }
+
+  /* * other partners button * */
+
+  .other-partners-btn {
+    padding-left: 1.8rem;
+    padding-right: 1.8rem;
+  }
+}
+
+/* ******* DESCTOP ONLY > 940px ******* */
+
+@media screen and (min-width: 940px) {
+  /* ***** GLOBAL STYLES ***** */
+
+  .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* ***** HEADER ***** */
+  /* *** Navigation *** */
+  /* * log buttons * */
+
+  .site-log-list {
+    padding-left: 4.4rem;
+  }
+
+  /* * logo * */
+
+  .site-logo-link {
+    text-align: left;
+  }
+
+  /* *** Header Info *** */
+  /* * header text * */
+
+  .page-header__title {
+    padding-right: 6rem;
+    padding-left: 6rem;
+  }
+
+  /* ***** MEMBERS SECTION ***** */
+  /* *** Members List *** */
+  /* * member card * */
+  
+  .member-info {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
