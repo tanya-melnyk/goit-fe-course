@@ -7,7 +7,6 @@
 
   .site-log-list {
     margin-bottom: 8.14rem;
-    padding-left: 3.8rem;
   }
 
   /* *** Header Info *** */
@@ -57,12 +56,6 @@
     margin-bottom: 140px;
   }
 
-  /* * log buttons * */
-
-  .site-log-list {
-    padding-left: 3rem;
-  }
-
   /* *** Header Info *** */
   /* * header text * */
 
@@ -102,8 +95,8 @@
   /* * member card * */
 
   .member-info {
-    padding-right: 0.4rem;
-    padding-left: 0.4rem;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
   }
 
   /* * other partners button * */
@@ -129,7 +122,7 @@
   /* * log buttons * */
 
   .site-log-list {
-    padding-left: 4.4rem;
+    justify-content: flex-end;
   }
 
   /* * logo * */
@@ -151,7 +144,7 @@
   /* * member card * */
   
   .member-info {
-    padding-right: 0;
-    padding-left: 0;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
   }
 }
