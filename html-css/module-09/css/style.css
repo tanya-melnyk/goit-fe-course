@@ -17,7 +17,7 @@ img {
 
 /* ***** HEADER ***** */
 
-.header-wrapper {
+.page-header {
   min-height: 540px;
   padding: 20px 0;
   background-image: url(../img/website/background/background-768.jpg);
@@ -37,7 +37,6 @@ img {
 .site-log-list {
   display: flex;
   justify-content: center;
-  /* min-width: 170px; */
   margin: 0;
   padding: 0;
   list-style: none;
@@ -72,8 +71,8 @@ img {
   text-transform: uppercase;
   text-decoration: none;
   color: #fff;
-  transition: transform 200ms;
   text-align: center;
+  transition: transform 200ms;
 }
 
 .site-logo-link:hover,
@@ -82,11 +81,6 @@ img {
 }
 
 /* *** Header Info *** */
-
-.header-info-wrapper {
-  text-align: center;
-}
-
 /* * header text * */
 
 .page-header__title {
@@ -96,6 +90,7 @@ img {
   letter-spacing: -0.02em;
   text-transform: uppercase;
   color: #fff;
+  text-align: center;
 }
 
 .page-header__text {
@@ -103,19 +98,23 @@ img {
   margin-bottom: 0.8em;
   font: 300 1.29rem "Roboto", sans-serif;
   color: #fff;
+  text-align: center;
 }
 
 /* * header find button * */
 
 .page-header__find-button-link {
-  display: inline-block;
-  padding: 0.82rem 3.6rem;
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  padding: 0.82rem 0;
   letter-spacing: -0.02em;
   color: #fff;
   text-decoration: none;
   background-color: #ff4e50;
   border-radius: 1.4rem;
   transition: transform 200ms;
+  text-align: center;
 }
 
 .page-header__find-button-link:hover,
@@ -130,16 +129,24 @@ img {
   padding-bottom: 56px;
 }
 
-.section-title {
-  margin: 0 0 1rem;
+.section-header {
+  margin-bottom: 1rem;
   text-align: center;
+}
+
+.section-title {
+  margin: 0;
 }
 
 /* *** Members List *** */
 
+.members-list-wrapper {
+  margin-bottom: 28px;
+}
+
 .members-list {
   margin-top: 0;
-  margin-bottom: 28px;
+  margin-bottom: 0;
   padding: 0;
   list-style: none;
 }
@@ -147,6 +154,8 @@ img {
 /* * member card * */
 
 .member-card {
+  margin: 0 auto;
+  width: 220px;
   text-align: center;
 }
 
@@ -207,8 +216,9 @@ img {
 
 .member-info {
   margin: 0;
-  padding: 0 3rem;
+  padding: 0;
   font: 300 1rem "Roboto", sans-serif;
+  letter-spacing: 0.01em;
   color: #666;
 }
 
@@ -217,7 +227,7 @@ img {
 .other-partners-btn {
   display: block;
   margin: 0 auto;
-  padding: 0.68rem 4.98rem;
+  padding: 0.71rem 4.98rem;
   font-weight: 700;
   color: #ff4e50;
   background: #fff;
