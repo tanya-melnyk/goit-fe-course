@@ -1,0 +1,61 @@
+body {
+  font: 20px/24px "Roboto", sans-serif;
+}
+
+.wrapper {
+  max-width: 855px;
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0 15px 100px;
+}
+
+.task {
+  padding-top: 30px;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+.wrapper > img {
+  margin-bottom: 20px;
+}
+
+/* ------- ЗАДАНИЕ 2 ------- */
+
+.box {
+  width: 400px;
+  height: 200px;
+  background: url(../img/add/placeimg_400_200_nature.jpg) center/contain;
+}
+
+/* ------- ЗАДАНИЕ 3 ------- */
+
+span {
+  display: block;
+  padding: 20px 0;
+  font-weight: bold;
+}
+
+.code {
+  line-height: 2;
+  font-style: italic;
+}
+
+/* ------- MEDIA ------- */
+
+@media screen and (min-resolution: 192ppi),
+  (-webkit-min-device-pixel-ratio: 2) {
+  .box {
+    background-image: url(../img/add/placeimg_800_400_nature@x2.jpg);
+  }
+}
+
+@media screen and (min-resolution: 288ppi),
+  (-webkit-min-device-pixel-ratio: 3) {
+  .box {
+    background-image: url(../img/add/placeimg_1000_500_nature@x3.jpg);
+  }
+}

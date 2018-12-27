@@ -1,0 +1,246 @@
+/* -------- GLOBAL STYLES ---------- */
+
+html {
+  font-size: 14px;
+}
+
+body {
+  font: bold 14px "Montserrat", sans-serif;
+  color: #333;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* ***** HEADER ***** */
+
+.page-header {
+  min-height: 540px;
+  padding: 20px 0;
+  background-image: url(../img/website/background/background-768.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* *** Navigation *** */
+
+.page-nav {
+  margin-bottom: 27px;
+}
+
+/* * log buttons * */
+
+.site-log-list {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.log-in-link,
+.sign-up-link {
+  display: block;
+  padding: 0.54rem 1.1rem;
+  text-decoration: none;
+  color: #fff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: rgba(0, 0, 0, 0);
+  border-radius: 1.4rem;
+  transition: border-color 200ms;
+}
+
+.log-in-link:hover,
+.log-in-link:focus,
+.sign-up-link:hover,
+.sign-up-link:focus {
+  border-color: #fff;
+}
+
+/* * site logo * */
+
+.site-logo-link {
+  display: block;
+  font-size: 1.43rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #fff;
+  text-align: center;
+  transition: transform 200ms;
+}
+
+.site-logo-link:hover,
+.site-logo-link:focus {
+  transform: scale(1.06);
+}
+
+/* *** Header Info *** */
+/* * header text * */
+
+.page-header__title {
+  margin-top: 0;
+  margin-bottom: 0.33em;
+  font-size: 2.14rem;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: #fff;
+  text-align: center;
+}
+
+.page-header__text {
+  margin-top: 0;
+  margin-bottom: 0.8em;
+  font: 300 1.29rem "Roboto", sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+/* * header find button * */
+
+.page-header__find-button-link {
+  display: block;
+  width: 280px;
+  margin: 0 auto;
+  padding: 0.82rem 0;
+  letter-spacing: -0.02em;
+  color: #fff;
+  text-decoration: none;
+  background-color: #ff4e50;
+  border-radius: 1.4rem;
+  transition: transform 200ms;
+  text-align: center;
+}
+
+.page-header__find-button-link:hover,
+.page-header__find-button-link:focus {
+  transform: scale(1.06);
+}
+
+/* ***** MEMBERS SECTION ***** */
+
+.members-section {
+  padding-top: 66px;
+  padding-bottom: 56px;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.section-title {
+  margin: 0;
+}
+
+/* *** Members List *** */
+
+.members-list-wrapper {
+  margin-bottom: 28px;
+}
+
+.members-list {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* * member card * */
+
+.member-card {
+  margin: 0 auto;
+  width: 220px;
+  text-align: center;
+}
+
+/* * member image * */
+
+.member-img-wrapper {
+  position: relative;
+  width: 120px;
+  margin: 0 auto 1.3rem;
+}
+
+.member-img-wrapper img {
+  border-radius: 50%;
+}
+
+/* * member icon * */
+
+.member-img-wrapper::after {
+  position: absolute;
+  bottom: 13.2%;
+  right: 14.1%;
+  transform: translate(50%, 50%);
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.member-img-wrapper-bradley-1::after {
+  background-image: url(../img/website/icons/1-tv.png);
+  background-color: #ff4e50;
+}
+
+.member-img-wrapper-heather::after {
+  background-image: url(../img/website/icons/3-cup.png);
+  background-color: #1cd7ad;
+}
+
+.member-img-wrapper-lucas::after {
+  background-image: url(../img/website/icons/2-flask.png);
+  background-color: #ffa507;
+}
+
+.member-img-wrapper-bradley-2::after {
+  background-image: url(../img/website/icons/4-letter.png);
+  background-color: #4e73db;
+}
+
+/* * member info * */
+
+.member-name {
+  margin: 0 0 0.9rem;
+}
+
+.member-info {
+  margin: 0;
+  padding: 0;
+  font: 300 1rem "Roboto", sans-serif;
+  letter-spacing: 0.01em;
+  color: #666;
+}
+
+/* * other partners button * */
+
+.other-partners-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 0.71rem 4.98rem;
+  font-weight: 700;
+  color: #ff4e50;
+  background: #fff;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #ff4e50;
+  border-radius: 1.55rem;
+  transition: transform 200ms;
+  outline: none;
+  cursor: pointer;
+}
+
+.other-partners-btn:hover,
+.other-partners-btn:focus {
+  transform: scale(1.06);
+}
