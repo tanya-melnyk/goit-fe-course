@@ -7,187 +7,401 @@
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Homework M-9</title>
+    <title>Homework M-10</title>
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/bootstrap-grid.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/fonts.css" />
-    <link rel="stylesheet" href="./css/media.css" />
   </head>
   <body>
     <!-- ***** HEADER ***** -->
 
     <header class="page-header">
-      <!-- *** Navigation *** -->
+      <!-- *** Site Navigation *** -->
 
-      <nav class="page-nav">
-        <div class="container">
-          <div
-            class="row no-gutters justify-content-md-between align-items-center"
-          >
-            <!-- * log buttons * -->
+      <nav class="page-nav container">
+        <!-- * site logo * -->
 
-            <div class="col-12 col-md-4 order-md-2 col-lg-3">
-              <ul class="site-log-list">
-                <li><a class="log-in-link" href="#">Log in</a></li>
-                <li><a class="sign-up-link" href="#">Sign up</a></li>
+        <a href="#" class="site-logo site-logo--hover link">MoGo</a>
+
+        <!-- * navigation * -->
+
+        <ul class="site-navigation list page-nav__site-navigation">
+          <li>
+            <a
+              href="#"
+              class="site-navigation__link site-navigation__link--hover link"
+              >about</a
+            >
+          </li>
+          <li>
+            <a
+              href="#services"
+              class="site-navigation__link site-navigation__link--hover link"
+              >service</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="site-navigation__link site-navigation__link--hover link"
+              >work</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="site-navigation__link site-navigation__link--hover link"
+              >blog</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="site-navigation__link site-navigation__link--hover link"
+              >contact</a
+            >
+          </li>
+
+          <!-- navigation icons -->
+
+          <li>
+            <a href="#" class="site-navigation__link link">
+              <svg class="site-navigation__icon">
+                <use
+                  href="./img/website/icons/nav_icons/nav-sprite.svg#cart-icon"
+                ></use>
+              </svg>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="site-navigation__link link">
+              <svg class="site-navigation__icon">
+                <use
+                  href="./img/website/icons/nav_icons/nav-sprite.svg#search-icon"
+                ></use>
+              </svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- *** Hero Section *** -->
+
+      <section class="hero">
+        <h2 class="hero__subtitle">Creative Template</h2>
+        <h1 class="hero__title">welcome<br />to mogo</h1>
+        <a href="#" class="hero__btn link button">learn more</a>
+      </section>
+    </header>
+
+    <main class="content">
+      <!-- ***** SERVICES SECTION ***** -->
+
+      <section class="services section container" id="services">
+        <!-- *** Services Section Header *** -->
+
+        <header class="header services__header">
+          <p class="header__subtitle">We work with</p>
+          <h2 class="header__title">amazing services</h2>
+        </header>
+
+        <!-- *** Services List *** -->
+
+        <ul class="services__list list">
+          <li class="services__item services__icon services__icon--clock">
+            <h3 class="services__item-name">photography</h3>
+            <p class="services__item-desc">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor.
+            </p>
+          </li>
+          <li class="services__item services__icon services__icon--web">
+            <h3 class="services__item-name">web design</h3>
+            <p class="services__item-desc">
+              Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor.
+            </p>
+          </li>
+          <li class="services__item services__icon services__icon--monitor">
+            <h3 class="services__item-name">creativity</h3>
+            <p class="services__item-desc">
+              Dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor.
+            </p>
+          </li>
+          <li class="services__item services__icon services__icon--book">
+            <h3 class="services__item-name">seo</h3>
+            <p class="services__item-desc">
+              Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod.
+            </p>
+          </li>
+          <li class="services__item services__icon services__icon--house">
+            <h3 class="services__item-name">css/html</h3>
+            <p class="services__item-desc">
+              Lorem dolor sit amet, consectetur adipiscing elit, sed do tempor.
+            </p>
+          </li>
+          <li class="services__item services__icon services__icon--box">
+            <h3 class="services__item-name">digital</h3>
+            <p class="services__item-desc">
+              Sit amet, consectetur adipiscing elit, sed do eiusmod tempor.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ***** TEAM SECTION ***** -->
+
+      <section class="team section container">
+        <!-- *** Team Section Header *** -->
+
+        <header class="header team__header">
+          <p class="header__subtitle">Who we are</p>
+          <h2 class="header__title">meet our team</h2>
+          <p class="team__lead">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat.
+          </p>
+        </header>
+
+        <!-- *** Team List *** -->
+
+        <ul class="team__list list">
+          <!-- * member card 1 * -->
+
+          <li class="team__item">
+            <!-- member pic -->
+            <img
+              class="team__item-img img"
+              srcset="
+                ./img/website/photos/dix.jpg    380w,
+                ./img/website/photos/dix@2x.jpg 760w
+              "
+              sizes="380px"
+              src="./img/website/photos/dix.jpg"
+              alt="Matthew Dix's photo"
+              height="470"
+            />
+
+            <!-- popup window with some socials icons -->
+
+            <div class="team__popup">
+              <ul class="socials list">
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#facebook-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#twitter-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#pinterest-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#instagram-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
               </ul>
             </div>
 
-            <!-- * logo * -->
+            <!-- member info -->
 
-            <div class="col-12 col-md-4 col-lg-3">
-              <a href="#" class="site-logo-link">urlaubsglück</a>
+            <div>
+              <p class="team__item-name">matthew dix</p>
+              <p class="team__item-occupation">Graphic Design</p>
             </div>
-          </div>
-        </div>
-      </nav>
+          </li>
 
-      <!-- *** Header Info *** -->
+          <!-- * member card 2* -->
 
-      <div class="header-info">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="col-12 col-md-9 col-lg-7">
-              <h2 class="page-header__title">share your holiday dreams</h2>
+          <li class="team__item">
+            <!-- member pic -->
+            <img
+              class="team__item-img img"
+              srcset="
+                ./img/website/photos/campbell.jpg    380w,
+                ./img/website/photos/campbell@2x.jpg 760w
+              "
+              sizes="380px"
+              src="./img/website/photos/campbell.jpg"
+              alt="Christopher Campbell's photo"
+              height="470"
+            />
+
+            <!-- popup window with some socials icons -->
+
+            <div class="team__popup">
+              <ul class="socials list">
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#facebook-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#twitter-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#pinterest-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#instagram-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
 
-          <div class="row justify-content-center">
-            <div class="col-9">
-              <p class="page-header__text">
-                And find the perfect partner to fullfill it
-              </p>
+            <!-- member info -->
+
+            <div>
+              <p class="team__item-name">christopher campbell</p>
+              <p class="team__item-occupation">Branding/UX design</p>
             </div>
-          </div>
+          </li>
 
-          <div class="row">
-            <div class="col-12">
-              <a href="#" class="page-header__find-button-link"
-                >Find your holiday partner</a
-              >
+          <!-- * member card 3* -->
+
+          <li class="team__item">
+            <!-- member pic -->
+            <img
+              class="team__item-img img"
+              srcset="
+                ./img/website/photos/fertig.jpg    380w,
+                ./img/website/photos/fertig@2x.jpg 760w
+              "
+              sizes="380px"
+              src="./img/website/photos/fertig.jpg"
+              alt="Michael Fertig's photo"
+              height="470"
+            />
+
+            <!-- popup window with some socials icons -->
+
+            <div class="team__popup">
+              <ul class="socials list">
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#facebook-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#twitter-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#pinterest-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+                <li class="socials__item">
+                  <a href="#" class="socials__link link">
+                    <svg class="socials__icon">
+                      <use
+                        href="./img/website/icons/socials/socials-sprite.svg#instagram-icon"
+                      ></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <main>
-      <!-- ***** MEMBERS SECTION ***** -->
+            <!-- member info -->
 
-      <section class="members-section">
-        <!-- *** Members Section Title *** -->
-
-        <header class="section-header">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <h2 class="section-title">
-                  Meet a partner for your best holiday
-                </h2>
-              </div>
+            <div>
+              <p class="team__item-name">michael fertig</p>
+              <p class="team__item-occupation">Developer</p>
             </div>
-          </div>
-        </header>
-
-        <!-- *** Members List *** -->
-
-        <div class="members-list-wrapper">
-          <div class="container">
-            <ul class="members-list row">
-              <!-- * member card 1 * -->
-
-              <li class="col-12 col-md-4 offset-md-2 col-lg-3 offset-lg-0">
-                <div class="member-card">
-                  <div class="member-img-wrapper member-img-wrapper-bradley-1">
-                    <img
-                      src="./img/website/photos/1-bradley.jpg"
-                      alt="Bradley Hunter"
-                      width="120"
-                      height="120"
-                    />
-                  </div>
-                  <p class="member-name">Bradley Hunter</p>
-                  <p class="member-info">
-                    Based in Chicago. I love playing tennis and loud music.
-                  </p>
-                </div>
-              </li>
-
-              <!-- * member card 2* -->
-              <li
-                class="col-12 col-md-4 offset-md-2 col-lg-3 offset-lg-0 order-md-1"
-              >
-                <div class="member-card">
-                  <div class="member-img-wrapper member-img-wrapper-lucas">
-                    <img
-                      src="./img/website/photos/2-lucas.jpg"
-                      alt="Lucas Marsha"
-                      width="120"
-                      height="120"
-                    />
-                  </div>
-                  <p class="member-name">Lucas Marsha</p>
-                  <p class="member-info">
-                    I get my inspiration from nature and objects around me. I
-                    have a passion to colours, typography and skateboards.
-                  </p>
-                </div>
-              </li>
-
-              <!-- * member card 3* -->
-
-              <li class="col-12 col-md-4 col-lg-3">
-                <div class="member-card">
-                  <div class="member-img-wrapper member-img-wrapper-heather">
-                    <img
-                      src="./img/website/photos/3-heather.jpg"
-                      alt="Heather Walker"
-                      width="120"
-                      height="120"
-                    />
-                  </div>
-                  <p class="member-name">Heather Walker</p>
-                  <p class="member-info">
-                    I'm a happy person that loves cats and climbing on
-                    mountains.
-                  </p>
-                </div>
-              </li>
-
-              <!-- * member card 4* -->
-
-              <li class="col-12 col-md-4 col-lg-3 order-last">
-                <div class="member-card">
-                  <div class="member-img-wrapper member-img-wrapper-bradley-2">
-                    <img
-                      src="./img/website/photos/4-bradley.jpg"
-                      alt="Bradley Hunter"
-                      width="120"
-                      height="120"
-                    />
-                  </div>
-                  <p class="member-name">Bradley Hunter</p>
-                  <p class="member-info">
-                    Based in Chicago. I love playing tennis and loud music.
-                  </p>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- * other partners button * -->
-        <div class="other-partners-btn-wrapper">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <button class="other-partners-btn">See other partners</button>
-              </div>
-            </div>
-          </div>
-        </div>
+          </li>
+        </ul>
       </section>
     </main>
+
+    <!-- ***** FOOTER ***** -->
+
+    <footer class="page-footer container">
+      <!-- *** Copyright information *** -->
+
+      <p class="copyright" role="contentinfo">
+        &copy; 2016 MoGo free PSD template by
+        <a class="copyright__link link" href="#">Laaqiq</a>
+      </p>
+
+      <!-- *** Subscribe form *** -->
+
+      <!-- * email input * -->
+
+      <form action="#" class="subscribe" method="POST">
+        <input
+          class="subscribe__email-input"
+          type="email"
+          name="email"
+          placeholder="Your Email..."
+          required
+        />
+
+        <!-- * subscribe button * -->
+
+        <button class="subscribe__submit-btn button" type="submit">
+          subscribe
+        </button>
+      </form>
+    </footer>
   </body>
 </html>
