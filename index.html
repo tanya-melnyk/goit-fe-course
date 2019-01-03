@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Tetiana Melnyk</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <style>
       * {
         box-sizing: border-box;
@@ -12,21 +18,17 @@
         margin: 0;
       }
 
-      .container {
+      body {
         min-height: 100vh;
+        padding-top: 30px;
         background: linear-gradient(
             rgba(255, 255, 255, 0.6),
             rgba(255, 255, 255, 0.6)
           ),
-          url(./html-css/module-01-02/img/remote-work.jpg) center/cover
+          url(./html-css/module-01-02/img/remote-work.jpg) left/cover
             no-repeat;
         font-size: 26px;
         line-height: 36px;
-      }
-
-      .wrapper {
-        margin: 0;
-        padding: 50px 440px;
       }
 
       .list-title {
@@ -59,99 +61,121 @@
 
   <body>
     <div class="container">
-      <div class="wrapper">
-        <h2 class="list-title">HTML/CSS Homeworks:</h2>
-        <!-- ol>li*10>a{Homework М-$@2} -->
-        <ol class="homeworks-list">
-          <li>
-            <a href="./html-css/module-01-02/index.html">Homework М-1-2</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-01-02/add.html"
-                  >Additional tasks М-1-2</a
-                >
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-03/index.html">Homework М-3</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-03/v2.html">Homework M-3 V.2</a>
-              </li>
-              <li>
-                <a href="./html-css/module-03/add.html">Additional tasks М-3</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-04/index.html">Homework М-4</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-04/add.html">Additional tasks М-4</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-05/index.html">Homework М-5</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-05/add.html">Additional tasks М-5</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-06/index.html">Homework М-6</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-06/add.html">Additional tasks М-6</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-07/index.html">Homework М-7</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-07/add.html">Additional tasks М-7</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-08/index.html">Homework М-8</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-08/add.html">Additional tasks М-8</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-09/index.html">Homework М-9</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-09/add.html">Additional tasks М-9</a>
-              </li>
-              <li>
-                <a href="./html-css/module-09/index_bootstrap.html">Full Bootstrap М-9</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-10/index.html">Homework М-10</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-10/add.html">Additional tasks М-10</a>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="./html-css/module-11/index.html">Homework М-11</a>
-            <ul class="additional-tasks-list">
-              <li>
-                <a href="./html-css/module-11/add.html">Additional tasks М-11</a>
-              </li>
-            </ul>
-          </li>
-        </ol>
+      <div class="row justify-content-center justify-content-lg-start">
+        <div class="col-10 col-md-7">
+          <h2 class="list-title">HTML/CSS Homeworks:</h2>
+          <!-- ol>li*10>a{Homework М-$@2} -->
+          <ol class="homeworks-list">
+            <li>
+              <a href="./html-css/module-01-02/index.html">Homework М-1-2</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-01-02/add.html"
+                    >Additional tasks М-1-2</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-03/index.html">Homework М-3</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-03/v2.html">Homework M-3 V.2</a>
+                </li>
+                <li>
+                  <a href="./html-css/module-03/add.html"
+                    >Additional tasks М-3</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-04/index.html">Homework М-4</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-04/add.html"
+                    >Additional tasks М-4</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-05/index.html">Homework М-5</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-05/add.html"
+                    >Additional tasks М-5</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-06/index.html">Homework М-6</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-06/add.html"
+                    >Additional tasks М-6</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-07/index.html">Homework М-7</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-07/add.html"
+                    >Additional tasks М-7</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-08/index.html">Homework М-8</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-08/add.html"
+                    >Additional tasks М-8</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-09/index.html">Homework М-9</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-09/add.html"
+                    >Additional tasks М-9</a
+                  >
+                </li>
+                <li>
+                  <a href="./html-css/module-09/index_bootstrap.html"
+                    >Full Bootstrap М-9</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-10/index.html">Homework М-10</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-10/add.html"
+                    >Additional tasks М-10</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="./html-css/module-11/index.html">Homework М-11</a>
+              <ul class="additional-tasks-list">
+                <li>
+                  <a href="./html-css/module-11/add.html"
+                    >Additional tasks М-11</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ol>
+        </div>
       </div>
     </div>
   </body>
