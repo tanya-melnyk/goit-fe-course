@@ -16,7 +16,8 @@ body {
   transition: all 200ms;
 }
 
-.link:hover {
+.link:hover,
+.button:hover {
   text-decoration: none;
 }
 
