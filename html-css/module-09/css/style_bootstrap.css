@@ -22,7 +22,7 @@ body {
 }
 
 .button {
-  height: 40px;
+  min-height: 40px;
   border-width: 2px;
   border-style: solid;
   border-radius: 1.4rem;
@@ -35,7 +35,7 @@ body {
 }
 
 .header-background {
-  height: 540px;
+  min-height: 540px;
   background-image: url(../img/website/background/background-768.jpg);
   background-position: center;
   background-size: cover;
@@ -77,7 +77,7 @@ body {
 .hero__btn {
   background-color: #ff4e50;
   border-color: #ff4e50;
-  width: 280px;
+  min-width: 280px;
 }
 
 .partners {
@@ -87,10 +87,6 @@ body {
 .partners__title {
   font-size: 1.6rem;
 }
-
-/* .partners__img-wrapper {
-  position: relative;
-} */
 
 .partners__img-wrapper::after {
   position: absolute;
@@ -131,7 +127,7 @@ body {
 }
 
 .partners__btn {
-  width: 280px;
+  min-width: 280px;
   color: #ff4e50;
   border-color: #ff4e50;
 }
@@ -144,7 +140,7 @@ body {
 
 @media (min-width: 768px) {
   .header-background {
-    height: 700px;
+    min-height: 700px;
     background-image: url(../img/website/background/background-1440.jpg);
   }
 
@@ -163,10 +159,10 @@ body {
   }
 
   .hero__btn {
-    width: 224px;
+    min-width: 224px;
   }
 
   .partners__btn {
-    width: 188px;
+    min-width: 188px;
   }
 }

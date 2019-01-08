@@ -61,8 +61,8 @@ body {
 
 .page-header {
   position: relative;
-  height: 1000px;
-  padding-top: 1.6rem;
+  min-height: 1000px;
+  padding-top: 0.6rem;
   background-image: -webkit-gradient(
       linear,
       left top, left bottom,
@@ -107,6 +107,8 @@ body {
 /* * site logo * */
 
 .site-logo {
+  margin-left: -1rem;
+  padding: 1rem;
   font-size: 2.1rem;
   font-weight: 700;
   color: #fff;
@@ -126,6 +128,12 @@ body {
 
 /* * navigation * */
 
+.page-nav__inner {
+  justify-content: space-between;
+  min-width: 662px;
+  margin-right: -1.5rem;
+}
+
 .site-navigation {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
@@ -133,10 +141,11 @@ body {
 }
 
 .page-nav__site-navigation {
-  min-width: 620px;
+  min-width: 526px;
 }
 
 .site-navigation__link {
+  padding: 1.5rem;
   text-transform: uppercase;
   font-weight: 500;
   color: #fff;
@@ -147,7 +156,16 @@ body {
 
 /* navigation icons */
 
-.site-navigation__icon {
+.user-nav {
+  justify-content: space-between;
+  min-width: 76px;
+}
+
+.user-nav__link {
+  padding: 1.5rem;
+}
+
+.user-nav__icon {
   width: 18px;
   height: 18px;
   fill: #fff;
@@ -160,7 +178,7 @@ body {
 
 /* navigation hover, focus effects */
 
-.site-navigation__link--hover::after {
+.site-navigation__link::after {
   content: "";
   display: block;
   width: 0;
@@ -171,18 +189,18 @@ body {
   transition: width 200ms;
 }
 
-.site-navigation__link--hover:hover,
-.site-navigation__link--hover:focus {
+.site-navigation__link:hover,
+.site-navigation__link:focus {
   color: #fce38a;
 }
 
-.site-navigation__link--hover:hover::after,
-.site-navigation__link--hover:focus::after {
+.site-navigation__link:hover::after,
+.site-navigation__link:focus::after {
   width: 100%;
 }
 
-.site-navigation__icon:hover,
-.site-navigation__icon:focus {
+.user-nav__link:hover .user-nav__icon,
+.user-nav__link:focus .user-nav__icon {
   -webkit-transform: scale(1.2);
       -ms-transform: scale(1.2);
           transform: scale(1.2);
@@ -516,7 +534,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 62px;
+  min-height: 62px;
   border-top: 1px solid #e5e5e5;
 }
 
@@ -539,7 +557,7 @@ body {
 /* * email input * */
 
 .subscribe__email-input {
-  width: 230px;
+  min-width: 230px;
   padding: 0;
   font-size: 14px;
   line-height: 2.75;
