@@ -496,7 +496,8 @@ body {
 /* -- hover, focus effects for popup window with some choice-icons -- */
 
 .team__item:hover .team__item-img,
-.team__item:focus .team__item-img {
+.team__item:focus .team__item-img,
+.team__item:focus-within .team__item-img {
   -webkit-transform: translate(-10px, -10px);
       -ms-transform: translate(-10px, -10px);
           transform: translate(-10px, -10px);
@@ -505,7 +506,8 @@ body {
 }
 
 .team__item:hover .team__popup,
-.team__item:focus .team__popup {
+.team__item:focus .team__popup,
+.team__item:focus-within .team__popup {
   -webkit-transform: translate(-10px, -10px);
       -ms-transform: translate(-10px, -10px);
           transform: translate(-10px, -10px);
