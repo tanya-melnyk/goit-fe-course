@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Additional tasks M-11</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font: 20px/24px "Roboto", sans-serif;
+      }
+
+      .wrapper {
+        max-width: 855px;
+        min-width: 320px;
+        margin: 0 auto;
+        padding: 0 15px 100px;
+      }
+
+      .task {
+        padding-top: 30px;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .wrapper > img {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="wrapper">
+        <h2 class="task">Задание 1</h2>
+        <p class="task-text">
+          Создать 4 SASS-переменные которые хранят следующие значения:
+        </p>
+        <ul>
+          <li>
+            набор шрифтов страницы: Roboto, sans-serif <br />
+            <br />
+            <strong><em>$roboto: 'Roboto', sans-serif;</em></strong> <br />
+            <br />
+          </li>
+
+          <li>
+            цвет текста: #424242<br />
+            <br />
+            <strong><em>$dark-grey-text: hsl(0, 0%, 26%);</em></strong> <br />
+            <br />
+          </li>
+
+          <li>
+            цвет акцента при ховере: #03A9F4<br />
+            <br />
+            <strong><em>$hover-accent-blue: hsl(199, 98%, 48%);</em></strong>
+            <br />
+            <br />
+          </li>
+
+          <li>
+            размер шрифта абзацев: 18px<br />
+            <br />
+            <strong><em>$paragraph-font-size: 18px;</em></strong> <br />
+            <br />
+          </li>
+        </ul>
+
+        <h2 class="task">Задание 2</h2>
+        <p class="task-text">
+          Создать SASS миксин, который принимает 2 значения, размер шрифта и
+          высоту строки. В место вызова должны подставляться font-size и
+          line-height с передаными значениями.
+        </p>
+
+        <p>
+            <strong><em>@mixin text-sizes($font-size: 1rem, &line-height: 1) { <br />
+              <br />&emsp;&emsp;font-size: $font-size; <br />
+            <br />&emsp;&emsp;line-height: &line-height; <br />
+          }</em></strong>
+        </p>
+      </div>
+    </main>
+  </body>
+</html>
