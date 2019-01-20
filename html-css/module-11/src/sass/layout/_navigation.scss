@@ -1,0 +1,17 @@
+.page-nav {
+  @extend %flex-justify;
+  align-items: baseline;
+}
+
+.page-nav__inner {
+  @extend %list;
+  @extend %flex-justify;
+  min-width: 662px;
+
+  /* negative margin removes right padding indent of navigation link */
+  margin-right: (-1 * $nav-link-padding);
+}
+
+.page-nav__site-navigation {
+  min-width: 526px;
+}

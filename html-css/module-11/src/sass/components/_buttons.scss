@@ -1,0 +1,11 @@
+/**
+ * Class with common properties for all buttons 
+ */
+
+.button {
+  @extend %button;
+  padding: $button-padding;
+  font-weight: bold;
+  color: $primary-light-color;
+  border-width: $thick-border-width;
+}

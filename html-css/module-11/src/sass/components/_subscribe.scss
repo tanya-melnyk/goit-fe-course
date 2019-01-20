@@ -1,0 +1,49 @@
+/* removes the gap between the input field and button */
+
+.subscribe {
+  font-size: 0;
+}
+
+/* * email input * */
+
+.subscribe__email-input {
+  @include font-settings($main-font-size, $height: 2.75);
+  width: 230px;
+  padding: 0;
+  text-indent: 0.7rem;
+  border: {
+    width: $thin-border-width;
+    style: solid;
+    color: $input-border-color;
+    right: none;
+  }
+}
+
+.subscribe__email-input::placeholder {
+  @include font-settings($desc-font-size, $desc-line-height);
+  @extend %italic-text;
+  font-family: $secondary-font-stack;
+  color: tint($secondary-dark-color, 50%);
+}
+
+.subscribe__email-input:valid {
+  outline-color: $valid-input-color;
+}
+
+.subscribe__email-input:invalid {
+  outline-color: $invalid-input-color;
+}
+
+/* * subscribe button * */
+
+.subscribe__submit-btn {
+  font-size: $main-font-size;
+  background-color: $secondary-accent-color;
+  border-color: $secondary-accent-color;
+  transition-property: box-shadow;
+
+  &:hover,
+  &:focus {
+    box-shadow: 1px 1px 5px 0px hsla(0, 0%, 0%, 0.4);
+  }
+}

@@ -1,4 +1,65 @@
-$font-stack: ('Helvetica', 'Arial', sans-serif);
+/// FONT STACKS AND SIZES
 
-$sass-pink: hsl(330, 50%, 60%);
-$main-theme-color: $sass-pink;
+/// font families
+$main-font-stack: "Montserrat", sans-serif;
+$subtitles-font-stack: "Kaushan Script", cursive;
+$secondary-font-stack: "Roboto", sans-serif;
+
+/// font sizes
+$main-font-size: 14px;
+$desc-font-size: 1.1rem;
+$section-subtitle-font-size: 1.7rem;
+$section-title-font-size: 2.1rem;
+$hero-subtitle-font-size: 5.1rem;
+$hero-title-font-size: 10.7rem;
+
+/// line heights
+$desc-line-height: 1.6;
+
+/// BASIC COLORS
+$white-color: hsl(0, 0%, 100%);
+$light-grey-color: hsl(0, 0%, 80%);
+$grey-color: hsl(0, 0%, 60%);
+$dark-grey-color: hsl(0, 0%, 20%);
+$black-color: hsl(0, 0%, 0%);
+
+$yellow-color: hsl(47, 95%, 76%);
+$peach-color: hsl(0, 83%, 73%);
+$turquase-color: hsl(169, 56%, 73%);
+
+/// text colors
+$primary-light-color: $white-color;
+$primary-dark-color: $dark-grey-color;
+$secondary-dark-color: $grey-color;
+
+/// theme colors
+$main-theme-color: $peach-color;
+$primary-accent-color: $yellow-color;
+$secondary-accent-color: $turquase-color;
+
+/// gradient colors
+$main-theme-gradient: linear-gradient(
+  transparentize($main-theme-color, 0.1), 
+  transparentize($primary-accent-color, 0.1),
+  );
+
+/// footer horisontal rule color
+$horisontal-rule-color: darken($white-color, 10%);
+
+/// form input border color
+$input-border-color: mix(black, $white-color, 10%);
+// $input-border-color: lighten($light-grey-color, 10%);
+
+/// input warning colors
+$valid-input-color: $turquase-color;
+$invalid-input-color: $peach-color;
+
+/// BASIC SIZES
+$content-column-width: 380px;
+$team-photo-height: 470px;
+
+$nav-link-padding: 1.5rem;
+$button-padding: 0.66rem 2.04rem;
+
+$thick-border-width: 3px;
+$thin-border-width: 1px;

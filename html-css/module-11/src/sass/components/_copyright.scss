@@ -1,0 +1,8 @@
+.copyright {
+  margin: 0;
+}
+
+.copyright__link {
+  @extend %link;
+  color: $main-theme-color;
+}

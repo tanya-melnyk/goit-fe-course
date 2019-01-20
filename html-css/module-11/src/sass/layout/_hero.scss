@@ -1,0 +1,34 @@
+.hero {
+  @include absolute-pos($top: 50%, $left: 50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: $primary-light-color;
+}
+
+.hero__subtitle {
+  @extend %subtitle;
+  margin-bottom: 0.5em;
+  font-size: $hero-subtitle-font-size;
+}
+
+.hero__title {
+  @include font-settings($hero-title-font-size, $height: 0.93);
+  margin-top: 0;
+  margin-bottom: 0.74em;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* * hero button * */
+
+.hero__btn {
+  @extend %link;
+  margin: 0 auto;
+  border-color: $primary-light-color;
+  transition-property: background-color;
+
+  &:hover,
+  &:focus {
+    background-color: transparentize($main-theme-color, 0.5);
+  }
+}

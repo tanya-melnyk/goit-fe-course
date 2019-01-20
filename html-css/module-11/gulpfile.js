@@ -67,13 +67,22 @@ gulp.task('scripts', () => {
     .pipe(gulp.dest('./build/js'));
 });
 
-gulp.task('sprite', () => {
+gulp.task('sprite-nav', () => {
   return gulp
-    .src('./src/images/icons/icon-*.svg')
+    .src('./src/images/icons/nav/*.svg')
     .pipe(svgstore({ inlineSvg: true }))
-    .pipe(rename('sprite.svg'))
+    .pipe(rename('sprite-nav.svg'))
     .pipe(gulp.dest('./build/images'));
 });
+
+gulp.task('sprite-soc', () => {
+  return gulp
+    .src('./src/images/icons/socials/*.svg')
+    .pipe(svgstore({ inlineSvg: true }))
+    .pipe(rename('sprite-soc.svg'))
+    .pipe(gulp.dest('./build/images'));
+});
+
 
 gulp.task('images', () => {
   return gulp
@@ -120,7 +129,7 @@ gulp.task('prepare', () => del(['**/.gitkeep', 'README.md', 'banner.png']));
 gulp.task('build', callback =>
   sequence(
     'del:build',
-    ['sprite', 'images', 'fonts', 'styles', 'html', 'scripts'],
+    ['sprite-nav', 'sprite-soc', 'images', 'fonts', 'styles', 'html', 'scripts'],
     callback
   )
 );

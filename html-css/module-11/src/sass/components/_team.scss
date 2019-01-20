@@ -1,0 +1,66 @@
+/* sets the gap between the section title and lead text */
+
+.team__header {
+  margin-bottom: 6.4rem;
+}
+
+.team__lead {
+  @extend %desc-text;
+  margin-top: 2.8rem;
+  padding: 0 7rem;
+}
+
+/* *** Team List *** */
+
+.team__list {
+  @extend %list;
+  @extend %flex-justify;
+}
+
+/* * member card * */
+
+.team__item {
+  position: relative;
+  width: $content-column-width;
+  text-align: center;
+
+  &:hover .team__item-img,
+  &:focus .team__item-img {
+    transform: translate(-10px, -10px);
+    box-shadow: 10px 10px 0px 0px $secondary-accent-color;
+  }
+
+  &:hover .team__popup,
+  &:focus .team__popup {
+    transform: translate(-10px, -10px);
+    opacity: 1;
+  }
+}
+
+.team__item-img {
+  margin-bottom: 2rem;
+  transition-property: transform, box-shadow;
+  transition-duration: 200ms;
+}
+
+.team__item-name {
+  @extend %section__item-name;
+  margin-bottom: 0.5rem;
+}
+
+.team__item-occupation {
+  @extend %desc-text;
+  @extend %italic-text;
+}
+
+/* popup window with some socials icons */
+
+.team__popup {
+  @include absolute-pos;
+  @include center-flex;
+  @include size($content-column-width, $team-photo-height);
+  background-image: $main-theme-gradient;
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: 200ms;
+}

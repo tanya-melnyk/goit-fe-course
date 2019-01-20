@@ -1,0 +1,47 @@
+.services__header {
+  margin-bottom: 4.4rem;
+}
+
+.services__list {
+  @extend %list;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.services__item {
+  width: $content-column-width;
+  padding-left: 80px;
+
+  &:nth-last-child(n + 4) {
+    margin-bottom: 6.6rem;
+  }
+}
+
+/* * services icons * */
+
+.services__icon {
+  background-repeat: no-repeat;
+  background-position: 20px 4px;
+}
+
+$icons: (clock, web, monitor, book, house, box);
+
+@include generate-icons(
+  "services__icon--",
+  $icons,
+  "../images/services_icons/",
+  "svg"
+);
+
+/* * services info * */
+
+.services__item-name {
+  @extend %section__item-name;
+  margin-bottom: 1rem;
+  font-size: $main-font-size;
+}
+
+.services__item-desc {
+  @extend %desc-text;
+}

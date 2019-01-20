@@ -1,0 +1,54 @@
+.site-navigation {
+  @extend %list;
+  @extend %flex-justify;
+}
+
+.site-navigation__link {
+  @extend %link;
+  padding: $nav-link-padding;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: $primary-light-color;
+  transition: color 200ms;
+
+  &::after {
+    @include pseudo;
+    @include underline($primary-accent-color, $margin-top: 0.6rem);
+    transition: width 200ms;
+  }
+
+  &:hover,
+  &:focus {
+    color: $primary-accent-color;
+  }
+
+  &:hover::after,
+  &:focus::after {
+    width: 100%;
+  }
+}
+
+/* navigation icons */
+
+.user-nav {
+  @extend %list;
+  @extend %flex-justify;
+  min-width: 5.4rem;
+}
+
+.user-nav__icon {
+  @include size(1.3rem);
+  fill: $primary-light-color;
+  transition: fill 200ms, transform 200ms;
+}
+
+.user-nav__link {
+  @extend %link;
+  padding: $nav-link-padding;
+
+  &:hover .user-nav__icon,
+  &:focus .user-nav__icon {
+    transform: scale(1.2);
+    fill: $primary-accent-color;
+  }
+}

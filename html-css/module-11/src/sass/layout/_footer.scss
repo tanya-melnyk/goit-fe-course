@@ -1,0 +1,10 @@
+.page-footer {
+  @include center-flex('ver');
+  justify-content: space-between;
+  min-height: 62px;
+  border-top: {
+    width: $thin-border-width;
+    style: solid;
+    color: $horisontal-rule-color;
+  }
+}

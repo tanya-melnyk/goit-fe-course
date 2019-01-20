@@ -60,4 +60,7 @@ typings/
 # dotenv environment variables file
 .env
 
+# psd files
 *.psd
+
+.vs/

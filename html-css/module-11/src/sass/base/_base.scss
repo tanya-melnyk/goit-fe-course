@@ -1,2 +1,24 @@
 // стили, определяющие некоторые стандартные стили 
 // для часто используемых элементов HTML.
+
+html {
+  box-sizing: border-box;
+  font-size: $main-font-size;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: $main-font-stack;
+  color: $primary-dark-color;
+}
+
+.img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

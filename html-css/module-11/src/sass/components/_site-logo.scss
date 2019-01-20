@@ -1,0 +1,16 @@
+.site-logo {
+  @extend %link;
+
+  /* negative margin removes left padding indent */
+  margin-left: (-1 * $nav-link-padding);
+  padding: $nav-link-padding;
+  font-size: $section-title-font-size;
+  font-weight: 700;
+  color: $primary-light-color;
+  transition: transform 200ms;
+
+  &:hover,
+  &:focus {
+    transform: scale(1.1);
+  }
+}

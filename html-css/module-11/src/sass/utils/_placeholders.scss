@@ -1,0 +1,58 @@
+/// common properties for all links
+%link {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/// common properties for all lists
+%list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/// common properties for all buttons
+%button {
+  text-transform: uppercase;
+  border-style: solid;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 200ms;
+}
+
+/// common properties for all subtitles
+%subtitle {
+  margin-top: 0;
+  margin-bottom: 0.7em;
+  font-family: $subtitles-font-stack;
+  font-weight: normal;
+}
+
+/// common properties for all description texts
+%desc-text {
+  @include font-settings($desc-font-size, $desc-line-height);
+  margin: 0;
+  font-family: $secondary-font-stack;
+  color: $secondary-dark-color;
+}
+
+/// common properties for section item names
+%section__item-name {
+  margin-top: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/// common properties for italic style texts
+%italic-text {
+  font: {
+    weight: 300;
+    style: italic;
+  }
+}
+
+/// flex items to be positioned with even spaces between the lines
+%flex-justify {
+  display: flex;
+  justify-content: space-between;
+}

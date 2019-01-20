@@ -1,0 +1,36 @@
+.socials {
+  @extend %list;
+  display: flex;
+}
+
+/* gaps between the boxes with sotial icons */
+
+.socials__item {
+  &:not(:last-child) {
+    margin-right: 1px;
+  }
+}
+
+.socials__icon {
+  @include size(26px);
+  fill: $main-theme-color;
+}
+
+.socials__link {
+  @include center-flex;
+  @include size(55px);
+  @extend %link;
+  background-color: $primary-accent-color;
+  transition: background-color 200ms;
+
+  &:hover,
+  &:focus {
+    background-color: $main-theme-color;
+  }
+
+  &:hover .socials__icon,
+  &:focus .socials__icon {
+    fill: $primary-light-color;
+  }
+}
+

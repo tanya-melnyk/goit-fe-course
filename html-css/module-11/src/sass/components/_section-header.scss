@@ -1,0 +1,24 @@
+/**
+ * Common properties for all section headers 
+ */
+
+
+.header {
+  text-align: center;
+}
+
+.header__subtitle {
+  @extend %subtitle;
+  font-size: $section-subtitle-font-size;
+}
+
+.header__title {
+  margin: 0;
+  font-size: $section-title-font-size;
+  text-transform: uppercase;
+
+  &::after {
+    @include pseudo;
+    @include underline($main-theme-color, $margin-top: 2.6rem, $width: 4.3rem);
+  }
+}

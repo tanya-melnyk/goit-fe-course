@@ -1,8 +1,100 @@
-/// Помощник для определения размера
+/// Helper for defining sizes
 /// @author Hugo Giraudel
 /// @param {Length} $width
 /// @param {Length} $height
 @mixin size($width, $height: $width) {
   width: $width;
   height: $height;
+}
+
+/// Helper for font settings
+@mixin font-settings($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+/// Helper for creating pseudo elements
+@mixin pseudo($display: block, $content: '') {
+  display: $display;
+  content: $content;
+}
+
+/// Helper for creating accent underlines
+@mixin underline($color, $margin-top: 0, $width: 0) {
+  width: $width;
+  margin: $margin-top auto 0;
+  border-bottom: {
+    width: $thick-border-width;
+    style: solid;
+    color: $color;
+  }
+}
+
+/// Helper for backgroung image settings
+@mixin bg-image($path: '', $size: cover, $repeat: no-repeat, $pos: center) {
+  background-image: url($path);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $pos;
+}
+
+/// Helper for flex centering
+@mixin center-flex($type: 'all') {
+  display: flex;
+
+  @if $type== 'all' {
+    justify-content: center;
+    align-items: center;
+  } @else if $type== 'hor' {
+    justify-content: center;
+  } @else if $type== 'ver' {
+    align-items: center;
+  }
+}
+
+/// Helper for generating icons
+/// @example scss - how to use
+/// $icons: clock, web, monitor, book, house, box;
+/// @include generate-icons('services__icon--', $icons, '../images/services_icons/', 'svg');
+@mixin generate-icons($baseclass, $list, $path, $ext) {
+  @each $icon in $list {
+    .#{$baseclass}#{$icon} {
+      background-image: url(#{$path}#{$icon}-icon.#{$ext});
+    }   
+  }
+}
+
+/// Helper for generating icons with media
+/// @example scss - how to use
+/// $icons: clock, web, monitor, book, house, box;
+/// @include generate-icons('services__icon--', $icons, '../images/services_icons/', 'png');
+@mixin generate-responsive-icons($baseclass, $list, $path, $ext) {
+  @each $icon in $list {
+    .#{$baseclass}#{$icon} {
+      background-image: url(#{$path}#{$icon}-icon.#{$ext});
+
+      @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+        background-image: url(#{$path}#{$icon}-icon@2px.#{$ext});
+      }
+    }   
+  }
+}
+
+/// Helper for generating icons with pseudo-class
+/// @example scss - how to use
+/// $icons: clock, web, monitor, book, house, box;
+/// @include generate-pseudo-icons('services__icon--', $icons, '../images/services_icons/', 'svg');
+@mixin generate-pseudo-icons($baseclass, $list, $path, $ext) {
+  @each $icon in $list {
+    .#{$baseclass}#{$icon}::before {
+      background-image: url(#{$path}#{$icon}.#{$ext});
+    }   
+  }
+}
+
+/// Helper for absolute positioning
+@mixin absolute-pos($top: 0, $left: 0) {
+  position: absolute;
+  top: $top;
+  left: $left;
 }

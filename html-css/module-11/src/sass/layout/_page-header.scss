@@ -1,0 +1,14 @@
+.page-header {
+  position: relative;
+  min-height: 1000px;
+  background-image: $main-theme-gradient,
+    url(../images/background/eagle.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @media (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    background-image: $main-theme-gradient,
+      url(../images/background/eagle@2x.jpg);
+  }
+}
