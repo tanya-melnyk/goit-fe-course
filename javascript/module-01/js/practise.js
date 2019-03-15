@@ -172,7 +172,7 @@ console.log(`${value} is ${type}`);
     5 - "Каталог лучших отелей"
 */
 
-const hotelStar = prompt("Введите класс оттеля от 1 до 5");
+const hotelStar = prompt("Введите класс отеля от 1 до 5");
 let searchResult;
 
 if (hotelStar === null) {
