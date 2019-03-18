@@ -88,8 +88,8 @@ if (totalPrice > credits) {
 // PS: используй switch
 
 const country = "Индия";
-let price;
 let hasDelivery = true;
+let price;
 
 switch (country) {
   case "Китай":
