@@ -1,3 +1,5 @@
+"use strict";
+
 // 1. Задача 1
 
 // Напиши скрипт имитирующий авторизацию администратора в панели управления.
@@ -87,71 +89,33 @@ if (totalPrice > credits) {
 
 const country = "Индия";
 let price;
-let priceMessage;
+let hasDelivery = true;
 
 switch (country) {
   case "Китай":
     price = 100;
-    priceMessage = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   case "Южная Америка":
     price = 250;
-    priceMessage = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   case "Австралия":
     price = 170;
-    priceMessage = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   case "Индия":
     price = 80;
-    priceMessage = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   case "Ямайка":
     price = 120;
-    priceMessage = `Доставка в ${country} будет стоить ${price} кредитов`;
     break;
 
   default:
-    priceMessage = "В вашей стране доставка не доступна";
+    hasDelivery = false;
+    console.log("В вашей стране доставка не доступна");
 }
 
-console.log(priceMessage);
-
-// Не смогла найти такое решение, чтобы не повторять в каждом кейсе
-// присвоение значения priceMessage. Иначе в случае ввода страны,
-// не указанной в списке, после сообщения 'В вашей стране доставка не доступна',
-// в консоль выводилось сообщение 'Доставка в [страна] будет стоить undefined кредитов'
-
-// const country = "Индия";
-// let price;
-
-// switch (country) {
-//   case "Китай":
-//     price = 100;
-//     break;
-
-//   case "Южная Америка":
-//     price = 250;
-//     break;
-
-//   case "Австралия":
-//     price = 170;
-//     break;
-
-//   case "Индия":
-//     price = 80;
-//     break;
-
-//   case "Ямайка":
-//     price = 120;
-//     break;
-
-//   default:
-//     console.log("В вашей стране доставка не доступна");
-// }
-
-// console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
+if (hasDelivery)
+  console.log(`Доставка в ${country} будет стоить ${price} кредитов`);
