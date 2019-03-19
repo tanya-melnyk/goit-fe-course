@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // 1. Задача 1
 
@@ -17,17 +17,17 @@
 
 // После всех проверок вывести в alert значение переменной message.
 
-const ADMIN_PASSWORD = "m4ng0h4ckz";
+const ADMIN_PASSWORD = 'm4ng0h4ckz';
 let message;
 
-const userPassword = prompt("Введите пароль, пожалуйста");
+const userPassword = prompt('Введите пароль, пожалуйста');
 
 if (userPassword === null) {
-  message = "Отменено пользователем!";
+  message = 'Отменено пользователем!';
 } else if (userPassword !== ADMIN_PASSWORD) {
-  message = "Доступ запрещен, неверный пароль!";
+  message = 'Доступ запрещен, неверный пароль!';
 } else {
-  message = "Добро пожаловать!";
+  message = 'Добро пожаловать!';
 }
 
 alert(message);
@@ -54,14 +54,14 @@ alert(message);
 let credits = 23580;
 const pricePerDroid = 3000;
 const quantity = 3;
-const totalPrice = pricePerDroid * Number(quantity);
+const totalPrice = pricePerDroid * quantity;
 
 if (totalPrice > credits) {
-  console.log("Недостаточно средств на счету!");
+  console.log('Недостаточно средств на счету!');
 } else {
   credits -= totalPrice;
   console.log(
-    `Вы купили ${quantity} дроидов, на счету осталось ${credits} кредитов.`
+    `Вы купили ${quantity} дроидов, на счету осталось ${credits} кредитов.`,
   );
 }
 
@@ -87,34 +87,34 @@ if (totalPrice > credits) {
 
 // PS: используй switch
 
-const country = "Индия";
+const country = 'Индия';
 let hasDelivery = true;
 let price;
 
 switch (country) {
-  case "Китай":
+  case 'Китай':
     price = 100;
     break;
 
-  case "Южная Америка":
+  case 'Южная Америка':
     price = 250;
     break;
 
-  case "Австралия":
+  case 'Австралия':
     price = 170;
     break;
 
-  case "Индия":
+  case 'Индия':
     price = 80;
     break;
 
-  case "Ямайка":
+  case 'Ямайка':
     price = 120;
     break;
 
   default:
     hasDelivery = false;
-    console.log("В вашей стране доставка не доступна");
+    console.log('В вашей стране доставка не доступна');
 }
 
 if (hasDelivery)
