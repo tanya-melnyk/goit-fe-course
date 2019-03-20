@@ -18,6 +18,27 @@ let input;
 const numbers = [];
 let total = 0;
 
+while (true) {
+  input = prompt('Введите число');
+
+  if (input === null) break;
+
+  input = Number(input);
+
+  if (Number.isNaN(input)) {
+    alert('Было введено не число, попробуйте еще раз');
+  } else {
+    numbers.push(input);
+  }
+}
+
+if (numbers.length > 0) {
+  for (const number of numbers) {
+    total += number;
+  }
+  alert(`Общая сумма чисел равна ${total}`);
+}
+
 // 2. Дополнительное задание
 // ⚠️ ВЫПОЛНЯТЬ ПО ЖЕЛАНИЮ
 
@@ -40,3 +61,20 @@ let total = 0;
 
 const passwords = ['qwerty', '111qwe', '123123', 'r4nd0mp4zzw0rd'];
 let attempts = 3;
+
+do {
+  const userPassword = prompt('Введите свой пароль, пожалуйста');
+
+  attempts -= 1;
+
+  if (userPassword === null) break;
+
+  if (passwords.includes(userPassword)) {
+    alert('Добро пожаловать!');
+    break;
+  } else if (attempts > 0) {
+    alert(`Неверный пароль, у вас осталось ${attempts} попыток`);
+  } else {
+    alert('У вас закончились попытки, аккаунт заблокирован!');
+  }
+} while (attempts > 0);
