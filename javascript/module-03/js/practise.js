@@ -133,7 +133,7 @@ console.log(findLongestWord('May the force be with you')); // 'force'
 */
 
 const findLargestNumber = numbers => {
-  let largestNumber = -Infinity;
+  let largestNumber = numbers[0];
   for (const number of numbers) {
     if (number > largestNumber) {
       largestNumber = number;
