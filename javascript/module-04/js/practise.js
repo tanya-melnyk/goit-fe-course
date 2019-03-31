@@ -102,7 +102,9 @@ console.log(countProps({ a: 1, b: 3, c: 'hello' })); // 3
 const isObjectEmpty = function(obj) {
   const objKeys = Object.keys(obj);
   let isObjectEmpty = false;
-  if (objKeys.length === 0) isObjectEmpty = true;
+  if (objKeys.length === 0) {
+    isObjectEmpty = true;
+  }
   return isObjectEmpty;
 };
 
