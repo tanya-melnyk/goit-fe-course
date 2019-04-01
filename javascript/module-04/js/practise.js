@@ -99,14 +99,7 @@ console.log(countProps({ a: 1, b: 3, c: 'hello' })); // 3
   Возвращает true если объект пустой, false если не пустой.
 */
 
-const isObjectEmpty = function(obj) {
-  const objKeys = Object.keys(obj);
-  let isObjectEmpty = false;
-  if (objKeys.length === 0) {
-    isObjectEmpty = true;
-  }
-  return isObjectEmpty;
-};
+const isObjectEmpty = obj => Object.keys(obj).length === 0;
 
 // Вызовы функции для проверки
 console.log(isObjectEmpty({})); // true
