@@ -53,7 +53,9 @@ class Notepad {
      */
 
     for (let i = 0; i < this._notes.length; i += 1) {
-      if (this._notes[i].id === id) {
+      const note = this._notes[i];
+
+      if (note.id === id) {
         this._notes.splice(i, 1);
       }
     }
@@ -78,6 +80,10 @@ class Notepad {
      * Возвращает: обновленную заметку
      */
     const updatedNote = this.findNoteById(id);
+
+    if (!updatedNote) {
+      return;
+    }
 
     Object.assign(updatedNote, updatedContent);
 
@@ -108,6 +114,10 @@ class Notepad {
      * Возвращает: обновленную заметку
      */
     const updatedNote = this.findNoteById(id);
+
+    if (!updatedNote) {
+      return;
+    }
 
     updatedNote.priority = priority;
 
