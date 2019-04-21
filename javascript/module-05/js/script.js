@@ -5,117 +5,125 @@
 // для создания объекта управляющего коллекцией заметок.
 
 // Конструктор Notepad при инициализации принимает массив заметок
-const Notepad = function Notepad(notes = []) {
-  // Перенеси свойства и методы объекта notepad в конструктор
+
+function Notepad(notes = []) {
   this.notes = notes;
-  this.getNotes = function() {
-    /*
-     * Принимает: ничего
-     * Возвращает: все заметки, значение свойства notes
-     */
-    return this.notes;
-  };
-  this.findNoteById = function(id) {
-    /*
-     * Ищет заметку в массиве notes
-     *
-     * Принимает: идентификатор заметки
-     * Возвращает: заметку с совпавшим полем id или undefined если ничего не найдено
-     */
-    for (const note of this.notes) {
-      if (note.id === id) {
-        return note;
-      }
+}
+
+Notepad.prototype.getNotes = function() {
+  /*
+   * Принимает: ничего
+   * Возвращает: все заметки, значение свойства notes
+   */
+  return this.notes;
+};
+
+Notepad.prototype.findNoteById = function(id) {
+  /*
+   * Ищет заметку в массиве notes
+   *
+   * Принимает: идентификатор заметки
+   * Возвращает: заметку с совпавшим полем id или undefined если ничего не найдено
+   */
+  for (const note of this.notes) {
+    if (note.id === id) {
+      return note;
     }
-  };
-  this.saveNote = function(note) {
-    /*
-     * Сохраняет заметку в массив notes
-     *
-     * Принимает: объект заметки
-     * Возвращает: сохраненную заметку
-     */
-    this.notes.push(note);
-    return note;
-  };
-  this.deleteNote = function(id) {
-    /*
-     * Удаляет заметку по идентификатору из массива notes
-     *
-     * Принимает: идентификатор заметки
-     * Возвращает: ничего
-     */
-    const noteToDelete = this.findNoteById(id);
+  }
+};
 
-    if (noteToDelete) {
-      const idxNoteToDelete = this.notes.indexOf(noteToDelete);
-      this.notes.splice(idxNoteToDelete, 1);
-    }
-  };
-  this.updateNoteContent = function(id, updatedContent) {
-    /*
-     * Обновляет контент заметки
-     * updatedContent - объект с полями вида {имя: значение, имя: значение}
-     * Свойств в объекте updatedContent может быть произвольное количество
-     *
-     * Принимает: идентификатор заметки и объект, полями которого надо обновить заметку
-     * Возвращает: обновленную заметку
-     */
-    const updatedNote = this.findNoteById(id);
+Notepad.prototype.saveNote = function(note) {
+  /*
+   * Сохраняет заметку в массив notes
+   *
+   * Принимает: объект заметки
+   * Возвращает: сохраненную заметку
+   */
+  this.notes.push(note);
+  return note;
+};
 
-    for (const key in updatedContent) {
-      updatedNote[key] = updatedContent[key];
-    }
+Notepad.prototype.deleteNote = function(id) {
+  /*
+   * Удаляет заметку по идентификатору из массива notes
+   *
+   * Принимает: идентификатор заметки
+   * Возвращает: ничего
+   */
+  const noteToDelete = this.findNoteById(id);
 
-    return updatedNote;
+  if (noteToDelete) {
+    const idxNoteToDelete = this.notes.indexOf(noteToDelete);
+    this.notes.splice(idxNoteToDelete, 1);
+  }
+};
 
-    // for (let i = 0; i < this.notes.length; i += 1) {
-    //   if (id === this.notes[i].id) {
-    //     this.notes[i] = { ...this.notes[i], ...updatedContent };
-    //     return this.notes[i];
-    //   }
-    // }
-  };
-  this.updateNotePriority = function(id, priority) {
-    /*
-     * Обновляет приоритет заметки
-     *
-     * Принимает: идентификатор заметки и ее новый приоритет
-     * Возвращает: обновленную заметку
-     */
-    const updatedNote = this.findNoteById(id);
+Notepad.prototype.updateNoteContent = function(id, updatedContent) {
+  /*
+   * Обновляет контент заметки
+   * updatedContent - объект с полями вида {имя: значение, имя: значение}
+   * Свойств в объекте updatedContent может быть произвольное количество
+   *
+   * Принимает: идентификатор заметки и объект, полями которого надо обновить заметку
+   * Возвращает: обновленную заметку
+   */
+  const updatedNote = this.findNoteById(id);
 
-    updatedNote.priority = priority;
+  for (const key in updatedContent) {
+    updatedNote[key] = updatedContent[key];
+  }
 
-    return updatedNote;
-  };
-  this.filterNotesByQuery = function(query) {
-    /*
-     * Фильтрует массив заметок по подстроке query.
-     * Если значение query есть в заголовке или теле заметки - она подходит
-     *
-     * Принимает: подстроку для поиска в title и body заметки
-     * Возвращает: новый массив заметок, контент которых содержит подстроку
-     */
-    query = query.toLowerCase();
+  return updatedNote;
 
-    return this.notes.filter(
-      note =>
-        note.title.toLowerCase().includes(query) ||
-        note.body.toLowerCase().includes(query),
-    );
-  };
-  this.filterNotesByPriority = function(priority) {
-    /*
-     * Фильтрует массив заметок по значению приоритета
-     * Если значение priority совпадает с приоритетом заметки - она подходит
-     *
-     * Принимает: приоритет для поиска в свойстве priority заметки
-     * Возвращает: новый массив заметок с подходящим приоритетом
-     */
+  // for (let i = 0; i < this.notes.length; i += 1) {
+  //   if (id === this.notes[i].id) {
+  //     this.notes[i] = { ...this.notes[i], ...updatedContent };
+  //     return this.notes[i];
+  //   }
+  // }
+};
 
-    return this.notes.filter(note => note.priority === priority);
-  };
+Notepad.prototype.updateNotePriority = function(id, priority) {
+  /*
+   * Обновляет приоритет заметки
+   *
+   * Принимает: идентификатор заметки и ее новый приоритет
+   * Возвращает: обновленную заметку
+   */
+  const updatedNote = this.findNoteById(id);
+
+  updatedNote.priority = priority;
+
+  return updatedNote;
+};
+
+Notepad.prototype.filterNotesByQuery = function(query) {
+  /*
+   * Фильтрует массив заметок по подстроке query.
+   * Если значение query есть в заголовке или теле заметки - она подходит
+   *
+   * Принимает: подстроку для поиска в title и body заметки
+   * Возвращает: новый массив заметок, контент которых содержит подстроку
+   */
+  query = query.toLowerCase();
+
+  return this.notes.filter(
+    note =>
+      note.title.toLowerCase().includes(query) ||
+      note.body.toLowerCase().includes(query),
+  );
+};
+
+Notepad.prototype.filterNotesByPriority = function(priority) {
+  /*
+   * Фильтрует массив заметок по значению приоритета
+   * Если значение priority совпадает с приоритетом заметки - она подходит
+   *
+   * Принимает: приоритет для поиска в свойстве priority заметки
+   * Возвращает: новый массив заметок с подходящим приоритетом
+   */
+
+  return this.notes.filter(note => note.priority === priority);
 };
 
 // Добавляем статическое свойство, в котором храним приоритеты.
@@ -147,7 +155,7 @@ const initialNotes = [
 ];
 
 const notepad = new Notepad(initialNotes);
-
+console.log(notepad);
 /*
  * Смотрю что у меня в заметках после инициализации
  */
