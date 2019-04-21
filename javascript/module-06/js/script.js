@@ -21,7 +21,8 @@ class Notepad {
   get notes() {
     return this._notes;
   }
-  findNoteById = function(id) {
+
+  findNoteById(id) {
     /*
      * Ищет заметку в массиве notes
      *
@@ -33,8 +34,9 @@ class Notepad {
         return note;
       }
     }
-  };
-  saveNote = function(note) {
+  }
+
+  saveNote(note) {
     /*
      * Сохраняет заметку в массив notes
      *
@@ -43,8 +45,9 @@ class Notepad {
      */
     this._notes.push(note);
     return note;
-  };
-  deleteNote = function(id) {
+  }
+
+  deleteNote(id) {
     /*
      * Удаляет заметку по идентификатору из массива notes
      *
@@ -69,8 +72,8 @@ class Notepad {
     //   const idxNoteToDelete = this.notes.indexOf(noteToDelete);
     //   this.notes.splice(idxNoteToDelete, 1);
     // }
-  };
-  updateNoteContent = function(id, updatedContent) {
+  }
+  updateNoteContent(id, updatedContent) {
     /*
      * Обновляет контент заметки
      * updatedContent - объект с полями вида {имя: значение, имя: значение}
@@ -105,8 +108,8 @@ class Notepad {
     //     return this.notes[i];
     //   }
     // }
-  };
-  updateNotePriority = function(id, priority) {
+  }
+  updateNotePriority(id, priority) {
     /*
      * Обновляет приоритет заметки
      *
@@ -122,8 +125,8 @@ class Notepad {
     updatedNote.priority = priority;
 
     return updatedNote;
-  };
-  filterNotesByQuery = function(query) {
+  }
+  filterNotesByQuery(query) {
     /*
      * Фильтрует массив заметок по подстроке query.
      * Если значение query есть в заголовке или теле заметки - она подходит
@@ -138,8 +141,8 @@ class Notepad {
         note.title.toLowerCase().includes(query) ||
         note.body.toLowerCase().includes(query),
     );
-  };
-  filterNotesByPriority = function(priority) {
+  }
+  filterNotesByPriority(priority) {
     /*
      * Фильтрует массив заметок по значению приоритета
      * Если значение priority совпадает с приоритетом заметки - она подходит
@@ -149,7 +152,7 @@ class Notepad {
      */
 
     return this._notes.filter(note => note.priority === priority);
-  };
+  }
 
   static Priority = {
     LOW: 0,
