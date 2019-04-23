@@ -177,6 +177,11 @@ console.log(getUsersByFriend(users, 'Goldie Gentry'));
 // при этом не должно быть повторяющихся умений
 // и они должны быть отсортированы в алфавитном порядке
 
+const getAllSkills = (skills, user) => {
+  skills.push(...user.skills);
+  return skills;
+};
+
 const leaveUniqueSkills = (skills, skill) => {
   if (!skills.includes(skill)) {
     skills.push(skill);
@@ -186,10 +191,7 @@ const leaveUniqueSkills = (skills, skill) => {
 
 const getUniqueSkills = users =>
   users
-    .reduce((skills, user) => {
-      skills.push(...user.skills);
-      return skills;
-    }, [])
+    .reduce(getAllSkills, [])
     .reduce(leaveUniqueSkills, [])
     .sort();
 
