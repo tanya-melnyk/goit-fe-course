@@ -2,18 +2,7 @@
 
 // За основу возьми домашнее задание из модуля №5,
 // но теперь необходимо написать ES6 класс.
-
 class Notepad {
-  /*
-   * Перенеси свойства и методы конструктора в класс
-   *
-   * Замени метод getNotes геттером,
-   * чтобы можно было обратиться как notepad.notes,
-   * для этого создай свойство _notes, в котором храни массив заметок,
-   * а геттер notes возвращает значение этого поля
-   *
-   * Добавь статическое свойство Priority используя ключевое слово static
-   */
   constructor(notes) {
     this._notes = notes;
   }
@@ -23,134 +12,42 @@ class Notepad {
   }
 
   findNoteById(id) {
-    /*
-     * Ищет заметку в массиве notes
-     *
-     * Принимает: идентификатор заметки
-     * Возвращает: заметку с совпавшим полем id или undefined если ничего не найдено
-     */
-    for (const note of this._notes) {
-      if (note.id === id) {
-        return note;
-      }
-    }
+    return this._notes.find(note => note.id === id);
   }
 
   saveNote(note) {
-    /*
-     * Сохраняет заметку в массив notes
-     *
-     * Принимает: объект заметки
-     * Возвращает: сохраненную заметку
-     */
-    this._notes.push(note);
+    this._notes = [...this._notes, note];
     return note;
   }
 
   deleteNote(id) {
-    /*
-     * Удаляет заметку по идентификатору из массива notes
-     *
-     * Принимает: идентификатор заметки
-     * Возвращает: ничего
-     */
-
-    for (let i = 0; i < this._notes.length; i += 1) {
-      const note = this._notes[i];
-
-      if (note.id === id) {
-        this._notes.splice(i, 1);
-      }
-    }
-
-    /*
-     * Альтернативное решение
-     */
-    // const noteToDelete = this.findNoteById(id);
-
-    // if (noteToDelete) {
-    //   const idxNoteToDelete = this.notes.indexOf(noteToDelete);
-    //   this.notes.splice(idxNoteToDelete, 1);
-    // }
+    this._notes = this._notes.filter(note => note.id !== id);
   }
+
   updateNoteContent(id, updatedContent) {
-    /*
-     * Обновляет контент заметки
-     * updatedContent - объект с полями вида {имя: значение, имя: значение}
-     * Свойств в объекте updatedContent может быть произвольное количество
-     *
-     * Принимает: идентификатор заметки и объект, полями которого надо обновить заметку
-     * Возвращает: обновленную заметку
-     */
-    const updatedNote = this.findNoteById(id);
-
-    if (!updatedNote) {
-      return;
-    }
-
-    Object.assign(updatedNote, updatedContent);
-
-    return updatedNote;
-
-    /*
-     * Альтернативное решение
-     */
-    // for (const key in updatedContent) {
-    //   updatedNote[key] = updatedContent[key];
-    // }
-
-    /*
-     * Альтернативное решение
-     */
-    // for (let i = 0; i < this.notes.length; i += 1) {
-    //   if (id === this.notes[i].id) {
-    //     this.notes[i] = { ...this.notes[i], ...updatedContent };
-    //     return this.notes[i];
-    //   }
-    // }
+    this._notes = this._notes.map(note =>
+      note.id === id ? { ...note, ...updatedContent } : note,
+    );
+    return this.findNoteById(id);
   }
+
   updateNotePriority(id, priority) {
-    /*
-     * Обновляет приоритет заметки
-     *
-     * Принимает: идентификатор заметки и ее новый приоритет
-     * Возвращает: обновленную заметку
-     */
-    const updatedNote = this.findNoteById(id);
-
-    if (!updatedNote) {
-      return;
-    }
-
-    updatedNote.priority = priority;
-
-    return updatedNote;
+    this._notes = this._notes.map(note =>
+      note.id === id ? { ...note, priority } : note,
+    );
+    return this.findNoteById(id);
   }
-  filterNotesByQuery(query) {
-    /*
-     * Фильтрует массив заметок по подстроке query.
-     * Если значение query есть в заголовке или теле заметки - она подходит
-     *
-     * Принимает: подстроку для поиска в title и body заметки
-     * Возвращает: новый массив заметок, контент которых содержит подстроку
-     */
-    query = query.toLowerCase();
 
+  filterNotesByQuery(query) {
+    query = query.toLowerCase();
     return this._notes.filter(
       note =>
         note.title.toLowerCase().includes(query) ||
         note.body.toLowerCase().includes(query),
     );
   }
-  filterNotesByPriority(priority) {
-    /*
-     * Фильтрует массив заметок по значению приоритета
-     * Если значение priority совпадает с приоритетом заметки - она подходит
-     *
-     * Принимает: приоритет для поиска в свойстве priority заметки
-     * Возвращает: новый массив заметок с подходящим приоритетом
-     */
 
+  filterNotesByPriority(priority) {
     return this._notes.filter(note => note.priority === priority);
   }
 
@@ -160,6 +57,164 @@ class Notepad {
     HIGH: 2,
   };
 }
+
+// class Notepad {
+//   /*
+//    * Перенеси свойства и методы конструктора в класс
+//    *
+//    * Замени метод getNotes геттером,
+//    * чтобы можно было обратиться как notepad.notes,
+//    * для этого создай свойство _notes, в котором храни массив заметок,
+//    * а геттер notes возвращает значение этого поля
+//    *
+//    * Добавь статическое свойство Priority используя ключевое слово static
+//    */
+//   constructor(notes) {
+//     this._notes = notes;
+//   }
+
+//   get notes() {
+//     return this._notes;
+//   }
+
+//   findNoteById(id) {
+//     /*
+//      * Ищет заметку в массиве notes
+//      *
+//      * Принимает: идентификатор заметки
+//      * Возвращает: заметку с совпавшим полем id или undefined если ничего не найдено
+//      */
+//     for (const note of this._notes) {
+//       if (note.id === id) {
+//         return note;
+//       }
+//     }
+//   }
+
+//   saveNote(note) {
+//     /*
+//      * Сохраняет заметку в массив notes
+//      *
+//      * Принимает: объект заметки
+//      * Возвращает: сохраненную заметку
+//      */
+//     this._notes.push(note);
+//     return note;
+//   }
+
+//   deleteNote(id) {
+//     /*
+//      * Удаляет заметку по идентификатору из массива notes
+//      *
+//      * Принимает: идентификатор заметки
+//      * Возвращает: ничего
+//      */
+
+//     for (let i = 0; i < this._notes.length; i += 1) {
+//       const note = this._notes[i];
+
+//       if (note.id === id) {
+//         this._notes.splice(i, 1);
+//       }
+//     }
+
+//     /*
+//      * Альтернативное решение
+//      */
+//     // const noteToDelete = this.findNoteById(id);
+
+//     // if (noteToDelete) {
+//     //   const idxNoteToDelete = this.notes.indexOf(noteToDelete);
+//     //   this.notes.splice(idxNoteToDelete, 1);
+//     // }
+//   }
+//   updateNoteContent(id, updatedContent) {
+//     /*
+//      * Обновляет контент заметки
+//      * updatedContent - объект с полями вида {имя: значение, имя: значение}
+//      * Свойств в объекте updatedContent может быть произвольное количество
+//      *
+//      * Принимает: идентификатор заметки и объект, полями которого надо обновить заметку
+//      * Возвращает: обновленную заметку
+//      */
+//     const updatedNote = this.findNoteById(id);
+
+//     if (!updatedNote) {
+//       return;
+//     }
+
+//     Object.assign(updatedNote, updatedContent);
+
+//     return updatedNote;
+
+//     /*
+//      * Альтернативное решение
+//      */
+//     // for (const key in updatedContent) {
+//     //   updatedNote[key] = updatedContent[key];
+//     // }
+
+//     /*
+//      * Альтернативное решение
+//      */
+//     // for (let i = 0; i < this.notes.length; i += 1) {
+//     //   if (id === this.notes[i].id) {
+//     //     this.notes[i] = { ...this.notes[i], ...updatedContent };
+//     //     return this.notes[i];
+//     //   }
+//     // }
+//   }
+//   updateNotePriority(id, priority) {
+//     /*
+//      * Обновляет приоритет заметки
+//      *
+//      * Принимает: идентификатор заметки и ее новый приоритет
+//      * Возвращает: обновленную заметку
+//      */
+//     const updatedNote = this.findNoteById(id);
+
+//     if (!updatedNote) {
+//       return;
+//     }
+
+//     updatedNote.priority = priority;
+
+//     return updatedNote;
+//   }
+//   filterNotesByQuery(query) {
+//     /*
+//      * Фильтрует массив заметок по подстроке query.
+//      * Если значение query есть в заголовке или теле заметки - она подходит
+//      *
+//      * Принимает: подстроку для поиска в title и body заметки
+//      * Возвращает: новый массив заметок, контент которых содержит подстроку
+//      */
+//     query = query.toLowerCase();
+
+//     return this._notes.filter(
+//       note =>
+//         note.title.toLowerCase().includes(query) ||
+//         note.body.toLowerCase().includes(query),
+//     );
+//   }
+//   filterNotesByPriority(priority) {
+//     /*
+//      * Фильтрует массив заметок по значению приоритета
+//      * Если значение priority совпадает с приоритетом заметки - она подходит
+//      *
+//      * Принимает: приоритет для поиска в свойстве priority заметки
+//      * Возвращает: новый массив заметок с подходящим приоритетом
+//      */
+
+//     return this._notes.filter(note => note.priority === priority);
+//   }
+
+//   static Priority = {
+//     LOW: 0,
+//     NORMAL: 1,
+//     HIGH: 2,
+//   };
+// }
 
 // Далее идет код для проверки работоспособности класса и созданного экземпляра,
 // вставь его в конец скрипта.

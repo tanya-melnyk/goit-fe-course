@@ -232,6 +232,12 @@ const getTotalPrice = (products, order) =>
     return totalPrice;
   }, 0);
 
+// const getTotal = (products, order) =>
+//   Object.keys(order).reduce(
+//     (acc, value) => acc + order[value] * products[value],
+//     0,
+//   );
+
 const products = {
   bread: 10,
   milk: 15,
