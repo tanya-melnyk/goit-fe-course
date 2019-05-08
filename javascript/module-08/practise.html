@@ -5,8 +5,211 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Practise-08</title>
+    <style>
+      html {
+        box-sizing: border-box;
+      }
+
+      *,
+      *::before,
+      *::after {
+        box-sizing: inherit;
+      }
+
+      body {
+        font-family: 'Roboto', sans-serif;
+        font-size: 16px;
+        width: 1070px;
+        padding: 30px;
+        margin: 0 auto;
+      }
+
+      img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .movie {
+        width: 400px;
+        border-radius: 4px;
+        color: #212121;
+        margin: 0 auto 20px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+          0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+          0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+      }
+
+      .movie__image {
+        margin-bottom: 8px;
+        height: 550px;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      .movie__body {
+        padding: 8px;
+      }
+
+      .movie__title {
+        margin: 0;
+        margin-bottom: 16px;
+        font-size: 32px;
+        font-weight: 500;
+      }
+
+      .movie__description {
+        margin: 0;
+        margin-bottom: 16px;
+        line-height: 1.5;
+      }
+
+      .button {
+        position: relative;
+        display: inline-block;
+        border: none;
+        border-radius: 3px;
+        padding: 0 1.5em;
+        vertical-align: top;
+
+        font-size: 15px;
+        line-height: 2.8;
+        color: #222;
+        text-transform: uppercase;
+        text-align: center;
+        white-space: nowrap;
+        font-family: inherit;
+        font-weight: 500;
+        text-decoration: none;
+
+        background-color: #fff;
+        overflow: hidden;
+        z-index: 0;
+        cursor: pointer;
+
+        box-shadow: 0 2px 1px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3);
+        transition: background-color 0.3s, box-shadow 0.3s, opacity 0.3s,
+          color 0.3s;
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+      }
+
+      .button:hover {
+        box-shadow: 0 2px 3px rgba(0, 0, 0, 0.1), 0 4px 8px rgba(0, 0, 0, 0.3);
+      }
+    </style>
   </head>
   <body>
+    <!-- 1 -->
+    <ul class="categories">
+      <li>
+        Животные
+        <ul>
+          <li>Кот</li>
+          <li>Хомяк</li>
+          <li>Лошадь</li>
+          <li>Попугай</li>
+        </ul>
+      </li>
+      <li>
+        Продукты
+        <ul>
+          <li>Хлеб</li>
+          <li>Зелень</li>
+          <li>Творог</li>
+        </ul>
+      </li>
+      <li>
+        Технологии
+        <ul>
+          <li>html</li>
+          <li>css</li>
+          <li>js</li>
+          <li>react</li>
+          <li>node</li>
+        </ul>
+      </li>
+    </ul>
+
+    <!-- 2 -->
+    <ul class="skills-list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JavaScript</li>
+      <li>React</li>
+      <li>NodeJS</li>
+    </ul>
+
+    <!-- 3 -->
+    <ul class="list"></ul>
+
+    <!-- 4 -->
+    <ul class="gallery"></ul>
+
+    <!-- 5 -->
+    <ul class="size-filter">
+      <li>
+        <label>
+          <input type="checkbox" name="size" value="xs" />
+          Extra Small
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="size" value="s" checked />
+          Small
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="size" value="m" />
+          Medium
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="size" value="l" checked />
+          Large
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="size" value="xl" checked />
+          Extra Large
+        </label>
+      </li>
+      <li>
+        <label>
+          <input type="checkbox" name="size" value="xxl" />
+          Extra Extra Large
+        </label>
+      </li>
+    </ul>
+
+    <!-- 6 -->
+    <section class="movies">
+      <div class="movie">
+        <img
+          class="movie__image"
+          src="http://image.tmdb.org/t/p/w500/rPdtLWNsZmAtoZl9PK7S2wE3qiS.jpg"
+          alt="movie image"
+        />
+
+        <div class="movie__body">
+          <h2 class="movie__title">The Godfather</h2>
+          <p class="movie__description">
+            Spanning the years 1945 to 1955, a chronicle of the fictional
+            Italian-American Corleone crime family. When organized crime family
+            patriarch, Vito Corleone barely survives an attempt on his life, his
+            youngest son, Michael steps in to take care of the would-be killers,
+            launching a campaign of bloody revenge.
+          </p>
+
+          <p class="movie__date">Released: 1972-03-14</p>
+          <p class="movie__rating">Rating: 8.6</p>
+        </div>
+      </div>
+    </section>
+
     <script src="./js/practise.js"></script>
   </body>
 </html>
