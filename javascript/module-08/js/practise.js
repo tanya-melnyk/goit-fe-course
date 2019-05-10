@@ -155,53 +155,104 @@ console.log(collectInputData(checkedInputs));
   Добавьте классы и атрибуты.
 */
 
-function createMovieCard() {
-  const movieCard = document.createElement('div');
-  movieCard.classList.add('movie');
+function createMovieCards(movies) {
+  const movieCards = document.createElement('div');
 
-  const img = document.createElement('img');
-  img.classList.add('movie__image');
-  img.src = 'https://images-na.ssl-images-amazon.com/images/I/41OBAkdAhWL.jpg';
-  img.alt = 'movie image';
+  movies.forEach(movie => {
+    const movieCard = document.createElement('div');
+    movieCard.classList.add('movie');
 
-  movieCard.appendChild(img);
+    const img = document.createElement('img');
+    img.classList.add('movie__image');
+    img.src = movie.imgSrc;
+    img.alt = 'movie image';
 
-  const movieInfo = document.createElement('div');
-  movieInfo.classList.add('movie__body');
+    movieCard.appendChild(img);
 
-  movieCard.appendChild(movieInfo);
+    const movieInfo = document.createElement('div');
+    movieInfo.classList.add('movie__body');
 
-  const movieTitle = document.createElement('h2');
-  movieTitle.classList.add('movie__title');
-  movieTitle.textContent = 'Betty Blue';
+    movieCard.appendChild(movieInfo);
 
-  movieInfo.appendChild(movieTitle);
+    const movieTitle = document.createElement('h2');
+    movieTitle.classList.add('movie__title');
+    movieTitle.textContent = movie.title;
 
-  const movieDescription = document.createElement('p');
-  movieDescription.classList.add('movie__description');
-  movieDescription.textContent =
-    'A lackadaisical handyman and aspiring novelist tries to support his younger girlfriend as she slowly succumbs to madness.';
+    movieInfo.appendChild(movieTitle);
 
-  movieInfo.appendChild(movieDescription);
+    const movieDescription = document.createElement('p');
+    movieDescription.classList.add('movie__description');
+    movieDescription.textContent = movie.description;
 
-  const movieDate = document.createElement('p');
-  movieDate.classList.add('movie__date');
-  movieDate.textContent = 'Released: 1986-04-09';
+    movieInfo.appendChild(movieDescription);
 
-  movieInfo.appendChild(movieDate);
+    const movieDate = document.createElement('p');
+    movieDate.classList.add('movie__date');
+    movieDate.textContent = movie.date;
 
-  const movieRating = document.createElement('p');
-  movieRating.classList.add('movie__rating');
-  movieRating.textContent = 'Rating: 7.4';
+    movieInfo.appendChild(movieDate);
 
-  movieInfo.appendChild(movieRating);
+    const movieRating = document.createElement('p');
+    movieRating.classList.add('movie__rating');
+    movieRating.textContent = movie.rating;
 
-  return movieCard;
+    movieInfo.appendChild(movieRating);
+
+    movieCards.appendChild(movieCard);
+  });
+
+  return movieCards;
 }
+
+// Или используя клонирование
+
+// function createMovieCards(movies) {
+//   const movieCards = document.createElement('div');
+//   const movieCardHTML = document.querySelector('.movie');
+
+//   movies.forEach(movie => {
+//     const movieCard = movieCardHTML.cloneNode(true);
+
+//     const [img, movieInfo] = [...movieCard.children];
+
+//     img.src = movie.imgSrc;
+
+//     const [title, description, date, rating] = [...movieInfo.children];
+
+//     title.textContent = movie.title;
+//     description.textContent = movie.description;
+//     date.textContent = movie.date;
+//     rating.textContent = movie.rating;
+
+//     movieCards.appendChild(movieCard);
+//   });
+
+//   return movieCards;
+// }
+
+const movies = [
+  {
+    title: 'Betty Blue',
+    imgSrc: 'https://images-na.ssl-images-amazon.com/images/I/41OBAkdAhWL.jpg',
+    description:
+      'A lackadaisical handyman and aspiring novelist tries to support his younger girlfriend as she slowly succumbs to madness.',
+    date: 'Released: 1986-04-09',
+    rating: 'Rating: 7.4',
+  },
+  {
+    title: 'Great Expectations',
+    imgSrc:
+      'https://images-na.ssl-images-amazon.com/images/I/71VA7P7AVZL._SY445_.gif',
+    description:
+      'Modernization of Charles Dickens classic story finds the hapless Finn as a painter in New York City pursuing his unrequited and haughty childhood love.',
+    date: 'Released: 1998-07-08',
+    rating: 'Rating: 6.8',
+  },
+];
 
 const moviesSection = document.querySelector('.movies');
 
-moviesSection.appendChild(createMovieCard());
+moviesSection.appendChild(createMovieCards(movies));
 
 /*
   7
