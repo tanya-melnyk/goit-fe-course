@@ -155,53 +155,51 @@ console.log(collectInputData(checkedInputs));
   Добавьте классы и атрибуты.
 */
 
+const createMovieImg = src => {
+  const img = document.createElement('img');
+  img.classList.add('movie__image');
+  img.src = src;
+  img.alt = 'movie image';
+  return img;
+};
+
+const createTextElem = (tag = 'p', className = 'info', content) => {
+  const elem = document.createElement(tag);
+  elem.classList.add(className);
+  elem.textContent = content;
+  return elem;
+};
+
 function createMovieCards(movies) {
-  const movieCards = document.createElement('div');
+  const cardsContainer = document.createElement('div');
 
   movies.forEach(movie => {
-    const movieCard = document.createElement('div');
-    movieCard.classList.add('movie');
+    const card = document.createElement('div');
+    card.classList.add('movie');
 
-    const img = document.createElement('img');
-    img.classList.add('movie__image');
-    img.src = movie.imgSrc;
-    img.alt = 'movie image';
+    const img = createMovieImg(movie.imgSrc);
+    card.appendChild(img);
 
-    movieCard.appendChild(img);
+    const textBody = document.createElement('div');
+    textBody.classList.add('movie__body');
+    card.appendChild(textBody);
 
-    const movieInfo = document.createElement('div');
-    movieInfo.classList.add('movie__body');
+    const title = createTextElem('h2', 'movie__title', movie.title);
+    textBody.appendChild(title);
 
-    movieCard.appendChild(movieInfo);
+    const descr = createTextElem('p', 'movie__description', movie.description);
+    textBody.appendChild(descr);
 
-    const movieTitle = document.createElement('h2');
-    movieTitle.classList.add('movie__title');
-    movieTitle.textContent = movie.title;
+    const date = createTextElem('p', 'movie__date', movie.date);
+    textBody.appendChild(date);
 
-    movieInfo.appendChild(movieTitle);
+    const rating = createTextElem('p', 'movie__rating', movie.rating);
+    textBody.appendChild(rating);
 
-    const movieDescription = document.createElement('p');
-    movieDescription.classList.add('movie__description');
-    movieDescription.textContent = movie.description;
-
-    movieInfo.appendChild(movieDescription);
-
-    const movieDate = document.createElement('p');
-    movieDate.classList.add('movie__date');
-    movieDate.textContent = movie.date;
-
-    movieInfo.appendChild(movieDate);
-
-    const movieRating = document.createElement('p');
-    movieRating.classList.add('movie__rating');
-    movieRating.textContent = movie.rating;
-
-    movieInfo.appendChild(movieRating);
-
-    movieCards.appendChild(movieCard);
+    cardsContainer.appendChild(card);
   });
 
-  return movieCards;
+  return cardsContainer;
 }
 
 // Или используя клонирование
