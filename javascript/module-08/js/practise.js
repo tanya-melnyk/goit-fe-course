@@ -178,23 +178,18 @@ function createMovieCards(movies) {
     card.classList.add('movie');
 
     const img = createMovieImg(movie.imgSrc);
-    card.appendChild(img);
 
     const textBody = document.createElement('div');
     textBody.classList.add('movie__body');
-    card.appendChild(textBody);
+
+    card.append(img, textBody);
 
     const title = createTextElem('h2', 'movie__title', movie.title);
-    textBody.appendChild(title);
-
     const descr = createTextElem('p', 'movie__description', movie.description);
-    textBody.appendChild(descr);
-
     const date = createTextElem('p', 'movie__date', movie.date);
-    textBody.appendChild(date);
-
     const rating = createTextElem('p', 'movie__rating', movie.rating);
-    textBody.appendChild(rating);
+
+    textBody.append(title, descr, date, rating);
 
     cardsContainer.appendChild(card);
   });
@@ -273,21 +268,27 @@ function createBoxes(num) {
   const container = document.createElement('div');
   container.classList.add('container');
   container.setAttribute('style', 'display: flex; flex-wrap: wrap;');
+
   let boxSize = 30;
+
   const getRandomRgbColor = () => {
     const getRandomRgbNum = () => Math.floor(Math.random() * 256);
     return `rgb(${getRandomRgbNum()}, ${getRandomRgbNum()}, ${getRandomRgbNum()})`;
   };
+
   while (num > 0) {
     num -= 1;
+
     const box = document.createElement('div');
     box.style.backgroundColor = getRandomRgbColor();
     box.style.width = boxSize + 'px';
     box.style.height = boxSize + 'px';
     boxSize += 10;
+
     container.appendChild(box);
   }
   return container;
 }
+
 const root = document.querySelector('#root');
 root.appendChild(createBoxes(12));
