@@ -22,12 +22,14 @@
         width: 1126px;
         padding: 30px;
         margin: 0 auto;
+        /* text-align: center; */
       }
 
       img {
         display: block;
         max-width: 100%;
         height: auto;
+        cursor: pointer;
       }
 
       .button {
@@ -67,7 +69,7 @@
       .container {
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
       }
 
       .expression {
@@ -76,9 +78,10 @@
         font-family: monospace;
       }
 
-      input {
+      .input_2 {
         width: 100px;
         font-family: monospace;
+        font-size: 24px;
       }
 
       span {
@@ -109,38 +112,554 @@
         margin: 0 16px;
         font-size: 64px;
       }
+
+      .question-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .options {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .options label {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        margin-bottom: 16px;
+        font-size: 24px;
+      }
+
+      .options input {
+        margin: 0;
+        margin-right: 8px;
+        width: 24px;
+        height: 24px;
+      }
+
+      .result_4 {
+        font-size: 32px;
+        text-align: center;
+      }
+
+      .images {
+        display: grid;
+        width: 648px;
+        margin: 0 auto;
+        padding: 8px;
+        display: grid;
+        grid-template-columns: repeat(2, 320px);
+        grid-gap: 8px;
+        list-style: none;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+          0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+          0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+      }
+
+      .list {
+        margin: 0 auto;
+        padding: 8px;
+        outline: 1px solid teal;
+        width: 250px;
+      }
+
+      .list li {
+        display: flex;
+        align-items: center;
+        padding: 16px;
+        font-size: 24px;
+        outline: 1px solid #212121;
+      }
+
+      .list li:not(:last-child) {
+        margin-bottom: 8px;
+      }
+
+      .list button {
+        margin-right: 16px;
+        font-size: 24px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .input-list {
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        outline: 1px solid teal;
+        width: 500px;
+      }
+
+      .input {
+        padding: 4px 8px;
+        font-size: 32px;
+        margin-bottom: 8px;
+        font-family: inherit;
+      }
+
+      .input.valid {
+        outline: 3px solid #4caf50;
+      }
+
+      .input.invalid {
+        outline: 3px solid #f44336;
+      }
+
+      .input_8 {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 16px;
+        border: none;
+        width: 360px;
+        height: 42px;
+        padding: 8px;
+        background-color: #e9e9e9;
+        font-family: inherit;
+        font-size: 24px;
+        color: #2a2a2a;
+      }
+
+      .input_8:focus {
+        outline-color: #2a2a2a;
+      }
+
+      .input-value {
+        color: #2a2a2a;
+        font-size: 24px;
+        font-weight: 400;
+        line-height: 24px;
+        text-align: center;
+      }
+
+      .message {
+        text-align: center;
+        font-size: 24px;
+      }
+
+      .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(37, 45, 58, 0.7);
+      }
+
+      .modal-hidden {
+        display: none;
+      }
+
+      .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-width: 650px;
+        min-height: 380px;
+        padding: 50px 80px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 4px rgba(1, 2, 2, 0.2);
+        border-radius: 2px;
+      }
+
+      .close-btn {
+        position: absolute;
+        top: 0;
+        right: 0;
+        display: inline-block;
+        width: 45px;
+        height: 45px;
+        background-image: url('https://image.flaticon.com/icons/png/512/64/64146.png');
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+        transition: transform 0.1s linear;
+      }
+
+      .close-btn:hover {
+        transform: rotate(90deg);
+      }
+
+      .modal-title {
+        margin-bottom: 15px;
+        color: #2a2a2a;
+        font-size: 30px;
+        font-weight: 600;
+        line-height: 42px;
+        text-transform: uppercase;
+      }
+
+      .modal-text {
+        margin-bottom: 15px;
+        color: #676767;
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 25px;
+        text-align: center;
+      }
+
+      .sub-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .sub-form-input {
+        display: inline-block;
+        margin-bottom: 15px;
+        border: none;
+        width: 360px;
+        height: 42px;
+        padding: 10px;
+        background-color: #e9e9e9;
+        font-family: inherit;
+        font-size: 14px;
+        color: #676767;
+      }
+
+      .sub-form-input:focus {
+        outline-color: #2a2a2a;
+      }
+
+      .sub-form-input::placeholder {
+        color: #ababab;
+        font-family: inherit;
+        font-size: 13px;
+        font-weight: 400;
+        line-height: 25px;
+      }
+
+      .sub-form-btn {
+        border: none;
+        width: 115px;
+        height: 42px;
+        background-color: #2a2a2a;
+        border-radius: 3px;
+        box-shadow: 0 4px 10px rgba(1, 2, 2, 0.2);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 74px;
+        text-transform: uppercase;
+        line-height: 42px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .btn_9 {
+        border: none;
+        width: 115px;
+        height: 42px;
+        background-color: #2a2a2a;
+        border-radius: 3px;
+        box-shadow: 0 4px 10px rgba(1, 2, 2, 0.2);
+        color: #ffffff;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 74px;
+        text-transform: uppercase;
+        line-height: 42px;
+        cursor: pointer;
+        font-family: inherit;
+      }
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+      }
+
+      .menu-link {
+        display: block;
+        padding: 20px 25px;
+        font-size: 24px;
+        font-weight: 700;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: #212121;
+        transition: background-color 0.1s linear;
+      }
+
+      .menu-link.active {
+        background-color: #ff4081;
+        color: #ffffff;
+      }
     </style>
   </head>
   <body>
     <!-- 1 -->
+    <p>
+      1. Напишите скрипт который реализует следующий функционал. <br />
+      Есть кнопка с классом button, текст которой отображает кол-во раз которое
+      по ней кликнули, обновляется при каждом клике.
+    </p>
     <button class="button btn_1">0</button>
+    <hr />
 
     <!-- 2 -->
+    <p>
+      2. Даны 2 инпута, абзац и кнопка. <br />
+      По нажатию на кнопку получите числа которые будут введены в инпуты и
+      запишите их сумму в span.result.
+    </p>
     <div class="container">
       <div class="expression">
-        <input type="text" placeholder="0" />
+        <input class="input_2" type="text" placeholder="0" />
         <span>+</span>
-        <input type="text" placeholder="0" />
+        <input class="input_2" type="text" placeholder="0" />
         <span>=</span>
         <span class="result">0</span>
       </div>
 
       <button data-action="add_2" class="btn_2">Сложить</button>
     </div>
+    <hr />
 
     <!-- 3 -->
+    <p>
+      3. Есть счетчик (спан) и кнопки +1, -1, которые должны увеличивать и
+      уменьшать значение счетчика на 1. <br />
+      - Создайте класс Counter, который хранит одно поле value - текущее
+      значение счетчика <br />
+      - Класс принимает один параметр - onChange, функцию для обновления
+      интерфейса при изменении счетчика <br />
+      - Добавьте классу методы increment и decrement для увеличения и уменьшения
+      значения счетчика <br />
+      - Привяжите вызовы методов и значение счетчика к раметке
+    </p>
     <button class="btn_3" data-action="sub">-1</button>
     <span class="value">0</span>
     <button class="btn_3" data-action="add">+1</button>
+    <hr />
 
     <!-- 4 -->
+    <p>
+      4. Есть форма с набором радиокнопок. <br />
+      Пользователь выбирает вариант ответа, после чего нажимает кнопку "Submit"
+      и происходит отправка формы.
+      <br />
+      При отправке формы:<br />
+      - не должна перезагружаться страница<br />
+      - необходимо получить выбранную опцию и вывести в параграф с классом
+      .result
+    </p>
+    <form class="question-form">
+      <div class="options">
+        <label>
+          <input type="radio" name="option" value="html" />
+          HTML
+        </label>
+        <label>
+          <input type="radio" name="option" value="css" />
+          CSS
+        </label>
+        <label>
+          <input type="radio" name="option" value="js" />
+          JavaScript
+        </label>
+        <label>
+          <input type="radio" name="option" value="php" />
+          PHP
+        </label>
+      </div>
+
+      <button class="btn_2" type="submit">Submit</button>
+    </form>
+
+    <p class="result_4">Result:</p>
+    <hr />
 
     <!-- 5 -->
+    <p>
+      5. Дан список изображений. Сделайте так, чтобы по клику на картинку
+      алертом выводился ее src.<br />
+      Обязательно используйте делегирование событий.
+    </p>
+    <ul class="images">
+      <li>
+        <img src="https://placeimg.com/320/240/animals" alt="animals" />
+      </li>
+      <li>
+        <img src="https://placeimg.com/320/240/arch" alt="arch" />
+      </li>
+      <li>
+        <img src="https://placeimg.com/320/240/nature" alt="nature" />
+      </li>
+      <li>
+        <img src="https://placeimg.com/320/240/tech" alt="tech" />
+      </li>
+    </ul>
+    <hr />
 
     <!-- 6 -->
+    <p>
+      6. Дан ul, а внутри него произвольное количество li с текстом и
+      кнопкой.<br />
+      Сделайте так, чтобы по нажатию на кнопку, удалялся тот li в котором она
+      находится. Обязательно используйте делегирование событий.
+    </p>
+    <ul class="list">
+      <li>
+        <button data-action="delete">Delete</button>
+        <span>HTML</span>
+      </li>
+      <li>
+        <button data-action="delete">Delete</button>
+        <span>CSS</span>
+      </li>
+      <li>
+        <button data-action="delete">Delete</button>
+        <span>JS</span>
+      </li>
+      <li>
+        <button data-action="delete">Delete</button>
+        <span>React</span>
+      </li>
+      <li>
+        <button data-action="delete">Delete</button>
+        <span>NodeJS</span>
+      </li>
+      <li>
+        <button data-action="delete">Delete</button>
+        <span>PHP</span>
+      </li>
+    </ul>
+    <hr />
 
     <!-- 7 -->
+    <p>
+      7. Дан набор инпутов. <br />
+      Сделайте так, чтобы при потере фокуса все инпуты проверяли свое содержимое
+      на правильное количество символов. <br />
 
+      - Сколько символов должно быть в инпуте, указывается в атрибуте
+      data-length. <br />
+      - Если введено подходящее количество, то outline инпута становится
+      зеленым, если неправильное - красным. Для добавления стилей, на вкладке
+      CSS есть стили valid и invalid */
+    </p>
+    <div class="input-list">
+      <input
+        type="text"
+        class="input"
+        data-length="2"
+        placeholder="2 символа"
+      />
+      <input
+        type="text"
+        class="input"
+        data-length="4"
+        placeholder="4 символа"
+      />
+      <input
+        type="text"
+        class="input"
+        data-length="8"
+        placeholder="8 символов"
+      />
+      <input
+        type="text"
+        class="input"
+        data-length="16"
+        placeholder="16 символов"
+      />
+    </div>
+    <hr />
+
+    <!-- 8 -->
+    <p>
+      8. Напишите скрипт который:<br />
+
+      - При фокусе текстового поля, в p.message рендерит строку "Input is in
+      focus!"<br />
+      - При наборе текста в инпуте (событие input), текущее его значение должно
+      отображаться в p.input-value
+    </p>
+    <p class="message"></p>
+    <input class="input_8" type="text" />
+    <p class="input-value">Current input value:</p>
+    <hr />
+
+    <!-- 9 -->
+    <p>
+      9. На вкладках HTML и CSS уже готовая верстка модального окна. По
+      умолчанию модальное окно скрыто классом modal-hidden.<br />
+
+      Напишите скрипт который реализует следующее поведение:<br />
+
+      - При клике на кнопке с надписью "Open Modal", модальное окно с классом
+      modal, должно появляться. Для этого необходимо убрать класс modal-hidden.
+      Для выбора модального модального окна используйте класс
+      js-modal-backdrop<br />
+
+      - При открытом модальном окне, клик на кнопку с крестиком
+      (data-action="close-modal") или на серый фон с прозрачностью
+      (js-modal-backdrop), модальное окно должно закрываться.
+    </p>
+    <button class="btn_9" data-action="open-modal">Open Modal</button>
+
+    <div class="modal modal-hidden js-modal-backdrop">
+      <div class="modal-content">
+        <div class="close-btn" data-action="close-modal"></div>
+        <h2 class="modal-title">Newsletter</h2>
+        <p class="modal-text">
+          Subscribe to the Bachas mailing list to receive updates on new
+          arrivals, special offers and other discount information.
+        </p>
+        <form class="sub-form" action="#">
+          <input
+            class="sub-form-input"
+            type="text"
+            placeholder="Your Email Here"
+          />
+          <button class="sub-form-btn">subscribe</button>
+        </form>
+      </div>
+    </div>
+    <hr />
+
+    <!-- 10 -->
+    <p>
+      10. Ознакомьтесь с HTML и CSS.<br />
+
+      Есть меню навигации, необходимо написать скрипт, который при клике на
+      пункт меню добавит ему класс active, таким образом выделив текущую
+      (активную) ссылку, при этом убрав его у всех остальных элементов меню.<br />
+
+      Пунктов меню может быть произвольное количество, используйте прием
+      делегирование событий. Учтите клик по самому ul, его необходимо
+      игнорировать.<br />
+
+      При клике по ссылкам не должна перезагружаться страница!
+    </p>
+    <ul class="menu js-menu">
+      <li class="menu-item">
+        <a href="#" class="menu-link active">home</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">about</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">contacts</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">team</a>
+      </li>
+      <li class="menu-item">
+        <a href="#" class="menu-link">career</a>
+      </li>
+    </ul>
+    <hr />
+
+    <!-- js script -->
     <script src="./js/practise.js"></script>
   </body>
 </html>

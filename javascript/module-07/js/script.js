@@ -114,8 +114,14 @@ console.log(getUsersByEyeColor(users, 'blue'));
 // 1.3. Задание 3
 // Получить массив имен пользователей по полу (поле gender).
 
+// const getUsersByGender = (users, gender) =>
+//   users.filter(user => user.gender === gender).map(user => user.name);
+
 const getUsersByGender = (users, gender) =>
-  users.filter(user => user.gender === gender);
+  users.reduce(
+    (names, user) => (user.gender === gender ? [...names, user.name] : names),
+    [],
+  );
 
 console.log(getUsersByGender(users, 'male'));
 // [ 'Moore Hensley', 'Ross Vazquez', 'Carey Barr', 'Blackburn Dotson' ]
@@ -177,6 +183,11 @@ console.log(getUsersByFriend(users, 'Goldie Gentry'));
 // при этом не должно быть повторяющихся умений
 // и они должны быть отсортированы в алфавитном порядке
 
+// const getAllSkills = (skills, user) => {
+//   skills.push(...user.skills);
+//   return skills;
+// };
+
 const getAllSkills = (skills, user) => {
   skills.push(...user.skills);
   return skills;
@@ -199,11 +210,11 @@ const getUniqueSkills = users =>
 
 // const getUniqueSkills = users =>
 //   users
-//   .map(user => user.skills)
-//   .join()
-//   .split(',')
-//   .reduce(leaveUniqueSkills, [])
-//   .sort();
+//     .map(user => user.skills)
+//     .join()
+//     .split(',')
+//     .reduce(leaveUniqueSkills, [])
+//     .sort();
 
 console.log(getUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit',
