@@ -22,7 +22,6 @@
         width: 1126px;
         padding: 30px;
         margin: 0 auto;
-        /* text-align: center; */
       }
 
       img {
@@ -337,24 +336,7 @@
         line-height: 25px;
       }
 
-      .sub-form-btn {
-        border: none;
-        width: 115px;
-        height: 42px;
-        background-color: #2a2a2a;
-        border-radius: 3px;
-        box-shadow: 0 4px 10px rgba(1, 2, 2, 0.2);
-        color: #ffffff;
-        font-size: 13px;
-        font-weight: 600;
-        line-height: 74px;
-        text-transform: uppercase;
-        line-height: 42px;
-        cursor: pointer;
-        font-family: inherit;
-      }
-
-      .btn_9 {
+      .modal_btn {
         border: none;
         width: 115px;
         height: 42px;
@@ -395,6 +377,7 @@
     </style>
   </head>
   <body>
+    <hr />
     <!-- 1 -->
     <p>
       1. Напишите скрипт который реализует следующий функционал. <br />
@@ -604,7 +587,7 @@
       (data-action="close-modal") или на серый фон с прозрачностью
       (js-modal-backdrop), модальное окно должно закрываться.
     </p>
-    <button class="btn_9" data-action="open-modal">Open Modal</button>
+    <button class="btn_9 modal_btn" data-action="open-modal">Open Modal</button>
 
     <div class="modal modal-hidden js-modal-backdrop">
       <div class="modal-content">
@@ -620,7 +603,7 @@
             type="text"
             placeholder="Your Email Here"
           />
-          <button class="sub-form-btn">subscribe</button>
+          <button class="sub-form-btn modal_btn">subscribe</button>
         </form>
       </div>
     </div>

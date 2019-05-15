@@ -182,15 +182,13 @@ function createMovieCards(movies) {
     const textBody = document.createElement('div');
     textBody.classList.add('movie__body');
 
-    card.append(img, textBody);
-
     const title = createTextElem('h2', 'movie__title', movie.title);
     const descr = createTextElem('p', 'movie__description', movie.description);
     const date = createTextElem('p', 'movie__date', movie.date);
     const rating = createTextElem('p', 'movie__rating', movie.rating);
 
     textBody.append(title, descr, date, rating);
-
+    card.append(img, textBody);
     cardsContainer.appendChild(card);
   });
 
