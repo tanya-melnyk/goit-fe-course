@@ -58,23 +58,3 @@ const quizData = {
 
 export default quizData;
 
-{
-  /* <section>
-  <h3>1. Текст вопроса</h3>
-
-  <ol>
-    <li>
-      <label>
-        <input type="radio" name="answer" value="0" />
-        Ответ 1
-      </label>
-    </li>
-    <li>
-      <label>
-        <input type="radio" name="answer" value="1" />
-        Ответ 2
-      </label>
-    </li>
-  </ol>
-</section> */
-}

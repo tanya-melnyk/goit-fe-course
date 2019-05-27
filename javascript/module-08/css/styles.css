@@ -1,0 +1,76 @@
+body {
+  padding: 50px 0;
+  font-family: 'Roboto', sans-serif;
+  background-image: url(https://webfon.top/wp-content/uploads/2016/10/tetrad-v-kletki.jpg);
+}
+
+form,
+p {
+  width: 70%;
+  margin: 0 auto 20px;
+  padding: 20px;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+section {
+  margin-bottom: 20px;
+  padding: 0 20px;
+  border: 2px solid #000;
+}
+
+ol {
+  list-style: none;
+}
+
+li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+input {
+  margin-right: 10px;
+}
+
+.bg-red {
+  background: hsl(0, 100%, 85%);
+}
+
+.bg-green {
+  background: hsl(120, 100%, 85%);
+}
+
+button {
+  display: block;
+  margin: 0 auto;
+  padding: 20px 40px;
+  border: 2px solid #000;
+  background-color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  cursor: pointer;
+  transition: all 200ms;
+}
+
+button[disabled] {
+  color: #ccc;
+  cursor: auto;
+  border-color: #ccc;
+}
+
+button:hover {
+  box-shadow: 5px 5px 10px -5px rgba(0, 0, 0, 0.6);
+}
+
+button[disabled]:hover {
+  box-shadow: none;
+}
+
+p {
+  font-size: 20px;
+  text-align: center;
+}
+
+.invisible {
+  opacity: 0;
+}

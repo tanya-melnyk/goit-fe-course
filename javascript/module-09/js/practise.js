@@ -9,11 +9,12 @@
 */
 
 const btn_1 = document.querySelector('.btn_1');
-let counter = btn_1.textContent;
+let counter = 0;
 
-const countClicks = () => {
-  counter = Number(counter) + 1;
-  btn_1.textContent = counter;
+const countClicks = e => {
+  const elem = e.currentTarget;
+  counter += 1;
+  elem.textContent = counter;
 };
 
 btn_1.addEventListener('click', countClicks);
