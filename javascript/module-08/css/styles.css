@@ -32,10 +32,12 @@ input {
 }
 
 .bg-red {
+  /* border: 2px solid hsl(0, 80%, 50%); */
   background: hsl(0, 100%, 85%);
 }
 
 .bg-green {
+  /* border: 2px solid hsl(120, 50%, 50%); */
   background: hsl(120, 100%, 85%);
 }
 
@@ -67,7 +69,8 @@ button[disabled]:hover {
 }
 
 p {
-  font-size: 20px;
+  font-size: 24px;
+  font-weight: 600;
   text-align: center;
 }
 
