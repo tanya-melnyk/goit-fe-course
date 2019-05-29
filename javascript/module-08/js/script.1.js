@@ -161,10 +161,10 @@ const printResultText = (userRightAnswersCount, userAnswers, resultText) => {
   let message = `${rightAnswersPercentage}% правильных ответов.`;
 
   if (rightAnswersPercentage < 80) {
-    message += ' Тест не пройден.';
+    message += ' Тест не пройден. Вам еще нужно подучиться :)';
     resultText.classList.add('bg-red');
   } else {
-    message += ' Поздравляем! Тест пройден.';
+    message += ' Поздравляем! Тест пройден. Похоже, вы усердно занимались! :)';
     resultText.classList.add('bg-green');
   }
 
