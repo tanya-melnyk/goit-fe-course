@@ -124,5 +124,9 @@ function handleModalClick(e) {
 
 function closeModal() {
   modal.classList.remove('is-visible');
+
+  const modalImg = modal.querySelector('img');
+  modalImg.src = '';
+
   window.removeEventListener('keydown', handleKeyPress);
 }
