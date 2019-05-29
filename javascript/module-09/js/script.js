@@ -98,10 +98,10 @@ function openModal(e) {
   const galleryImg = e.target;
 
   const modal = gallery.nextElementSibling;
-  modal.classList.add('is-visible');
-
   const modalImg = modal.querySelector('img');
   modalImg.src = galleryImg.dataset.source;
+
+  modal.classList.add('is-visible');
 
   window.addEventListener('keydown', handleKeyPress);
 }
