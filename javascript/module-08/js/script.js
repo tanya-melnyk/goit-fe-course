@@ -8,13 +8,13 @@
   <ol>
     <li>
       <label>
-        <input type="radio" name="question-0" value="0" />
+        <input type="radio" name="question-1" value="0" />
         Ответ 1
       </label>
     </li>
     <li>
       <label>
-        <input type="radio" name="0" value="1" />
+        <input type="radio" name="question-1" value="1" />
         Ответ 2
       </label>
     </li>
@@ -24,10 +24,12 @@
 
 import quizData from './quiz-data.js';
 
+const { title: quizTitle, questions: quizQuestions } = quizData;
+
 const form = document.querySelector('form');
 const submitBtn = document.querySelector('button[type="submit"]');
 const formTitle = document.createElement('h2');
-formTitle.textContent = quizData.title;
+formTitle.textContent = quizTitle;
 form.insertBefore(formTitle, submitBtn);
 
 // Создает одну li с одним ответом
@@ -66,17 +68,17 @@ function createQuizItem(questionData, questionIdx) {
 }
 
 // Создает список секций с вопросами
-function createQuizItems(quizData) {
-  return quizData.questions.map((question, i) => createQuizItem(question, i));
+function createQuizItems(quizQuestions) {
+  return quizQuestions.map((question, i) => createQuizItem(question, i));
 }
 
-const quizItems = createQuizItems(quizData);
+const quizItems = createQuizItems(quizQuestions);
 
 submitBtn.before(...quizItems);
 
 // СОБЫТИЯ
 
-const rigthAnswers = quizData.questions.map(item => item.answer);
+const rigthAnswers = quizQuestions.map(question => question.answer);
 
 // делает кнопку submit активной если все ответы выбраны
 const countAnswers = e => {
@@ -186,8 +188,10 @@ form.addEventListener('submit', showTestResult);
 ////////////////////////////////////////////////////////////////////////
 // Version 1
 
+// СОБЫТИЯ
+
 // const userAnswers = [];
-// const rigthAnswers = quizData.questions.map(item => item.answer);
+// const rigthAnswers = quizQuestions.map(item => item.answer);
 
 // // записывает выбранные ответы в массив
 // // и делает кнопку submit активной если все ответы выбраны
@@ -196,7 +200,7 @@ form.addEventListener('submit', showTestResult);
 //   const answerIdx = Number(userAnswer.name);
 //   userAnswers[answerIdx] = userAnswer;
 
-//   if (userAnswers.length === quizData.questions.length) {
+//   if (userAnswers.length === quizQuestions.length) {
 //     submitBtn.removeAttribute('disabled');
 //   }
 // };

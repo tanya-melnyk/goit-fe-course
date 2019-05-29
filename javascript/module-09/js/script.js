@@ -6,8 +6,7 @@ const createGalleryImage = (preview, original, description) => {
   const galleryImage = document.createElement('img');
 
   galleryImage.classList.add('gallery__image');
-  galleryImage.src =
-    'http://stmoore.blob.core.windows.net/images/default-image_256.gif';
+  galleryImage.src = '';
   galleryImage.dataset.lazy = preview;
   galleryImage.dataset.source = original;
   galleryImage.alt = description;
@@ -51,10 +50,9 @@ const gallery = document.querySelector('.gallery');
 gallery.append(...htmlGalleryItems);
 
 // images lazy-load
-// такой большой марджин сделала для того, чтобы видеть, как картинки появляются
 const lazyLoad = target => {
   const options = {
-    rootMargin: '-500px 0px',
+    rootMargin: '50px 0px',
     threshold: 0.01,
   };
 
