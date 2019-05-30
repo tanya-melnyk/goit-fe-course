@@ -5,10 +5,7 @@ class Quiz {
     this._title = title;
     this._questions = questions;
     this._elemClssName = elemClssName;
-  }
-
-  get questions() {
-    return this._questions;
+    this.createQuiz();
   }
 
   // Создает заголовок теста
@@ -66,8 +63,8 @@ class Quiz {
     const quizItems = this._createQuizItems(this._questions);
     quizForm.prepend(quizTitle, ...quizItems);
 
-    quizForm.addEventListener('change', quiz._countAnswers.bind(quiz));
-    quizForm.addEventListener('submit', quiz._showTestResult.bind(quiz));
+    quizForm.addEventListener('change', this._countAnswers);
+    quizForm.addEventListener('submit', this._showTestResult);
   }
 
   // делает кнопку submit активной если все ответы выбраны
@@ -101,7 +98,7 @@ class Quiz {
 
   // закрашивает ответы в красный или зеленый цвет
   _colorUserAnswers(allInputs) {
-    const rightAnswers = this.questions.map(question => question.answer);
+    const rightAnswers = this._questions.map(question => question.answer);
     let questionNumber = 0;
 
     allInputs.forEach(input => {
@@ -149,7 +146,7 @@ class Quiz {
     e.preventDefault();
 
     // считает количество правильных ответов
-    const rightAnswers = this.questions.map(question => question.answer);
+    const rightAnswers = this._questions.map(question => question.answer);
     const formData = new FormData(e.currentTarget);
     const userAnswers = {};
 
@@ -180,5 +177,3 @@ class Quiz {
 import quizData from './quiz-data.js';
 
 const quiz = new Quiz(quizData, '.js-quiz-form');
-quiz.createQuiz();
-
