@@ -63,8 +63,8 @@ class Quiz {
     const quizItems = this._createQuizItems(this._questions);
     quizForm.prepend(quizTitle, ...quizItems);
 
-    quizForm.addEventListener('change', this._countAnswers);
-    quizForm.addEventListener('submit', this._showTestResult);
+    quizForm.addEventListener('change', this._countAnswers.bind(this));
+    quizForm.addEventListener('submit', this._showTestResult.bind(this));
   }
 
   // делает кнопку submit активной если все ответы выбраны
@@ -174,6 +174,6 @@ class Quiz {
   }
 }
 
-import quizData from './quiz-data.js';
+import jsQuizData from './quiz-data.js';
 
-const quiz = new Quiz(quizData, '.js-quiz-form');
+const jsQuiz = new Quiz(jsQuizData, '.js-quiz-form');
