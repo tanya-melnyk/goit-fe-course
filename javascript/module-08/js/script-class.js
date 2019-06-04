@@ -1,11 +1,11 @@
 'use strict';
 
 class Quiz {
-  constructor({ title, questions }, elemClssName) {
+  constructor({ title, questions }, elemClassName) {
     this._title = title;
     this._questions = questions;
-    this._elemClssName = elemClssName;
-    this.createQuiz();
+    this._elemClassName = elemClassName;
+    this._createQuiz();
   }
 
   // Создает заголовок теста
@@ -56,8 +56,8 @@ class Quiz {
   }
 
   // создает всю разметку теста с заголовком и списком вопросов
-  createQuiz() {
-    const quizForm = document.querySelector(this._elemClssName);
+  _createQuiz() {
+    const quizForm = document.querySelector(`.${this._elemClassName}`);
 
     const quizTitle = this._createQuizTitle(this._title);
     const quizItems = this._createQuizItems(this._questions);
@@ -176,4 +176,4 @@ class Quiz {
 
 import jsQuizData from './quiz-data.js';
 
-const jsQuiz = new Quiz(jsQuizData, '.js-quiz-form');
+const jsQuiz = new Quiz(jsQuizData, 'js-quiz-form');
