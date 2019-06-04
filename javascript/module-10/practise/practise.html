@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Practise-09</title>
+    <style>
+      .products {
+        display: inline-block;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .item {
+        padding: 4px;
+      }
+
+      .item + .item {
+        border-top: 1px solid #212121;
+      }
+
+      .name,
+      .quantity {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .posts {
+        display: flex;
+        max-width: 1170px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .post {
+        position: relative;
+        flex: 0 1 calc(25% - 16px);
+        margin: 8px;
+        padding: 16px;
+        box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
+          0px 1px 1px 0px rgba(0, 0, 0, 0.14),
+          0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+      }
+
+      .fav-icon {
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        display: inline-block;
+        width: 32px;
+        height: 32px;
+        background-image: url('https://image.flaticon.com/icons/svg/189/189670.svg');
+      }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <!-- 1 -->
+    <p>
+      1.<br />К pen уже подключен Handlebars. <br />
+      Используй встроенные шаблоны и метод Handlebars.compile <br />
+      Создай шаблон элемента списка указаного на вкладке HTML. <br />
+      Отрендери список в DOM по данным из массива products.
+    </p>
+
+    <!-- Контейнер в который рендерить -->
+    <ul class="products"></ul>
+
+    <!-- Разметка элемента списка
+
+<li class="item">
+  <p class="name"><strong>Name:</strong> </p>
+  <p class="quantity"><strong>Quantity:</strong> </p>
+</li> -->
+
+    <template id="list-item-template">
+      {{#each products}}
+      <li class="item">
+        <p class="name">
+          <strong>Name: {{ name }}</strong>
+        </p>
+        <p class="quantity">
+          <strong>Quantity: {{ quantity }}</strong>
+        </p>
+      </li>
+      {{/each}}
+    </template>
+
+    <!-- 2 -->
+    <p>
+      2.<br />К pen уже подключен Handlebars.<br />
+      Используй встроенные шаблоны и метод Handlebars.compile<br />
+
+      Создай шаблон поста указаного на вкладке HTML.<br />
+      Отрендери список постов в DOM по данным из массива posts.<br />
+
+      Если в объекте поле favourite=true, в посте должна быть разметка иконки
+      избранного поста, <br />в противном случае, разметки иконки быть не
+      должно.
+    </p>
+
+    <!-- Контейнер в который рендерить -->
+    <section class="posts"></section>
+
+    <!-- Разметка поста 
+
+<article class="post">
+  <h2 class="title"></h2>
+  <p class="text"></p>
+  <span class="fav-icon"></span>
+</article>
+-->
+    <template id="articles-template">
+      {{#each posts}}
+      <article class="post">
+        <h2 class="title">{{ title }}</h2>
+        <p class="text">{{ text }}</p>
+        {{#if favourite}}
+        <span class="fav-icon"></span>
+        {{/if}}
+      </article>
+      {{/each}}
+    </template>
+    <hr />
+
+    <!-- js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="./practise1.js" type="module"></script>
+    <script src="./practise2.js" type="module"></script>
+  </body>
+</html>
