@@ -9,16 +9,16 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
-  "homepage": "https://luxplanjay.github.io/js-group-11-12",
+  "homepage": "https://tanya-melnyk.github.io/goit-fe-course",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/luxplanjay/js-group-11-12.git"
+    "url": "git+https://github.com/tanya-melnyk/goit-fe-course.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Tetiana Melnyk <alexander.repeta@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/luxplanjay/js-group-11-12/issues"
+    "url": "https://github.com/tanya-melnyk/goit-fe-course/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
