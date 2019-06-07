@@ -3,15 +3,15 @@
 import galleryItems from './gallery-items.js';
 
 class Gallery {
-  constructor(galleryItems, elemClassName) {
+  constructor(galleryItems, elemSelector) {
     this._galleryItems = galleryItems;
-    this._elemClassName = elemClassName;
+    this._elemSelector = elemSelector;
     this._createGallery();
   }
 
   _createGalleryImage(preview, original, description) {
     const galleryImage = document.createElement('img');
-    galleryImage.classList.add(`${this._elemClassName}__image`);
+    galleryImage.classList.add('gallery__image');
     galleryImage.src = '';
     galleryImage.dataset.lazy = preview;
     galleryImage.dataset.source = original;
@@ -21,7 +21,7 @@ class Gallery {
 
   _createGalleryIcon() {
     const galleryIcon = document.createElement('span');
-    galleryIcon.classList.add(`${this._elemClassName}__icon`);
+    galleryIcon.classList.add('gallery__icon');
 
     const materialIcon = document.createElement('i');
     materialIcon.classList.add('material-icons');
@@ -33,10 +33,10 @@ class Gallery {
 
   _createGalleryItem({ preview, original, description }) {
     const galleryItem = document.createElement('li');
-    galleryItem.classList.add(`${this._elemClassName}__item`);
+    galleryItem.classList.add('gallery__item');
 
     const galleryLink = document.createElement('a');
-    galleryLink.classList.add(`${this._elemClassName}__link`);
+    galleryLink.classList.add('gallery__link');
     galleryLink.href = original;
 
     const galleryImage = this._createGalleryImage(
@@ -70,7 +70,7 @@ class Gallery {
         }
       });
     }, options);
-    
+
     imgObserver.observe(target);
   }
 
@@ -126,13 +126,11 @@ class Gallery {
       this._createGalleryItem(item),
     );
 
-    const gallery = document.querySelector(`.${this._elemClassName}`);
+    const gallery = document.querySelector(this._elemSelector);
     gallery.append(...htmlGalleryItems);
 
     // images lazy-load
-    const galleryImages = gallery.querySelectorAll(
-      `.${this._elemClassName}__image`,
-    );
+    const galleryImages = gallery.querySelectorAll('.gallery__image');
     galleryImages.forEach(img => this._lazyLoad(img));
 
     // EVENTS (close-open modal window)
@@ -148,7 +146,7 @@ class Gallery {
   }
 }
 
-const gallery = new Gallery(galleryItems, 'gallery');
+new Gallery(galleryItems, '.gallery');
 
 // import galleryItems from './gallery-items.js';
 

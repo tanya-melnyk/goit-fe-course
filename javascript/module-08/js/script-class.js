@@ -1,10 +1,12 @@
 'use strict';
 
+import jsQuizData from './quiz-data.js';
+
 class Quiz {
-  constructor({ title, questions }, elemClassName) {
+  constructor({ title, questions }, elemSelector) {
     this._title = title;
     this._questions = questions;
-    this._elemClassName = elemClassName;
+    this._elemSelector = elemSelector;
     this._createQuiz();
   }
 
@@ -57,7 +59,7 @@ class Quiz {
 
   // создает всю разметку теста с заголовком и списком вопросов
   _createQuiz() {
-    const quizForm = document.querySelector(`.${this._elemClassName}`);
+    const quizForm = document.querySelector(this._elemSelector);
 
     const quizTitle = this._createQuizTitle(this._title);
     const quizItems = this._createQuizItems(this._questions);
@@ -174,6 +176,4 @@ class Quiz {
   }
 }
 
-import jsQuizData from './quiz-data.js';
-
-const jsQuiz = new Quiz(jsQuizData, 'js-quiz-form');
+new Quiz(jsQuizData, '.js-quiz-form');
