@@ -308,6 +308,14 @@ const increaseNotePriority = (noteItem, itemId) => {
   renderUpdatedNotes(noteItem, itemId, priority);
 };
 
+////// функционал для редактирования заметки пользователем ////////////
+
+const editNote = (noteItem, itemId) => {
+  const note = notepad.findNoteById(itemId);
+  const updatedContent = {};
+  // notepad.updateNoteContent(itemId, updatedContent)
+};
+
 ////// функционал для удаления заметки пользователем ////////////
 
 const removeListItem = (noteItem, itemId) => {
@@ -328,6 +336,9 @@ const handleClick = e => {
       break;
     case 'increase-priority':
       increaseNotePriority(noteItem, itemId);
+      break;
+    case 'edit-note':
+      editNote(noteItem, itemId);
       break;
     case 'delete-note':
       removeListItem(noteItem, itemId);
