@@ -3,6 +3,8 @@ import Notepad from './notepad-model';
 import initialNotes from '../assets/notes.json';
 import { createListItem, renderNoteList } from './view';
 
+const shortid = require('shortid');
+
 const notepad = new Notepad(initialNotes);
 
 const refs = {
@@ -15,14 +17,6 @@ renderNoteList(refs.noteList, notepad.notes);
 
 ////// функционал для добавления заметки пользователем ////////////
 
-const generateUniqueId = () =>
-  Math.random()
-    .toString(36)
-    .substring(2, 15) +
-  Math.random()
-    .toString(36)
-    .substring(2, 15);
-
 // рендерит новую карточку с заметкой
 const addListItem = (listRef, note) => {
   const elem = createListItem(note);
@@ -32,7 +26,7 @@ const addListItem = (listRef, note) => {
 // создает новый объект с заметкой
 const createNote = (titleInput, bodyInput) => {
   const note = {};
-  note.id = generateUniqueId();
+  note.id = shortid.generate();
   note.title = titleInput;
   note.body = bodyInput;
   note.priority = PRIORITY_TYPES.LOW;

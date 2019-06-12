@@ -33,5 +33,8 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-merge": "^4.1.5",
     "webpackbar": "^3.1.4"
+  },
+  "dependencies": {
+    "shortid": "^2.2.14"
   }
 }
