@@ -4,10 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Webpack Demo</title>
+    <title>Templating</title>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Webpack is amazing!</h1>
-    <img src="images/webpack.png" alt="" />
+    <div class="toolbar">
+      <button class="toolbar__button" data-action="theme-switch">
+        <i class="material-icons toolbar__icon"></i>
+      </button>
+    </div>
+
+    <ul class="menu" id="menu"></ul>
   </body>
 </html>

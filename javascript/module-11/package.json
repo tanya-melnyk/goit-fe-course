@@ -46,6 +46,7 @@
     "webpackbar": "^3.2.0"
   },
   "dependencies": {
+    "fs": "0.0.1-security",
     "handlebars": "^4.1.2"
   }
 }
