@@ -1,5 +1,3 @@
-'use strict';
-
 import './styles.css';
 import menuData from './menu.json';
 import menuTemplate from './templates/menu.hbs';

@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Practise-09</title>
+    <style>
+      body {
+        /* display: flex; */
+        /* justify-content: center; */
+        /* align-items: center; */
+        min-height: 100vh;
+        margin: 50px;
+        font-family: 'Roboto', sans-serif;
+      }
+
+      .theme-light {
+        background-color: #fff;
+        color: #212121;
+      }
+
+      .theme-dark {
+        background-color: #212121;
+        color: #fff;
+      }
+
+      .button {
+        display: inline-flex;
+        padding: 16px 32px;
+        border: none;
+        margin: 0 4px;
+        border-radius: 2px;
+        font-size: 16px;
+        outline: 0;
+        text-transform: uppercase;
+        font-weight: 400;
+        font-family: inherit;
+        background-color: #f44336;
+        color: #fff;
+        cursor: pointer;
+        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
+          0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+          0px 3px 1px -2px rgba(0, 0, 0, 0.12);
+        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+      }
+
+      .button:active {
+        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
+          0px 8px 10px 1px rgba(0, 0, 0, 0.14),
+          0px 3px 14px 2px rgba(0, 0, 0, 0.12);
+      }
+
+      button[disabled] {
+        cursor: default;
+        background-color: #d87e78;
+        box-shadow: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <p>
+      1.<br />Ознакомься с содержанием панелей HTML и CSS. <br />
+      Напиши скрипт который сохраняет выбранную пользователем тему в
+      localStorage<br />
+      и, при следующих посещениях страницы, устанавливает ее автоматически.
+      <br />
+      По умолчанию пусть будет светлая тема. <br />
+      При выборе темы, добавляй на элемент body соответствующий класс.
+    </p>
+
+    <section class="theme-manager">
+      <h2>Change theme</h2>
+      <button class="button" data-theme="light">Light</button>
+      <button class="button" data-theme="dark">Dark</button>
+    </section>
+    <hr />
+
+    <!-- 2 -->
+    <p class="js-second">
+      2.<br />Есть массив цветов в hex-формате и кнопки Start и Stop.
+
+      <br />Напиши скрипт, который после нажатия кнопки Start, <br />раз в
+      секунду меняет цвет фона текста на случайное значение из массива.
+      <br />Используй инлайн-стиль для изменения background-color.<br />
+
+      При нажатии на кнопку Stop, изменении цвета фона должно
+      останавливаться.<br />
+
+      Учти, что на кнопку Start можно нажать бесконечное количество раз.<br />
+      Сделай так, чтобы пока изменение темы запушено, кнопка Start была не
+      активна.
+    </p>
+
+    <button class="button" data-action="start">Start</button>
+    <button class="button" data-action="stop">Stop</button>
+    <hr />
+
+    <!-- 3 -->
+    <p>
+      3.<br />Напиши функцию delay(ms), которая возвращает промис,<br />
+      переходящий в состояние "resolved" через ms миллисекунд.<br />
+
+      Значением исполнившегося промиса должно быть то кол-во<br />
+      миллисекунд которое передали во время вызова функции delay.<br />
+    </p>
+    <img src="./img/Screenshot_9.jpg" alt="" width="500" />
+    <hr />
+
+    <!-- 4 -->
+    <p>
+      4.<br />
+      Перепиши функцию updateActiveState так, чтобы она<br />
+      не использовала callback-функцию, а возвращала промис.<br />
+      <pre>
+        const users = [
+          { name: 'Mango', active: true },
+          { name: 'Poly', active: false },
+          { name: 'Ajax', active: true },
+          { name: 'Lux', active: false },
+        ];
+        
+        const updateActiveState = (users, callback) => {
+          const updatedUsers = users.map(user => ({ ...user, active: !user.active }));
+        
+          callback(updatedUsers);
+        };
+        
+        updateActiveState(users, console.table);
+      </pre>
+   
+  Должно работать так<br />
+ 
+  <pre>        updateActiveState(users).then(console.table);</pre>
+ 
+  <img src="./img/Screenshot_4.jpg" alt="" width="500" />
+    </p>
+    <hr />
+
+    <!-- 5 -->
+    <p>
+      5.<br />Есть переменная quantity хранящиая в себе
+       <br />текущее количество единиц какого-то товара на складе.
+      
+       <br />Напиши функцию processOrder(value), получающую
+       <br />кол-во товаров заказанных покупателем, и возвращающую промис.
+      
+       <br />Для имитации проверки достаточного количества товаров
+       <br />на складе используй setTimeout с задержкой 500мс.
+      
+       <br />Если на складе товаров больше либо равно заказанному
+       <br />количеству, функция возвращает промис который исполняется
+       <br />успешно со строкой "Ваш заказ готов!".
+      
+       <br />В противном случае, со строкой "К сожалению на складе не достаточно товаров!".
+      
+       <br />Если же пользователь ввел не число, то промис выполняется с ошибкой
+       <br />и значением "Некорректный ввод!".
+
+       <br />Вызовы функции для проверки
+       <pre>
+processOrder(50)
+  .then(console.log) // Ваш заказ готов!
+  .catch(console.log);
+
+processOrder(50)
+  .then(console.log) // Ваш заказ готов!
+  .catch(console.log);
+
+processOrder(500)
+  .then(console.log) // К сожалению на складе недостаточно товаров!
+  .catch(console.log);
+
+processOrder('lorem')
+  .then(console.log)
+  .catch(console.log); // Некорректный ввод!
+        </pre>
+
+    </p>
+    <img src="./img/Screenshot_1.jpg" alt="" width="500" />
+
+    <!-- js script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
+    <script src="./practise1.js" type="module"></script>
+    <script src="./practise2.js" type="module"></script>
+    <script src="./practise3.js" type="module"></script>
+    <script src="./practise4.js" type="module"></script>
+    <script src="./practise5.js" type="module"></script>
+  </body>
+</html>
