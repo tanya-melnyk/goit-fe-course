@@ -20,16 +20,17 @@ ref.menuList.innerHTML = menuMarkup;
 
 ///////////////////////////////////////////////////////////////
 
-// Apply the theme saved in Local Storage
-const currentTheme = JSON.parse(localStorage.getItem('theme'));
+// LOCAL STORAGE
+// Get data from Local Storage
+const loadFromLocalStorage = key => {
+  try {
+    const serializedState = localStorage.getItem(key);
 
-if (currentTheme && currentTheme === 'dark') {
-  ref.body.classList.add(`theme-dark`);
-  ref.themeSwitchBtnIcon.textContent = 'wb_sunny';
-} else {
-  ref.body.classList.add(`theme-light`);
-  ref.themeSwitchBtnIcon.textContent = 'brightness_3';
-}
+    return serializedState === null ? undefined : JSON.parse(serializedState);
+  } catch (err) {
+    console.error('Get state error: ', err);
+  }
+};
 
 // Save or update data in Local Storage
 const saveToLocalStorage = (key, value) => {
@@ -41,19 +42,41 @@ const saveToLocalStorage = (key, value) => {
   }
 };
 
+//////////////////////////////////////////////////////////////////
+
+// Theme settings
+const themeLight = {
+  style: 'theme-light',
+  icon: 'brightness_3',
+};
+
+const themeDark = {
+  style: 'theme-dark',
+  icon: 'wb_sunny',
+};
+
+// Apply the theme saved in Local Storage
+const savedTheme = loadFromLocalStorage('theme');
+
+if (savedTheme === themeDark.style) {
+  ref.body.classList.replace(themeLight.style, themeDark.style);
+  ref.themeSwitchBtnIcon.textContent = themeDark.icon;
+}
+
 // Switch the theme and save it to Local Storage
 const handleThemeSwitchBtnClick = e => {
   const icon = e.target;
-  icon.textContent =
-    icon.textContent === 'wb_sunny' ? 'brightness_3' : 'wb_sunny';
+  const currentTheme = loadFromLocalStorage('theme');
 
-  const body = document.querySelector('body');
-  body.classList.toggle('theme-light');
-  body.classList.toggle('theme-dark');
-
-  const currentTheme = JSON.parse(localStorage.getItem('theme'));
-
-  saveToLocalStorage('theme', currentTheme === 'dark' ? 'ligth' : 'dark');
+  if (currentTheme === themeDark.style) {
+    ref.body.classList.replace(themeDark.style, themeLight.style);
+    icon.textContent = themeLight.icon;
+    saveToLocalStorage('theme', themeLight.style);
+  } else {
+    ref.body.classList.replace(themeLight.style, themeDark.style);
+    icon.textContent = themeDark.icon;
+    saveToLocalStorage('theme', themeDark.style);
+  }
 };
 
 ref.themeSwitchBtn.addEventListener('click', handleThemeSwitchBtnClick);
