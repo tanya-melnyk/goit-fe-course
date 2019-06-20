@@ -7,10 +7,16 @@ module.exports = env => ({
   module: {
     rules: [
       {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader']
-      }
-    ]
+        test: /.scss$/,
+        exclude: /node_modules/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -21,12 +27,10 @@ module.exports = env => ({
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
-    new MiniCssExtractPlugin({
-      filename: 'styles.css'
-    }),
-    new OptimizeCssAssetsPlugin()
-  ]
+    new MiniCssExtractPlugin({ filename: 'styles.css' }),
+    new OptimizeCssAssetsPlugin({}),
+  ],
 });

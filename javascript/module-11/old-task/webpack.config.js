@@ -1,27 +1,31 @@
 const path = require('path');
 const webpackMerge = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 const WebpackBar = require('webpackbar');
 
-const loadModeConfig = env => require(`./build-utils/${env.mode}.config`)(env);
+const modeConfig = env => require(`./build-utils/webpack.${env}`)(env);
 
-module.exports = env =>
+module.exports = ({ mode = 'production' }) =>
   webpackMerge(
     {
-      mode: env.mode,
+      mode,
       context: path.resolve(__dirname, 'src'),
       entry: './index.js',
       output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].bundle.js'
+        filename: 'bundle.js',
       },
       module: {
         rules: [
           {
             test: /\.js$/,
             exclude: /node_modules/,
-            use: ['babel-loader']
+            use: 'babel-loader',
+          },
+          {
+            test: /\.html$/,
+            use: 'html-loader',
           },
           {
             test: /\.(gif|png|jpe?g|svg)$/i,
@@ -30,26 +34,23 @@ module.exports = env =>
                 loader: 'url-loader',
                 options: {
                   name: '[path]/[name].[ext]',
-                  limit: 5000
-                }
-              }
-            ]
-          },
-          {
-            test: /\.html$/,
-            use: 'html-loader'
+                  limit: 5000,
+                },
+              },
+            ],
           },
           {
             test: /\.hbs$/,
-            use: 'handlebars-loader'
-          }
-        ]
+            exclude: /node_modules/,
+            use: 'handlebars-loader',
+          },
+        ],
       },
       plugins: [
-        new CleanWebpackPlugin(),
+        new CleanWebpackPlugin('dist'),
         new FriendlyErrorsWebpackPlugin(),
-        new WebpackBar()
-      ]
+        new WebpackBar(),
+      ],
     },
-    loadModeConfig(env)
+    modeConfig(mode),
   );
