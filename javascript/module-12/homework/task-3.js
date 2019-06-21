@@ -1,5 +1,20 @@
 'use strict';
 
+// Создай плагин настраиваемого таймера,
+// который ведет обратный отсчет до предварительно определенной даты.
+// Такой плагин может использоваться в блогах и интернет-магазинах,
+// страницах регистрации событий, во время технического обслуживания и т. д.
+
+// Плагин ожидает следующую HTML-разметку и показывает четыре цифры:
+// дни, часы, минуты и секунды в формате XX:XX:XX:XX.
+// Количество дней может состоять из более чем двух цифр.
+
+// Плагин это класс CountdownTimer,
+// экземпляр которого создает новый таймер с настройками.
+
+// Для подсчета значений используй следующие готовые формулы,
+// где time - разница между targetDate и текущей датой.
+
 class CountdownTimer {
   constructor({ selector, targetDate }) {
     this.timer = document.querySelector(selector);
@@ -30,6 +45,11 @@ class CountdownTimer {
   setCountDown() {
     const currentTime = Date.now();
     this.deltaTime = this.targetTime - currentTime;
+
+    if (this.deltaTime < 1) {
+      clearInterval(this.intervalId);
+    }
+
     this.countTimeLeft(this.deltaTime);
   }
 

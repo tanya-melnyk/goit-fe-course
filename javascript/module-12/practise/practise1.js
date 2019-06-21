@@ -21,7 +21,7 @@ const theme = JSON.parse(localStorage.getItem('theme'));
 if (theme && theme === 'dark') {
   ref.body.classList.add('theme-dark');
 } else {
-  ref.body.classList.add('theme-ligth');
+  ref.body.classList.add('theme-light');
 }
 
 const saveToLocalStorage = (key, value) => {
@@ -36,10 +36,10 @@ const saveToLocalStorage = (key, value) => {
 const setTheme = e => {
   const btn = e.target;
   if (btn.dataset.theme === 'light') {
-    ref.body.classList.replace('theme-dark', 'theme-ligth');
+    ref.body.classList.replace('theme-dark', 'theme-light');
     saveToLocalStorage('theme', 'light');
   } else {
-    ref.body.classList.replace('theme-ligth', 'theme-dark');
+    ref.body.classList.replace('theme-light', 'theme-dark');
     saveToLocalStorage('theme', 'dark');
   }
 };
