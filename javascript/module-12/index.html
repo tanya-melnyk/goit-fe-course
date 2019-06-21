@@ -91,20 +91,17 @@
     <!-- 1 -->
     <ol>
       <li>
-        <h3>Случайная смена цветов</h3>
+        <h3>Random background color</h3>
 
         <p>
           Есть массив цветов в hex-формате и кнопки Start и Stop.<br />
 
-          Напиши скрипт, который после нажатия кнопки Start, <br />
-          раз в секунду меняет цвет фона текста на случайное значение из
-          массива.<br />
-          Используй инлайн-стиль для изменения background-color.<br />
-
-          При нажатии на кнопку Stop, изменении цвета фона должно
-          останавливаться.<br />
-
-          Учти, что на кнопку Start можно нажать бесконечное количество раз.<br />
+          Напиши скрипт, который после нажатия кнопки Start, <br />раз в секунду
+          меняет цвет фона body на случайное значение из массива используя
+          инлайн-стиль. <br />
+          При нажатии на кнопку Stop, изменение цвета фона должно
+          останавливаться. <br />
+          ⚠️ Учти, на кнопку Start можно нажать бесконечное количество раз.<br />
           Сделай так, чтобы пока изменение темы запушено, кнопка Start была не
           активна.
         </p>
@@ -114,93 +111,124 @@
         <hr />
       </li>
       <li>
+        <h3>Promises</h3>
         <ol>
           <li>
             <!-- 2-1 -->
             <p>
-              2-1.<br />Напиши функцию delay(ms), которая возвращает промис,<br />
-              переходящий в состояние "resolved" через ms миллисекунд.<br />
+              Напиши функцию delay(ms), которая возвращает промис, переходящий в
+              состояние "resolved" через ms миллисекунд.<br />
 
-              Значением исполнившегося промиса должно быть то кол-во<br />
-              миллисекунд которое передали во время вызова функции delay.<br />
+              Значением исполнившегося промиса должно быть то кол-во миллисекунд
+              которое передали во время вызова функции delay.<br />
             </p>
+            <pre>
+                const delay = ms =&gt; {
+                  return new Promise(resolve =&gt; {
+                    setTimeout(() =&gt; {
+                      resolve(ms);
+                    }, ms);
+                  });
+                };
+                
+                const logger = time =&gt; console.log(`Resolved after ${time}ms`);
+                
+                // Вызовы функции для проверки
+                delay(2000).then(logger); // Resolved after 2000ms
+                delay(1000).then(logger); // Resolved after 1000ms
+                delay(1500).then(logger); // Resolved after 1500ms
+            </pre>
 
             <!-- <hr /> -->
           </li>
           <li>
             <!-- 2-2 -->
-            <!-- <p>
-              2-2.<br />
-              Перепиши функцию updateActiveState так, чтобы она<br />
-              не использовала callback-функцию, а возвращала промис.<br />
-              <pre>
-                const users = [
+            <p>
+              Перепиши функцию toggleUserState() так, чтобы она не использовала
+              callback-функцию callback, <br />
+              а принимала всего два параметра allUsers и userName и возвращала
+              промис.<br />
+            </p>
+            <pre>
+                  const users = [
                   { name: 'Mango', active: true },
                   { name: 'Poly', active: false },
                   { name: 'Ajax', active: true },
                   { name: 'Lux', active: false },
                 ];
                 
-                const updateActiveState = (users, callback) =&gt; {
-                  const updatedUsers = users.map(user =&gt; ({ ...user, active: !user.active }));
-                
-                  callback(updatedUsers);
+                const toggleUserState = (allUsers, userName) =&gt; {
+                  return Promise.resolve(
+                    allUsers.map(user =&gt;
+                      user.name === userName ? { ...user, active: !user.active } : user,
+                    ),
+                  );
                 };
                 
-                updateActiveState(users, console.table);
-              </pre>
-           
-          Должно работать так<br />
-         
-          <pre>        updateActiveState(users).then(console.table);</pre>
-         
-          
-            </p> -->
-            <!-- <hr /> -->
+                const logger = updatedUsers =&gt; console.table(updatedUsers);
+                
+                /*
+                 * Должно работать так
+                 */
+                toggleUserState(users, 'Mango').then(logger);
+                toggleUserState(users, 'Lux').then(logger);
+              </pre
+            >
           </li>
           <li>
-            <!-- 2-3 -->
-            <!-- <p>
-              2-3.<br />Есть переменная quantity хранящиая в себе
-               <br />текущее количество единиц какого-то товара на складе.
-              
-               <br />Напиши функцию processOrder(value), получающую
-               <br />кол-во товаров заказанных покупателем, и возвращающую промис.
-              
-               <br />Для имитации проверки достаточного количества товаров
-               <br />на складе используй setTimeout с задержкой 500мс.
-              
-               <br />Если на складе товаров больше либо равно заказанному
-               <br />количеству, функция возвращает промис который исполняется
-               <br />успешно со строкой "Ваш заказ готов!".
-              
-               <br />В противном случае, со строкой "К сожалению на складе не достаточно товаров!".
-              
-               <br />Если же пользователь ввел не число, то промис выполняется с ошибкой
-               <br />и значением "Некорректный ввод!".
-        
-               <br />Вызовы функции для проверки
-               <pre>
-        processOrder(50)
-          .then(console.log) // Ваш заказ готов!
-          .catch(console.log);
-        
-        processOrder(50)
-          .then(console.log) // Ваш заказ готов!
-          .catch(console.log);
-        
-        processOrder(500)
-          .then(console.log) // К сожалению на складе недостаточно товаров!
-          .catch(console.log);
-        
-        processOrder('lorem')
-          .then(console.log)
-          .catch(console.log); // Некорректный ввод!
-                </pre>
-        
-            </p> -->
-
-            <!-- <hr /> -->
+            <p>
+              Перепиши функцию makeTransaction() так, чтобы она не использовала
+              callback-функции onSuccess и onError, <br />а принимала всего один
+              параметр transaction и возвращала промис.
+            </p>
+            <pre>
+                const randomIntegerFromInterval = (min, max) =&gt; {
+                  return Math.floor(Math.random() * (max - min + 1) + min);
+                };
+                
+                const makeTransaction = transaction =&gt; {
+                  return new Promise((resolve, reject) =&gt; {
+                    const delay = randomIntegerFromInterval(200, 500);
+                
+                    setTimeout(() =&gt; {
+                      const canProcess = Math.random() &gt; 0.3;
+                
+                      if (canProcess) {
+                        resolve([transaction.id, delay]);
+                      } else {
+                        reject(transaction.id);
+                      }
+                    }, delay);
+                  });
+                };
+                
+                const logSuccess = ([id, time]) =&gt; {
+                  console.log(`Transaction ${id} processed in ${time}ms`);
+                };
+                
+                const logError = id =&gt; {
+                  console.warn(`Error processing transaction ${id}. Please try again later.`);
+                };
+                
+                /*
+                 * Должно работать так
+                 */
+                makeTransaction({ id: 70, amount: 150 })
+                  .then(logSuccess)
+                  .catch(logError);
+                
+                makeTransaction({ id: 71, amount: 230 })
+                  .then(logSuccess)
+                  .catch(logError);
+                
+                makeTransaction({ id: 72, amount: 75 })
+                  .then(logSuccess)
+                  .catch(logError);
+                
+                makeTransaction({ id: 73, amount: 100 })
+                  .then(logSuccess)
+                  .catch(logError);
+            </pre>
           </li>
         </ol>
       </li>
