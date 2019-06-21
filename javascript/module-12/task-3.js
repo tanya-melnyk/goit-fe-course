@@ -21,12 +21,16 @@ class CountdownTimer {
   }
 
   setTimer() {
+    this.setCountDown();
     this.intervalId = setInterval(() => {
-      const currentTime = Date.now();
-      this.deltaTime = this.targetTime - currentTime;
-
-      this.countTimeLeft(this.deltaTime);
+      this.setCountDown();
     }, 1000);
+  }
+
+  setCountDown() {
+    const currentTime = Date.now();
+    this.deltaTime = this.targetTime - currentTime;
+    this.countTimeLeft(this.deltaTime);
   }
 
   countTimeLeft(time) {
