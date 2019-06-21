@@ -16,7 +16,8 @@ const colors = [
 ];
 
 class RandomBgColor {
-  constructor(colors) {
+  constructor(elem, colors) {
+    this.elem = elem;
     this.colors = colors;
     this.isActive = false;
   }
@@ -26,18 +27,13 @@ class RandomBgColor {
 
     this.isActive = true;
 
-    this.intervalId = setInterval(
-      elem => {
-        const randomIdx = this.randomIntegerFromInterval(
-          0,
-          this.colors.length - 1,
-        );
-
-        elem.style.backgroundColor = this.colors[randomIdx];
-      },
-      1000,
-      refs.body,
-    );
+    this.intervalId = setInterval(() => {
+      const min = 0;
+      const max = this.colors.length - 1;
+      const randomIdx = this.randomIntegerFromInterval(min, max);
+      
+      this.elem.style.backgroundColor = this.colors[randomIdx];
+    }, 1000);
   }
 
   randomIntegerFromInterval(min, max) {
@@ -50,11 +46,14 @@ class RandomBgColor {
   }
 }
 
-const randomBgColor = new RandomBgColor(colors);
+const randomBodyBgColor = new RandomBgColor(refs.body, colors);
 
 refs.startBtn.addEventListener(
   'click',
-  randomBgColor.start.bind(randomBgColor),
+  randomBodyBgColor.start.bind(randomBodyBgColor),
 );
 
-refs.stopBtn.addEventListener('click', randomBgColor.stop.bind(randomBgColor));
+refs.stopBtn.addEventListener(
+  'click',
+  randomBodyBgColor.stop.bind(randomBodyBgColor),
+);

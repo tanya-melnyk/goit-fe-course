@@ -7,8 +7,7 @@
     <title>Module-12</title>
     <style>
       body {
-        min-height: 100vh;
-        margin: 50px;
+        margin: 20px 50px;
         font-family: 'Roboto', sans-serif;
       }
 
@@ -23,7 +22,7 @@
         text-transform: uppercase;
         font-weight: 400;
         font-family: inherit;
-        background-color: #f44336;
+        background-color: #ff5252;
         color: #fff;
         cursor: pointer;
         box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
@@ -43,129 +42,211 @@
         background-color: #d87e78;
         box-shadow: none;
       }
+
+      .timer {
+        width: fit-content;
+        padding: 20px;
+        border: 1px solid;
+        margin: 30px auto;
+        background: #3f51b5;
+        color: #ffc107;
+      }
+
+      .timer-text {
+        margin: 10px 0;
+        font-weight: 700;
+        font-size: 36px;
+        text-align: center;
+      }
+
+      .timer-text::after {
+        margin-top: 20px;
+        content: '';
+        display: block;
+        border-bottom: 2px solid #ffc107;
+        width: 100%;
+      }
+
+      .container {
+        display: flex;
+        justify-content: center;
+      }
+
+      .field {
+        padding: 20px;
+        font-weight: 600;
+        font-size: 30px;
+      }
+
+      span.value {
+        display: block;
+        text-align: center;
+        color: #ffe8a3;
+      }
     </style>
   </head>
   <body>
+    <h2>Homework Module 12</h2>
+
     <!-- 1 -->
-    <p class="js-second">
-        1.<br />Есть массив цветов в hex-формате и кнопки Start и Stop.
-  
-        <br />Напиши скрипт, который после нажатия кнопки Start, <br />раз в
-        секунду меняет цвет фона текста на случайное значение из массива.
-        <br />Используй инлайн-стиль для изменения background-color.<br />
-  
-        При нажатии на кнопку Stop, изменении цвета фона должно
-        останавливаться.<br />
-  
-        Учти, что на кнопку Start можно нажать бесконечное количество раз.<br />
-        Сделай так, чтобы пока изменение темы запушено, кнопка Start была не
-        активна.
-      </p>
-  
-      <button type="button" data-action="start">Start</button>
-      <button type="button" data-action="stop">Stop</button>
-      <hr />
+    <ol>
+      <li>
+        <h3>Случайная смена цветов</h3>
 
-    
-    <!-- 2-1 -->
-    <p>
-      2-1.<br />Напиши функцию delay(ms), которая возвращает промис,<br />
-      переходящий в состояние "resolved" через ms миллисекунд.<br />
+        <p>
+          Есть массив цветов в hex-формате и кнопки Start и Stop.<br />
 
-      Значением исполнившегося промиса должно быть то кол-во<br />
-      миллисекунд которое передали во время вызова функции delay.<br />
-    </p>
-    <p>    </p>
-    
-    <hr />
+          Напиши скрипт, который после нажатия кнопки Start, <br />
+          раз в секунду меняет цвет фона текста на случайное значение из
+          массива.<br />
+          Используй инлайн-стиль для изменения background-color.<br />
 
-    <!-- 2-2 -->
-    <p>
-      2-2.<br />
-      Перепиши функцию updateActiveState так, чтобы она<br />
-      не использовала callback-функцию, а возвращала промис.<br />
-      <pre>
-        const users = [
-          { name: 'Mango', active: true },
-          { name: 'Poly', active: false },
-          { name: 'Ajax', active: true },
-          { name: 'Lux', active: false },
-        ];
+          При нажатии на кнопку Stop, изменении цвета фона должно
+          останавливаться.<br />
+
+          Учти, что на кнопку Start можно нажать бесконечное количество раз.<br />
+          Сделай так, чтобы пока изменение темы запушено, кнопка Start была не
+          активна.
+        </p>
+
+        <button type="button" data-action="start">Start</button>
+        <button type="button" data-action="stop">Stop</button>
+        <hr />
+      </li>
+      <li>
+        <ol>
+          <li>
+            <!-- 2-1 -->
+            <!-- <p>
+              2-1.<br />Напиши функцию delay(ms), которая возвращает промис,<br />
+              переходящий в состояние "resolved" через ms миллисекунд.<br />
+
+              Значением исполнившегося промиса должно быть то кол-во<br />
+              миллисекунд которое передали во время вызова функции delay.<br />
+            </p> -->
+
+            <!-- <hr /> -->
+          </li>
+          <li>
+            <!-- 2-2 -->
+            <!-- <p>
+              2-2.<br />
+              Перепиши функцию updateActiveState так, чтобы она<br />
+              не использовала callback-функцию, а возвращала промис.<br />
+              <pre>
+                const users = [
+                  { name: 'Mango', active: true },
+                  { name: 'Poly', active: false },
+                  { name: 'Ajax', active: true },
+                  { name: 'Lux', active: false },
+                ];
+                
+                const updateActiveState = (users, callback) =&gt; {
+                  const updatedUsers = users.map(user =&gt; ({ ...user, active: !user.active }));
+                
+                  callback(updatedUsers);
+                };
+                
+                updateActiveState(users, console.table);
+              </pre>
+           
+          Должно работать так<br />
+         
+          <pre>        updateActiveState(users).then(console.table);</pre>
+         
+          
+            </p> -->
+            <!-- <hr /> -->
+          </li>
+          <li>
+            <!-- 2-3 -->
+            <!-- <p>
+              2-3.<br />Есть переменная quantity хранящиая в себе
+               <br />текущее количество единиц какого-то товара на складе.
+              
+               <br />Напиши функцию processOrder(value), получающую
+               <br />кол-во товаров заказанных покупателем, и возвращающую промис.
+              
+               <br />Для имитации проверки достаточного количества товаров
+               <br />на складе используй setTimeout с задержкой 500мс.
+              
+               <br />Если на складе товаров больше либо равно заказанному
+               <br />количеству, функция возвращает промис который исполняется
+               <br />успешно со строкой "Ваш заказ готов!".
+              
+               <br />В противном случае, со строкой "К сожалению на складе не достаточно товаров!".
+              
+               <br />Если же пользователь ввел не число, то промис выполняется с ошибкой
+               <br />и значением "Некорректный ввод!".
         
-        const updateActiveState = (users, callback) =&gt; {
-          const updatedUsers = users.map(user =&gt; ({ ...user, active: !user.active }));
+               <br />Вызовы функции для проверки
+               <pre>
+        processOrder(50)
+          .then(console.log) // Ваш заказ готов!
+          .catch(console.log);
         
-          callback(updatedUsers);
-        };
+        processOrder(50)
+          .then(console.log) // Ваш заказ готов!
+          .catch(console.log);
         
-        updateActiveState(users, console.table);
-      </pre>
-   
-  Должно работать так<br />
- 
-  <pre>        updateActiveState(users).then(console.table);</pre>
- 
-  
-    </p>
-    <hr />
+        processOrder(500)
+          .then(console.log) // К сожалению на складе недостаточно товаров!
+          .catch(console.log);
+        
+        processOrder('lorem')
+          .then(console.log)
+          .catch(console.log); // Некорректный ввод!
+                </pre>
+        
+            </p> -->
 
-    <!-- 2-3 -->
-    <p>
-      2-3.<br />Есть переменная quantity хранящиая в себе
-       <br />текущее количество единиц какого-то товара на складе.
-      
-       <br />Напиши функцию processOrder(value), получающую
-       <br />кол-во товаров заказанных покупателем, и возвращающую промис.
-      
-       <br />Для имитации проверки достаточного количества товаров
-       <br />на складе используй setTimeout с задержкой 500мс.
-      
-       <br />Если на складе товаров больше либо равно заказанному
-       <br />количеству, функция возвращает промис который исполняется
-       <br />успешно со строкой "Ваш заказ готов!".
-      
-       <br />В противном случае, со строкой "К сожалению на складе не достаточно товаров!".
-      
-       <br />Если же пользователь ввел не число, то промис выполняется с ошибкой
-       <br />и значением "Некорректный ввод!".
+            <!-- <hr /> -->
+          </li>
+        </ol>
+      </li>
+      <li>
+        <!-- 3 -->
+        <hr />
+        <h3>Countdown Timer</h3>
+        <p>
+          Создай плагин настраиваемого таймера, который ведет обратный отсчет до
+          предварительно определенной даты. <br />
+          Такой плагин может использоваться в блогах и интернет-магазинах,
+          страницах регистрации событий, во время технического обслуживания и т.
+          д.<br />
+          Плагин показывает четыре цифры: дни, часы, минуты и секунды в формате
+          XX:XX:XX:XX.<br />
+          Количество дней может состоять из более чем двух цифр.
+        </p>
 
-       <br />Вызовы функции для проверки
-       <pre>
-processOrder(50)
-  .then(console.log) // Ваш заказ готов!
-  .catch(console.log);
+        <div class="timer" id="timer-1">
+          <h4 class="timer-text">
+            Time left to <span class="js-target-date"></span>:
+          </h4>
+          <div class="container">
+            <div class="field">
+              <span class="value" data-value="days"></span>
+              <span class="label">Days</span>
+            </div>
 
-processOrder(50)
-  .then(console.log) // Ваш заказ готов!
-  .catch(console.log);
+            <div class="field">
+              <span class="value" data-value="hours"></span>
+              <span class="label">Hours</span>
+            </div>
 
-processOrder(500)
-  .then(console.log) // К сожалению на складе недостаточно товаров!
-  .catch(console.log);
+            <div class="field">
+              <span class="value" data-value="mins"></span>
+              <span class="label">Minutes</span>
+            </div>
 
-processOrder('lorem')
-  .then(console.log)
-  .catch(console.log); // Некорректный ввод!
-        </pre>
-
-    </p>
-    
-
-    <hr />
-
-    <!-- 3 -->
-    <p>
-        3.<br />Ознакомься с содержанием панелей HTML и CSS. <br />
-        Напиши скрипт который сохраняет выбранную пользователем тему в
-        localStorage<br />
-        и, при следующих посещениях страницы, устанавливает ее автоматически.
-        <br />
-        По умолчанию пусть будет светлая тема. <br />
-        При выборе темы, добавляй на элемент body соответствующий класс.
-      </p>
-  
-      
-     
+            <div class="field">
+              <span class="value" data-value="secs"></span>
+              <span class="label">Seconds</span>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ol>
 
     <!-- js script -->
     <script src="./task-1.js" type="module"></script>
