@@ -45,8 +45,9 @@ class CountdownTimer {
   setCountDown() {
     const currentTime = Date.now();
     this.deltaTime = this.targetTime - currentTime;
+    const isTargetTimeNow = this.deltaTime < 1;
 
-    if (this.deltaTime < 1) {
+    if (isTargetTimeNow) {
       clearInterval(this.intervalId);
     }
 
