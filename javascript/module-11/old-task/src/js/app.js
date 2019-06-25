@@ -5,7 +5,6 @@ import {
 } from './utils/constants';
 import Notepad from './notepad-model';
 import initialNotes from '../assets/notes.json';
-// import { createListItem, renderNoteList } from './view';
 import notesMarkup from '../templates/notes.hbs';
 import MicroModal from 'micromodal';
 import { Notyf } from 'notyf';
@@ -128,9 +127,7 @@ const editNote = (noteItem, itemId) => {
 
 function handleEditSubmit(e) {
   e.preventDefault();
-  console.log(e.target);
   const form = e.currentTarget;
-  console.log(form);
   const itemId = form.accessKey;
   const { elements } = form;
 
@@ -147,13 +144,11 @@ function handleEditSubmit(e) {
     body: bodyInput,
   };
 
-  const updateNote = notepad.updateNoteContent(itemId, updatedContent);
+  notepad.updateNoteContent(itemId, updatedContent);
 
   refs.noteList.innerHTML = noteListMarkup(notepad.notes);
 
   notyf.success(`Заметка "${titleInput}" успешно изменена!`);
-
-  // form.reset();
 }
 
 ////// функционал для удаления заметки пользователем ////////////
@@ -165,7 +160,7 @@ const removeListItem = (noteItem, itemId) => {
   noteItem.remove();
 };
 
-// слушатель событий
+// обработчик событий на карточке заметки
 const handleClick = e => {
   const targetBtn = e.target.parentNode;
   const action = targetBtn.dataset.action;
