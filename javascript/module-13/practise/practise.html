@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Practise-13</title>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 100px 50px;
+      }
+
+      p {
+        padding-top: 40px;
+      }
+
+      .container {
+        padding: 20px 0;
+        min-width: 480px;
+      }
+
+      .mdc-btn {
+        min-width: 88px;
+        height: 36px;
+        padding: 0 16px;
+        border: 0;
+        outline: 0;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: #00796b;
+        cursor: pointer;
+        box-shadow: 0 4px 4px 0 rgba(#414141, 0.3);
+        &:hover {
+          background-color: #004c40;
+        }
+        &:active {
+          box-shadow: 0 6px 4px 0 rgba(#414141, 0.3);
+        }
+      }
+
+      .search-form {
+        display: flex;
+        justify-content: start;
+        padding: 20px;
+        box-shadow: 0 0 2px 2px rgba(#414141, 0.2);
+      }
+
+      .search-form input {
+        margin-right: 12px;
+        padding: 4px;
+        outline: 0;
+        border: 0;
+        color: #263238;
+        font-size: 18px;
+        background-color: transparent;
+        border-bottom: 2px solid #00796b;
+        &::placeholder {
+          color: #616161;
+        }
+      }
+
+      table.minimalistBlack {
+        border: 3px solid #000000;
+        text-align: left;
+        border-collapse: collapse;
+      }
+
+      table.minimalistBlack td,
+      table.minimalistBlack th {
+        border: 1px solid #000000;
+        padding: 5px 10px;
+      }
+
+      table.minimalistBlack thead {
+        background: #cfcfcf;
+        background: linear-gradient(
+          to bottom,
+          #dbdbdb 0%,
+          #d3d3d3 66%,
+          #cfcfcf 100%
+        );
+        border-bottom: 3px solid #000000;
+      }
+
+      table.minimalistBlack thead th {
+        font-size: 18px;
+        font-weight: bold;
+        color: #000000;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 1 -->
+    <p>
+      1. Countries information search form
+    </p>
+
+    <div class="container" id="task-1">
+      <form class="search-form">
+        <input type="text" name="country" placeholder="Enter country name" />
+        <button class="mdc-btn" type="submit">search</button>
+      </form>
+      <div class="result"></div>
+    </div>
+    <hr />
+
+    <!-- 2 -->
+    <p>
+      2. GitHub users search form
+    </p>
+
+    <div class="container" id="task-2">
+      <form class="search-form">
+        <input type="text" name="country" placeholder="Enter user name" />
+        <button class="mdc-btn" type="submit">search</button>
+      </form>
+      <div class="result"></div>
+    </div>
+
+    <hr />
+
+    <!-- 3 -->
+    <p>
+      3. Get all users info from
+      <a href="https://jsonplaceholder.typicode.com/"
+        >jsonplaceholder.typicode.com</a
+      >
+    </p>
+
+    <div class="container" id="task-3">
+      <form class="search-form">
+        <button class="mdc-btn" type="submit">get</button>
+      </form>
+      <table class="users-table minimalistBlack"></table>
+    </div>
+
+    <hr />
+
+    <!-- 4 -->
+    <p>
+      4. Get user by ID (1-10) from
+      <a href="https://jsonplaceholder.typicode.com/"
+        >jsonplaceholder.typicode.com</a
+      >
+    </p>
+
+    <div class="container" id="task-4">
+      <form class="search-form">
+        <input type="text" name="country" placeholder="Enter user id" />
+        <button class="mdc-btn" type="submit">Get</button>
+      </form>
+      <div class="result"></div>
+    </div>
+
+    <!-- js script -->
+    <script src="./practise1.js" type="module"></script>
+    <script src="./practise2.js" type="module"></script>
+    <script src="./practise3.js" type="module"></script>
+    <script src="./practise4.js" type="module"></script>
+  </body>
+</html>
