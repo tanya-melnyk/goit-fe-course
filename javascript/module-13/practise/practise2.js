@@ -42,7 +42,7 @@ function fetchUserData(evt) {
 }
 
 function getUserData(user) {
-  return fetch(`${API_URL}${user}`)
+  return fetch(API_URL + user)
     .then(response => {
       if (response.ok) return response.json();
       throw new Error('Error fetching data');
@@ -59,7 +59,9 @@ function printResult(user) {
       <tr>
         <th>Avatar: &emsp;</th>
         <td>
-          <img src=${user.avatar_url} alt="User ${user.name} Avatar" width="100">
+          <img src=${user.avatar_url} alt="User ${
+    user.name
+  } Avatar" width="100">
         </td>
       </tr>
       <tr>

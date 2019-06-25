@@ -18,6 +18,7 @@ const container = document.querySelector('#task-4');
 const input = container.querySelector('input');
 const form = container.querySelector('.search-form');
 const result = container.querySelector('.result');
+const API_URL = 'https://jsonplaceholder.typicode.com/users/';
 
 form.addEventListener('submit', getUserById);
 
@@ -26,7 +27,7 @@ function getUserById(evt) {
 
   const id = Number(input.value);
 
-  fetch(`https://jsonplaceholder.typicode.com/users/${id}`)
+  fetch(API_URL + id)
     .then(response => {
       if (response.ok) return response.json();
       throw new Error('Error fetching data');

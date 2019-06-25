@@ -13,14 +13,13 @@ import { Notyf } from 'notyf';
 MicroModal.init();
 
 const shortid = require('shortid');
-
 const notyf = new Notyf();
-
 const notepad = new Notepad(initialNotes);
 
 const refs = {
   searchForm: document.querySelector('.search-form'),
   noteEditorForm: document.querySelector('.note-editor'),
+  noteEditorForm2: document.querySelector('.note-editor-2'),
   noteList: document.querySelector('.note-list'),
   openModalBtn: document.querySelector('button[data-action="open-editor"]'),
 };
@@ -115,48 +114,47 @@ const increaseNotePriority = (noteItem, itemId) => {
 ////// функционал для редактирования заметки пользователем ////////////
 
 const editNote = (noteItem, itemId) => {
-  // console.log(itemId);
-  // MicroModal.show('note-editor-modal');
-  // refs.noteEditorForm.accessKey = itemId;
-  // console.log(refs.noteEditorForm.accessKey);
-  // const note = notepad.findNoteById(itemId);
-  // const { elements } = refs.noteEditorForm;
-  // const titleInput = elements.note_title;
-  // titleInput.value = note.title;
-  // const bodyInput = elements.note_body;
-  // bodyInput.value = note.body;
-  // refs.noteEditorForm.removeEventListener('submit', handleSubmit);
-  // refs.noteEditorForm.addEventListener('submit', handleEditSubmit);
+  MicroModal.show('note-editor-modal-2');
+  refs.noteEditorForm2.accessKey = itemId;
+  const note = notepad.findNoteById(itemId);
+  const { elements } = refs.noteEditorForm2;
+  const titleInput = elements.note_title;
+  titleInput.value = note.title;
+  const bodyInput = elements.note_body;
+  bodyInput.value = note.body;
+
+  refs.noteEditorForm2.addEventListener('submit', handleEditSubmit);
 };
 
-// function handleEditSubmit(e) {
-//   e.preventDefault();
+function handleEditSubmit(e) {
+  e.preventDefault();
+  console.log(e.target);
+  const form = e.currentTarget;
+  console.log(form);
+  const itemId = form.accessKey;
+  const { elements } = form;
 
-//   const form = e.currentTarget;
-//   const itemId = form.accessKey;
-//   const { elements } = form;
+  const titleInput = elements.note_title.value;
+  const bodyInput = elements.note_body.value;
 
-//   const titleInput = elements.note_title.value;
-//   const bodyInput = elements.note_body.value;
+  if (!titleInput || !bodyInput) {
+    notyf.error(NOTIFICATION_MESSAGES.EDITOR_FIELDS_EMPTY);
+    return;
+  }
 
-//   if (!titleInput || !bodyInput) {
-//     notyf.error(NOTIFICATION_MESSAGES.EDITOR_FIELDS_EMPTY);
-//     return;
-//   }
+  const updatedContent = {
+    title: titleInput,
+    body: bodyInput,
+  };
 
-//   const updatedContent = {
-//     title: titleInput,
-//     body: bodyInput,
-//   };
+  const updateNote = notepad.updateNoteContent(itemId, updatedContent);
 
-//   const updateNote = notepad.updateNoteContent(itemId, updatedContent);
+  refs.noteList.innerHTML = noteListMarkup(notepad.notes);
 
-//   refs.noteList.innerHTML = noteListMarkup(notepad.notes);
+  notyf.success(`Заметка "${titleInput}" успешно изменена!`);
 
-//   notyf.success(`Заметка "${titleInput}" успешно изменена!`);
-
-//   form.reset();
-// }
+  form.reset();
+}
 
 ////// функционал для удаления заметки пользователем ////////////
 

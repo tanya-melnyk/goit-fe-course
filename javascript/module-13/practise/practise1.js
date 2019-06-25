@@ -43,7 +43,7 @@ function fetchCountryData(evt) {
 }
 
 function getCountryData(country) {
-  return fetch(`${API_URL}${country}`)
+  return fetch(API_URL + country)
     .then(response => {
       if (response.ok) return response.json();
       throw new Error('Error fetching data');

@@ -20,6 +20,7 @@
 const container = document.querySelector('#task-3');
 const form = container.querySelector('.search-form');
 const userTable = container.querySelector('.users-table');
+const API_URL = 'https://jsonplaceholder.typicode.com/users';
 
 form.addEventListener('submit', fetchUsers);
 
@@ -33,7 +34,7 @@ function fetchUsers(evt) {
 }
 
 function getUsers() {
-  return fetch('https://jsonplaceholder.typicode.com/users')
+  return fetch(API_URL)
     .then(response => {
       if (response.ok) return response.json();
       throw new Error('Error fetching data');
