@@ -153,7 +153,7 @@ function handleEditSubmit(e) {
 
   notyf.success(`Заметка "${titleInput}" успешно изменена!`);
 
-  form.reset();
+  // form.reset();
 }
 
 ////// функционал для удаления заметки пользователем ////////////
