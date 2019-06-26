@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>APIs Examples</title>
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        background: #fff;
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 100px 50px;
+      }
+
+      img,
+      video {
+        padding: 10px;
+      }
+
+      p.api-name {
+        padding-top: 40px;
+      }
+
+      .container {
+        padding: 20px 0;
+        min-width: 480px;
+      }
+
+      .mdc-btn {
+        min-width: 88px;
+        height: 36px;
+        padding: 0 16px;
+        border: 0;
+        outline: 0;
+        border-radius: 2px;
+        color: #fff;
+        font-size: 14px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background-color: #00796b;
+        cursor: pointer;
+        box-shadow: 0 4px 4px 0 rgba(#414141, 0.3);
+        &:hover {
+          background-color: #004c40;
+        }
+        &:active {
+          box-shadow: 0 6px 4px 0 rgba(#414141, 0.3);
+        }
+      }
+
+      .search-form {
+        display: flex;
+        justify-content: start;
+        padding: 20px;
+        box-shadow: 0 0 2px 2px rgba(#414141, 0.2);
+      }
+
+      .search-form input {
+        margin-right: 12px;
+        padding: 4px;
+        outline: 0;
+        border: 0;
+        color: #263238;
+        font-size: 18px;
+        background-color: transparent;
+        border-bottom: 2px solid #00796b;
+        &::placeholder {
+          color: #616161;
+        }
+      }
+
+      .result-1,
+      .result-3,
+      .result-4 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+    </style>
+  </head>
+  <body>
+    <ol>
+      <li>
+        <p class="api-name">
+          Pixabay Photos
+          <img
+            src="https://pixabay.com/static/img/logo_square.svg"
+            alt=""
+            width="30"
+          />
+        </p>
+
+        <div class="container" id="task-1">
+          <form class="search-form">
+            <input type="text" name="country" placeholder="Enter keywords" />
+            <button class="mdc-btn" type="submit">show</button>
+          </form>
+          <div class="result-1"></div>
+        </div>
+      </li>
+      <li>
+        <p class="api-name">
+          Pixabay Videos
+          <img
+            src="https://pixabay.com/static/img/logo_square.svg"
+            alt=""
+            width="30"
+          />
+        </p>
+
+        <div class="container" id="task-2">
+          <form class="search-form">
+            <input type="text" name="country" placeholder="Enter keywords" />
+            <button class="mdc-btn" type="submit">show</button>
+          </form>
+          <div class="result-2"></div>
+        </div>
+      </li>
+      <li>
+        <p class="api-name">News API</p>
+        <div class="container" id="task-3">
+          <form class="search-form">
+            <input type="text" name="country" placeholder="Enter keywords" />
+            <button class="mdc-btn" type="submit">show</button>
+          </form>
+          <div class="result-3"></div>
+        </div>
+      </li>
+      <li>
+        <p class="api-name">APIXU Weather API</p>
+        <div class="container" id="task-4">
+          <form class="search-form">
+            <input type="text" name="country" placeholder="Enter city name" />
+            <button class="mdc-btn" type="submit">show</button>
+          </form>
+          <div class="result-4"></div>
+        </div>
+      </li>
+    </ol>
+
+    <script src="./pixabay_photos.js" type="module"></script>
+    <script src="./pixabay_videos.js" type="module"></script>
+    <script src="./newsapi.js" type="module"></script>
+    <script src="./apixu.js" type="module"></script>
+  </body>
+</html>
