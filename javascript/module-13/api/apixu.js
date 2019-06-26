@@ -4,7 +4,7 @@ const container = document.querySelector('#task-4');
 const input = container.querySelector('input');
 const form = container.querySelector('.search-form');
 const result = document.querySelector('.result-4');
-const API_base = 'http://api.apixu.com/v1/forecast.json';
+const API_base = 'https://api.apixu.com/v1/forecast.json';
 const key = '?key=4a502c918a8341f7b27123556192606';
 const params = '&days=3&lang=uk';
 
@@ -27,8 +27,8 @@ function renderWeatherForecast(forecastdays) {
   const markup = forecastdays.reduce((str, forecastday) => {
     return (
       str +
-      `<div>
-       <p>${forecastday.date}</p>
+      `<div style="margin-left: 40px">
+       <p style="font-weight: bold">${forecastday.date}</p>
        <p>Max. temp - ${forecastday.day.maxtemp_c}&deg;C</p>
        <p>Min. temp - ${forecastday.day.mintemp_c}&deg;C</p>
        <p>${forecastday.day.condition.text}</p>
