@@ -16,7 +16,9 @@
     />
   </head>
   <body>
+    <!-- HEADER -->
     <header class="page-header">
+      <!-- logo -->
       <h1 class="logo">
         <a href="/" class="logo__link">
           <img
@@ -29,6 +31,7 @@
         </a>
       </h1>
 
+      <!-- add new note button -->
       <button
         class="action action--primary page-header__button"
         data-action="open-editor"
@@ -37,6 +40,7 @@
         <i class="material-icons action__icon action__icon--large">add</i>
       </button>
 
+      <!-- search/filter form -->
       <form class="search-form">
         <input type="text" class="search-form__input" placeholder="Search..." />
         <i class="material-icons search-form__icon">search</i>
@@ -45,6 +49,7 @@
 
     <main class="container"><ul class="note-list"></ul></main>
 
+    <!-- modal window - adds new note -->
     <div
       class="modal micromodal-slide"
       id="note-editor-modal"
@@ -59,6 +64,7 @@
         >
           <main class="modal__content">
             <form class="note-editor" id="note-editor-form">
+              <!-- title field -->
               <label class="note-editor__label">
                 <span class="note-editor__field-name">Title</span>
                 <input
@@ -68,6 +74,7 @@
                   autocomplete="off"
                 />
               </label>
+              <!-- body field -->
               <label class="note-editor__label">
                 <span class="note-editor__field-name">Body</span>
                 <textarea
@@ -88,6 +95,7 @@
       </div>
     </div>
 
+    <!-- modal window - edits note -->
     <div
       class="modal micromodal-slide"
       id="note-editor-modal-2"
@@ -102,6 +110,7 @@
         >
           <main class="modal__content">
             <form class="note-editor-2" id="note-editor-form-2">
+              <!-- title field -->
               <label class="note-editor__label">
                 <span class="note-editor__field-name">Title</span>
                 <input
@@ -111,6 +120,7 @@
                   autocomplete="off"
                 />
               </label>
+              <!-- body field -->
               <label class="note-editor__label">
                 <span class="note-editor__field-name">Body</span>
                 <textarea

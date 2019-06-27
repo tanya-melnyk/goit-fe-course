@@ -6,12 +6,12 @@ export const PRIORITY_TYPES = {
 
 export const PRIORITY_NAMES = ['Low', 'Normal', 'High'];
 
-export const ICON_TYPES = {
-  EDIT: 'edit',
-  DELETE: 'delete',
-  ARROW_DOWN: 'expand_more',
-  ARROW_UP: 'expand_less',
-};
+// export const ICON_TYPES = {
+//   EDIT: 'edit',
+//   DELETE: 'delete',
+//   ARROW_DOWN: 'expand_more',
+//   ARROW_UP: 'expand_less',
+// };
 
 export const NOTIFICATION_MESSAGES = {
   NOTE_DELETED_SUCCESS: 'Заметка успешно удалена',
