@@ -2,15 +2,15 @@
 
 // Есть массив цветов в hex-формате и кнопки Start и Stop.
 
-// Напиши скрипт, который после нажатия кнопки Start, 
-// раз в секунду меняет цвет фона body на случайное 
-// значение из массива используя инлайн-стиль. 
+// Напиши скрипт, который после нажатия кнопки Start,
+// раз в секунду меняет цвет фона body на случайное
+// значение из массива используя инлайн-стиль.
 // При нажатии на кнопку Stop, изменение цвета фона должно останавливаться.
 
-// ⚠️ Учти, на кнопку Start можно нажать бесконечное количество раз. 
+// ⚠️ Учти, на кнопку Start можно нажать бесконечное количество раз.
 // Сделай так, чтобы пока изменение темы запушено, кнопка Start была не активна.
 
-// Для генерации случайного числа (индекс элемента массива цветов), 
+// Для генерации случайного числа (индекс элемента массива цветов),
 // используй функцию randomIntegerFromInterval.
 
 const refs = {
@@ -33,29 +33,38 @@ class RandomBgColor {
     this.elem = elem;
     this.colors = colors;
     this.isActive = false;
+    this.i = 0;
   }
 
   start() {
     if (this.isActive) return;
-
     this.isActive = true;
+    refs.startBtn.disabled = true;
 
     this.intervalId = setInterval(() => {
       const min = 0;
       const max = this.colors.length - 1;
       const randomIdx = this.randomIntegerFromInterval(min, max);
-      
+      console.log('randomIdx: ', randomIdx);
       this.elem.style.backgroundColor = this.colors[randomIdx];
+      console.log('color: ', this.colors[randomIdx]);
     }, 1000);
   }
 
   randomIntegerFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
+    const num = Math.floor(Math.random() * (max - min + 1) + min);
+
+    if (this.i !== num) return (this.i = num);
+
+    if (this.i !== this.colors.length - 1) return (this.i = num + 1);
+
+    return (this.i = 0);
   }
 
   stop() {
     clearInterval(this.intervalId);
     this.isActive = false;
+    refs.startBtn.disabled = false;
   }
 }
 
