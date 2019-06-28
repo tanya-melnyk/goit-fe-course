@@ -19,14 +19,15 @@
       }
 
       body {
-        width: 100%;
-        min-height: 100vh;
+        /* width: 100%; */
+        /* min-height: 100vh; */
         padding-top: 30px;
         background: linear-gradient(
             rgba(255, 255, 255, 0.6),
             rgba(255, 255, 255, 0.6)
           ),
           url(./html-css/module-01-02/img/remote-work.jpg) left/cover no-repeat;
+        background-attachment: fixed;
         font-size: 26px;
         line-height: 36px;
       }
@@ -60,10 +61,10 @@
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row justify-content-center justify-content-lg-start">
         <!-- HTML/CSS Homeworks -->
-        <div class="col-10 col-md-6">
+        <div class="col-10 col-lg-3 offset-sm-1">
           <h2 class="list-title">HTML/CSS Homeworks:</h2>
           <!-- ol>li*10>a{Homework М-$@2} -->
           <ol class="homeworks-list">
@@ -178,7 +179,7 @@
           </ol>
         </div>
         <!-- JavaScript Homeworks -->
-        <div class="col-10 col-md-6">
+        <div class="col-10 col-lg-3 offset-sm-1 offset-lg-0">
           <h2 class="list-title">JavaScript Homeworks:</h2>
           <ol class="homeworks-list">
             <li>
@@ -286,7 +287,12 @@
                 >Old Homework М-10</a
               >
             </li>
-            <li>
+          </ol>
+        </div>
+        <div class="col-10 col-lg-3 offset-sm-1 offset-lg-0 pt-4">
+          <br />
+          <ol class="homeworks-list">
+            <li value="11">
               <a href="./javascript/module-11/dist/index.html">Homework М-11</a>
               <ul class="additional-tasks-list">
                 <li>
@@ -329,7 +335,7 @@
                 </li>
                 <li>
                   <a href="./javascript/module-13/api/index.html"
-                    >APIs examples М-13</a
+                    >API examples М-13</a
                   >
                 </li>
               </ul>
