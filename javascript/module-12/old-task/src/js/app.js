@@ -109,10 +109,10 @@ refs.searchForm.addEventListener('input', handleSearchInput);
 
 function handleSearchInput(e) {
   const input = e.target;
-  const filteredNotes = notepad.filterNotesByQuery(input.value);
-
-  refs.noteList.innerHTML = noteListMarkup(filteredNotes);
-  renderPriorityNames();
+  notepad.filterNotesByQuery(input.value).then(filteredNotes => {
+    refs.noteList.innerHTML = noteListMarkup(filteredNotes);
+    renderPriorityNames();
+  });
 }
 
 ////// РЕДАКТИРОВАНИЕ ЗАМЕТОК ////////////
@@ -162,9 +162,9 @@ function increaseNotePriority(noteItem, itemId) {
 
   if (note.priority === PRIORITY_TYPES.HIGH) return;
 
-  note.priority += 1;
-
-  renderUpdatedNotes(noteItem, itemId, note.priority);
+  notepad.updateNotePriority(itemId, note.priority + 1).then(updatedNote => {
+    renderUpdatedNotes(noteItem, updatedNote.id, updatedNote.priority);
+  });
 }
 
 function decreaseNotePriority(noteItem, itemId) {
@@ -172,22 +172,28 @@ function decreaseNotePriority(noteItem, itemId) {
 
   if (note.priority === PRIORITY_TYPES.LOW) return;
 
-  note.priority -= 1;
-
-  renderUpdatedNotes(noteItem, itemId, note.priority);
+  notepad.updateNotePriority(itemId, note.priority - 1).then(updatedNote => {
+    renderUpdatedNotes(noteItem, updatedNote.id, updatedNote.priority);
+  });
 }
 
+// рендерим заметки с обновленным приоритетом
 function renderUpdatedNotes(noteItem, itemId, priority) {
   const notePriorityInfo = noteItem.querySelector('.note__priority');
   notePriorityInfo.dataset.priority = priority;
 
-  const sortedNotes = notepad.sortNotesByPriority();
-  refs.noteList.innerHTML = noteListMarkup(sortedNotes);
-  renderPriorityNames();
+  notepad.sortNotesByPriority().then(sortedNotes => {
+    refs.noteList.innerHTML = noteListMarkup(sortedNotes);
+    renderPriorityNames();
 
-  localStorage.save(localStorageNotesKey, notepad._notes);
+    markActiveNote(itemId);
 
-  // Выделение активной заметки
+    localStorage.save(localStorageNotesKey, notepad._notes);
+  });
+}
+
+// Выделение активной заметки
+function markActiveNote(itemId) {
   const note = document.querySelector(`li[data-id="${itemId}"]`);
   const noteDiv = note.querySelector('.note');
   noteDiv.classList.add('active');
@@ -232,23 +238,24 @@ function handleEditSubmit(e) {
     body: bodyInput,
   };
 
-  notepad.updateNoteContent(itemId, updatedContent);
-  localStorage.save(localStorageNotesKey, notepad._notes);
+  notepad.updateNoteContent(itemId, updatedContent).then(updatedNotes => {
+    localStorage.save(localStorageNotesKey, updatedNotes);
+    refs.noteList.innerHTML = noteListMarkup(updatedNotes);
 
-  refs.noteList.innerHTML = noteListMarkup(notepad.notes);
-  renderPriorityNames();
+    renderPriorityNames();
 
-  notyf.success(`Заметка "${titleInput}" успешно изменена!`);
+    notyf.success(`Заметка "${titleInput}" успешно изменена!`);
+  });
 }
 
 ////// Удаление заметки ////////////
 
 function removeListItem(noteItem, itemId) {
   const noteTitle = notepad.findNoteById(itemId).title;
-  notyf.success(`Заметка "${noteTitle}" удалена!`);
 
   notepad.deleteNote(itemId).then(updatedNotes => {
     localStorage.save(localStorageNotesKey, updatedNotes);
     noteItem.remove();
+    notyf.success(`Заметка "${noteTitle}" удалена!`);
   });
 }

@@ -33,7 +33,7 @@ class RandomBgColor {
     this.elem = elem;
     this.colors = colors;
     this.isActive = false;
-    this.i = 0;
+    this.oldIdx = 0;
   }
 
   start() {
@@ -45,20 +45,17 @@ class RandomBgColor {
       const min = 0;
       const max = this.colors.length - 1;
       const randomIdx = this.randomIntegerFromInterval(min, max);
-      console.log('randomIdx: ', randomIdx);
+
       this.elem.style.backgroundColor = this.colors[randomIdx];
-      console.log('color: ', this.colors[randomIdx]);
     }, 1000);
   }
 
   randomIntegerFromInterval(min, max) {
-    const num = Math.floor(Math.random() * (max - min + 1) + min);
+    const newIdx = Math.floor(Math.random() * (max - min + 1) + min);
 
-    if (this.i !== num) return (this.i = num);
+    if (this.oldIdx !== newIdx) return (this.oldIdx = newIdx);
 
-    if (this.i !== this.colors.length - 1) return (this.i = num + 1);
-
-    return (this.i = 0);
+    return this.randomIntegerFromInterval(min, max);
   }
 
   stop() {
