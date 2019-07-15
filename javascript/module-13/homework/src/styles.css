@@ -10,3 +10,7 @@ html {
 
 body {
 }
+
+.weather.is-hidden {
+  display: none;
+}
