@@ -14,12 +14,12 @@
     "url": "git+https://github.com/tanya-melnyk/goit-fe-course.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Tetiana Melnyk <tetiana.melnyk.ua@gmail.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://github.com/luxplanjay/webpack-starter-kit#readme",
+  "homepage": "https://tanya-melnyk.github.io/goit-fe-course/javascript/module-13/dist/index.html",
   "devDependencies": {
     "@babel/core": "^7.5.4",
     "@babel/plugin-proposal-class-properties": "^7.5.0",
