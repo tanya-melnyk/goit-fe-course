@@ -4,15 +4,17 @@ import './styles.css';
 import getGeoPosition from './js/getGeoPosition';
 import fetchWeather from './js/fetchWeather';
 import renderWeather from './js/renderWeather';
-import PNotify from '../node_modules/pnotify/dist/es/PNotify';
+import spinner from './js/spinner';
+import PNotify from 'pnotify/dist/es/PNotify';
+import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
+import 'material-design-icons/iconfont/material-icons.css';
 
-import PNotifyStyleMaterial from '../node_modules/pnotify/dist/es/PNotifyStyleMaterial.js';
-// Set default styling.
+// Set default PNotify styling.
 PNotify.defaults.styling = 'material';
 PNotify.defaults.icons = 'material';
 PNotify.defaults.delay = 3000;
 
-// ask user geoposition
+// Ask for user geoposition
 getGeoPosition()
   .then(showWeatherByUserPosition)
   .catch(error =>
@@ -23,12 +25,19 @@ getGeoPosition()
 
 // show current weather by user geoposition
 function showWeatherByUserPosition(location) {
+  spinner.show();
+
   const latitude = location.coords.latitude;
   const longitude = location.coords.longitude;
 
   fetchWeather(`${latitude},${longitude}`)
-    .then(renderWeather)
-    .catch(error => console.log(error));
+    .then(weather => {
+      spinner.hide();
+      renderWeather(weather);
+    })
+    .catch(error =>
+      PNotify.error('Не удалось определить ваше местонахождения.'),
+    );
 }
 
 // show current weather by user input
@@ -38,10 +47,18 @@ searchForm.addEventListener('submit', showWeatherByCityName);
 function showWeatherByCityName(e) {
   e.preventDefault();
 
+  spinner.show();
+
   const form = e.currentTarget;
   const cityName = form.children.city.value;
 
   fetchWeather(cityName)
-    .then(renderWeather)
-    .catch(error => PNotify.error('Введите правильное имя города.'));
+  .then(weather => {
+    spinner.hide();
+    renderWeather(weather);
+  })
+    .catch(error => {
+      PNotify.error('Введите правильное имя города.');
+      spinner.hide();
+    })
 }

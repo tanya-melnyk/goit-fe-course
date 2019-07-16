@@ -7,12 +7,6 @@ const APIkey = '?key=4a502c918a8341f7b27123556192606';
 export default function fetchWeather(query) {
   const APIquery = `&q=${query}`;
 
-  // return new Promise((resolve, reject) => {
-  //   fetch(baseURL + APImethod + APIkey + APIquery)
-  //     .then(response => resolve(response.json()))
-  //     .catch(error => reject(new Error()));
-  // });
-
   return fetch(baseURL + APImethod + APIkey + APIquery)
     .then(response => {
       if (response.ok) return response.json();
