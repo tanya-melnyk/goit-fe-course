@@ -1,10 +1,12 @@
 'use strict';
 
 import './styles.css';
+
 import getGeoPosition from './js/getGeoPosition';
 import fetchWeather from './js/fetchWeather';
 import renderWeather from './js/renderWeather';
 import spinner from './js/spinner';
+
 import PNotify from 'pnotify/dist/es/PNotify';
 import PNotifyStyleMaterial from 'pnotify/dist/es/PNotifyStyleMaterial.js';
 import 'material-design-icons/iconfont/material-icons.css';
@@ -23,42 +25,41 @@ getGeoPosition()
     ),
   );
 
-// show current weather by user geoposition
+// fetch current weather by user geoposition
 function showWeatherByUserPosition(location) {
-  spinner.show();
-
   const latitude = location.coords.latitude;
   const longitude = location.coords.longitude;
+  const coord = `${latitude},${longitude}`;
+  const errorMsg = 'Не удалось определить ваше местонахождения.';
 
-  fetchWeather(`${latitude},${longitude}`)
-    .then(weather => {
-      spinner.hide();
-      renderWeather(weather);
-    })
-    .catch(error =>
-      PNotify.error('Не удалось определить ваше местонахождения.'),
-    );
+  getWeather(coord, errorMsg);
 }
 
-// show current weather by user input
+// fetch current weather by user input
 const searchForm = document.getElementById('search-form');
 searchForm.addEventListener('submit', showWeatherByCityName);
 
 function showWeatherByCityName(e) {
   e.preventDefault();
 
-  spinner.show();
-
   const form = e.currentTarget;
   const cityName = form.children.city.value;
+  const errorMsg = 'Введите правильное имя города.';
 
-  fetchWeather(cityName)
-  .then(weather => {
-    spinner.hide();
-    renderWeather(weather);
-  })
-    .catch(error => {
-      PNotify.error('Введите правильное имя города.');
+  getWeather(cityName, errorMsg);
+}
+
+// show current weather
+function getWeather(query, errorMsg) {
+  spinner.show();
+
+  fetchWeather(query)
+    .then(weather => {
+      renderWeather(weather);
       spinner.hide();
     })
+    .catch(error => {
+      PNotify.error(errorMsg);
+      spinner.hide();
+    });
 }
