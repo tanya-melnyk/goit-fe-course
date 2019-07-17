@@ -11,9 +11,9 @@ export default function fetchWeather(query) {
     .then(response => {
       if (response.ok) return response.json();
 
-      throw new Error();
+      throw new Error('Place is not found');
     })
     .catch(error => {
-      throw new Error();
+      throw error;
     });
 }

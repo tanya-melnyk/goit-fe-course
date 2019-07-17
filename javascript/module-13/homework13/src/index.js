@@ -59,6 +59,7 @@ function getWeather(query, errorMsg) {
       spinner.hide();
     })
     .catch(error => {
+      console.log(error);
       PNotify.error(errorMsg);
       spinner.hide();
     });
