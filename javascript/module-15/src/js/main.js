@@ -6,7 +6,6 @@ import 'material-design-icons/iconfont/material-icons.css';
 // helpers
 import apiPhotoService from './services/photos-service';
 import openModalBtnClickHandler from './services/modal-service';
-// import InfiniteScroll from 'infinite-scroll';
 
 // HTML template
 import photoCardTemplate from '../templates/photo-card.hbs';
@@ -17,13 +16,6 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   sentinel: document.getElementById('sentinel'),
 };
-
-// initializing Infinite Scroll plugin
-// const infScrollInstance = new InfiniteScroll(refs.gallery, {
-//   path: '{{#}}',
-//   status: '.page-load-status',
-//   scrollThreshold: 100,
-// });
 
 // adding event listeners
 refs.searchForm.addEventListener('submit', searchFormSubmitHandler);
@@ -40,19 +32,17 @@ function searchFormSubmitHandler(e) {
   apiPhotoService.searchQuery = input.value;
   fetchPhotos();
 
-  // input.value = '';
+  loadPhotosOnIntersectionWith(refs.sentinel, fetchPhotos());
 }
 
 // load more photos when scrolled to the bottom
-loadPhotosOnIntersectionWith(refs.sentinel);
-
 function loadPhotosOnIntersectionWith(target) {
   const options = {
-    rootMargin: '100px 0px',
-    threshold: 0.01,
+    rootMargin: '200px 0px',
+    threshold: 1,
   };
 
-  const sentinelObserver = new IntersectionObserver((entries, observer) => {
+  const sentinelObserver = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         fetchPhotos();
@@ -83,5 +73,3 @@ function renderPhotoCards(photos) {
 function clearListItems() {
   refs.gallery.innerHTML = '';
 }
-
-// infScrollInstance.on('scrollThreshold', fetchPhotos);
