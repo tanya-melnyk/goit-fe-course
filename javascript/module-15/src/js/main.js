@@ -37,7 +37,7 @@ function searchFormSubmitHandler(e) {
 // load more photos when scrolled to the bottom
 function loadPhotosOnIntersectionWith(target) {
   const options = {
-    rootMargin: '0px 0px',
+    rootMargin: '100px 0px',
     threshold: 1,
   };
 
