@@ -30,15 +30,14 @@ function searchFormSubmitHandler(e) {
 
   apiPhotoService.resetPage();
   apiPhotoService.searchQuery = input.value;
-  fetchPhotos();
 
-  loadPhotosOnIntersectionWith(refs.sentinel, fetchPhotos());
+  loadPhotosOnIntersectionWith(refs.sentinel);
 }
 
 // load more photos when scrolled to the bottom
 function loadPhotosOnIntersectionWith(target) {
   const options = {
-    rootMargin: '200px 0px',
+    rootMargin: '0px 0px',
     threshold: 1,
   };
 
@@ -66,7 +65,6 @@ function fetchPhotos() {
 
 function renderPhotoCards(photos) {
   const markup = photoCardTemplate(photos);
-
   refs.gallery.insertAdjacentHTML('beforeend', markup);
 }
 
