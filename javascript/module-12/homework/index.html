@@ -11,38 +11,6 @@
         font-family: 'Roboto', sans-serif;
       }
 
-      button {
-        display: inline-flex;
-        padding: 16px 32px;
-        border: none;
-        margin: 0 4px;
-        border-radius: 2px;
-        font-size: 16px;
-        outline: 0;
-        text-transform: uppercase;
-        font-weight: 400;
-        font-family: inherit;
-        background-color: #ff5252;
-        color: #fff;
-        cursor: pointer;
-        box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2),
-          0px 2px 2px 0px rgba(0, 0, 0, 0.14),
-          0px 3px 1px -2px rgba(0, 0, 0, 0.12);
-        transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-      }
-
-      .button:active {
-        box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2),
-          0px 8px 10px 1px rgba(0, 0, 0, 0.14),
-          0px 3px 14px 2px rgba(0, 0, 0, 0.12);
-      }
-
-      button[disabled] {
-        cursor: default;
-        background-color: #d87e78;
-        box-shadow: none;
-      }
-
       .timer {
         width: fit-content;
         padding: 20px;
@@ -86,201 +54,45 @@
     </style>
   </head>
   <body>
-    <h2>Homework Module 12</h2>
+    <h3>Countdown Timer</h3>
+    <p>
+      Создай плагин настраиваемого таймера, который ведет обратный отсчет до
+      предварительно определенной даты. <br />
+      Такой плагин может использоваться в блогах и интернет-магазинах, страницах
+      регистрации событий, во время технического обслуживания и т. д.<br />
+      Плагин показывает четыре цифры: дни, часы, минуты и секунды в формате
+      XX:XX:XX:XX.<br />
+      Количество дней может состоять из более чем двух цифр.
+    </p>
 
-    <!-- 1 -->
-    <ol>
-      <li>
-        <h3>Random background color</h3>
-
-        <p>
-          Есть массив цветов в hex-формате и кнопки Start и Stop.<br />
-
-          Напиши скрипт, который после нажатия кнопки Start, <br />раз в секунду
-          меняет цвет фона body на случайное значение из массива используя
-          инлайн-стиль. <br />
-          При нажатии на кнопку Stop, изменение цвета фона должно
-          останавливаться. <br />
-          ⚠️ Учти, на кнопку Start можно нажать бесконечное количество раз.<br />
-          Сделай так, чтобы пока изменение темы запушено, кнопка Start была не
-          активна.
-        </p>
-
-        <button type="button" data-action="start">Start</button>
-        <button type="button" data-action="stop">Stop</button>
-        <hr />
-      </li>
-      <li>
-        <h3>Promises</h3>
-        <ol>
-          <li>
-            <!-- 2-1 -->
-            <p>
-              Напиши функцию delay(ms), которая возвращает промис, переходящий в
-              состояние "resolved" через ms миллисекунд.<br />
-
-              Значением исполнившегося промиса должно быть то кол-во миллисекунд
-              которое передали во время вызова функции delay.<br />
-            </p>
-            <pre>
-                const delay = ms =&gt; {
-                  return new Promise(resolve =&gt; {
-                    setTimeout(() =&gt; {
-                      resolve(ms);
-                    }, ms);
-                  });
-                };
-                
-                const logger = time =&gt; console.log(`Resolved after ${time}ms`);
-                
-                // Вызовы функции для проверки
-                delay(2000).then(logger); // Resolved after 2000ms
-                delay(1000).then(logger); // Resolved after 1000ms
-                delay(1500).then(logger); // Resolved after 1500ms
-            </pre>
-
-            <!-- <hr /> -->
-          </li>
-          <li>
-            <!-- 2-2 -->
-            <p>
-              Перепиши функцию toggleUserState() так, чтобы она не использовала
-              callback-функцию callback, <br />
-              а принимала всего два параметра allUsers и userName и возвращала
-              промис.<br />
-            </p>
-            <pre>
-                  const users = [
-                  { name: 'Mango', active: true },
-                  { name: 'Poly', active: false },
-                  { name: 'Ajax', active: true },
-                  { name: 'Lux', active: false },
-                ];
-                
-                const toggleUserState = (allUsers, userName) =&gt; {
-                  return Promise.resolve(
-                    allUsers.map(user =&gt;
-                      user.name === userName ? { ...user, active: !user.active } : user,
-                    ),
-                  );
-                };
-                
-                const logger = updatedUsers =&gt; console.table(updatedUsers);
-                
-                /*
-                 * Должно работать так
-                 */
-                toggleUserState(users, 'Mango').then(logger);
-                toggleUserState(users, 'Lux').then(logger);
-              </pre
-            >
-          </li>
-          <li>
-            <p>
-              Перепиши функцию makeTransaction() так, чтобы она не использовала
-              callback-функции onSuccess и onError, <br />а принимала всего один
-              параметр transaction и возвращала промис.
-            </p>
-            <pre>
-                const randomIntegerFromInterval = (min, max) =&gt; {
-                  return Math.floor(Math.random() * (max - min + 1) + min);
-                };
-                
-                const makeTransaction = transaction =&gt; {
-                  return new Promise((resolve, reject) =&gt; {
-                    const delay = randomIntegerFromInterval(200, 500);
-                
-                    setTimeout(() =&gt; {
-                      const canProcess = Math.random() &gt; 0.3;
-                
-                      if (canProcess) {
-                        resolve([transaction.id, delay]);
-                      } else {
-                        reject(transaction.id);
-                      }
-                    }, delay);
-                  });
-                };
-                
-                const logSuccess = ([id, time]) =&gt; {
-                  console.log(`Transaction ${id} processed in ${time}ms`);
-                };
-                
-                const logError = id =&gt; {
-                  console.warn(`Error processing transaction ${id}. Please try again later.`);
-                };
-                
-                /*
-                 * Должно работать так
-                 */
-                makeTransaction({ id: 70, amount: 150 })
-                  .then(logSuccess)
-                  .catch(logError);
-                
-                makeTransaction({ id: 71, amount: 230 })
-                  .then(logSuccess)
-                  .catch(logError);
-                
-                makeTransaction({ id: 72, amount: 75 })
-                  .then(logSuccess)
-                  .catch(logError);
-                
-                makeTransaction({ id: 73, amount: 100 })
-                  .then(logSuccess)
-                  .catch(logError);
-            </pre>
-          </li>
-        </ol>
-      </li>
-      <li>
-        <!-- 3 -->
-        <hr />
-        <h3>Countdown Timer</h3>
-        <p>
-          Создай плагин настраиваемого таймера, который ведет обратный отсчет до
-          предварительно определенной даты. <br />
-          Такой плагин может использоваться в блогах и интернет-магазинах,
-          страницах регистрации событий, во время технического обслуживания и т.
-          д.<br />
-          Плагин показывает четыре цифры: дни, часы, минуты и секунды в формате
-          XX:XX:XX:XX.<br />
-          Количество дней может состоять из более чем двух цифр.
-        </p>
-
-        <div class="timer" id="timer-1">
-          <h4 class="timer-text">
-            Time left to <span class="js-target-date"></span>:
-          </h4>
-          <div class="container">
-            <div class="field">
-              <span class="value" data-value="days">0</span>
-              <span class="label">Days</span>
-            </div>
-
-            <div class="field">
-              <span class="value" data-value="hours">00</span>
-              <span class="label">Hours</span>
-            </div>
-
-            <div class="field">
-              <span class="value" data-value="mins">00</span>
-              <span class="label">Minutes</span>
-            </div>
-
-            <div class="field">
-              <span class="value" data-value="secs">00</span>
-              <span class="label">Seconds</span>
-            </div>
-          </div>
+    <div class="timer" id="timer-1">
+      <h4 class="timer-text">
+        Time left to <span class="js-target-date"></span>:
+      </h4>
+      <div class="container">
+        <div class="field">
+          <span class="value" data-value="days">0</span>
+          <span class="label">Days</span>
         </div>
-      </li>
-    </ol>
+
+        <div class="field">
+          <span class="value" data-value="hours">00</span>
+          <span class="label">Hours</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="mins">00</span>
+          <span class="label">Minutes</span>
+        </div>
+
+        <div class="field">
+          <span class="value" data-value="secs">00</span>
+          <span class="label">Seconds</span>
+        </div>
+      </div>
+    </div>
 
     <!-- js script -->
-    <script src="./task-1.js" type="module"></script>
-    <script src="./task-2-1.js" type="module"></script>
-    <script src="./task-2-2.js" type="module"></script>
-    <script src="./task-2-3.js" type="module"></script>
     <script src="./task-3.js" type="module"></script>
   </body>
 </html>

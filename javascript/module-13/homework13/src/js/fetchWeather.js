@@ -1,11 +1,11 @@
 'use strict';
 
-const baseURL = 'https://api.apixu.com/v1';
-const APImethod = '/current.json';
-const APIkey = '?key=4a502c918a8341f7b27123556192606';
+const baseURL = 'http://api.weatherstack.com';
+const APImethod = '/current';
+const APIkey = '?access_key=a2f4a19b05175ece9e4162c1948e6ca4';
 
 export default function fetchWeather(query) {
-  const APIquery = `&q=${query}`;
+  const APIquery = `&query=${query}`;
 
   return fetch(baseURL + APImethod + APIkey + APIquery)
     .then(response => {

@@ -11,12 +11,12 @@ const refs = {
 };
 
 export default function renderWeather(weather) {
-  refs.icon.src = 'https:' + weather.current.condition.icon;
+  refs.icon.src = weather.current.weather_icons[0];
   refs.location.textContent = weather.location.name;
-  refs.temp.textContent = weather.current.temp_c;
+  refs.temp.textContent = weather.current.temperature;
   refs.humidity.textContent = weather.current.humidity;
-  refs.wind.textContent = weather.current.wind_kph;
-  refs.conditions.textContent = weather.current.condition.text;
+  refs.wind.textContent = weather.current.wind_speed;
+  refs.conditions.textContent = weather.current.weather_descriptions;
 
   refs.weatherSection.classList.remove('is-hidden');
 }
